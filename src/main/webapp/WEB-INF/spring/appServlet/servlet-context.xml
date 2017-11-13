@@ -8,12 +8,11 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
-	
 	<!-- Interceptor -->
 	<!-- <interceptors>
 		<interceptor>
-			<mapping path="/test/test*" />
-			<beans:bean id="spoInterceptor" class="com.spomatch.interceptor.spoInterceptor">
+			<mapping path="/spomatch/*" />
+			<beans:bean id="simpleInterceptor" class="com.spomatch.interceptor.SpoInterceptor">
 			</beans:bean>
 		</interceptor>
 	</interceptors> -->
@@ -31,7 +30,5 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="com.spomatch" />
-	
-	
 	
 </beans:beans>

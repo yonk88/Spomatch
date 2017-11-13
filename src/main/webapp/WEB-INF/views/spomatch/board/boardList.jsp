@@ -21,7 +21,6 @@
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../css/board.css"></script>
 </head>
 <body>
 	<table class="table">
@@ -32,11 +31,12 @@
 			<th>수준</th>
 			<th>초청 / 원정</th>
 		</tr>
+		
 		<c:forEach var="i" items="${boaList }">
 			<tr>
-				<td>${i.mat_Date }</td>
+				<td><fmt:formatDate value="${i.mat_Date }" pattern="yyyy-MM-dd" /></td>
 				<td>${i.mat_Local }</td>
-				<td>${i.mat_Local }</td>
+				<td>${i.mat_Matchday }</td>
 				<td>${i.mat_Lv}</td>
 				<td>${i.mat_Status }</td>
 			</tr>

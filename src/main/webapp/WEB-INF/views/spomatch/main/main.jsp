@@ -1,6 +1,7 @@
 <!-- GIT 테스트 -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -20,9 +21,9 @@
 <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<spring:url value="/resources/js/main.js" var="mainJs" />
+<script src="${mainJs }"></script>
 
-	<script type="text/javascript" src="./css/main.css"></script>
-	<script type="text/javascript" src="./js/main.js"></script>
 </head>
 <body>
 	<!-- Header -->
@@ -35,12 +36,14 @@
 			<button type="button" class="btn btn-default">신고게시판</button>
 		</div>
 	</div>
-	<!-- Board List -->
-	<div class="boardList">
-	test2
-		
-	</div>
 	
+	<!-- Board List -->
+	<div id="boardList"></div>
+<!-- <script>
+$(document).ready(function(){
+	$("#boardList").load("../board/boardList.do");
+});
+</script> -->
 
 </body>
 </html>
