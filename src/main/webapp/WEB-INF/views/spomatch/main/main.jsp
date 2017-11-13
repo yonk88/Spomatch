@@ -37,6 +37,7 @@
 	</div>
 	<!-- Board List -->
 	<div class="boardList">
+	test2
 		
 	</div>
 	
