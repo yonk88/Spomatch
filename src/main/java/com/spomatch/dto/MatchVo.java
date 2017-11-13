@@ -4,7 +4,7 @@ import java.util.Date;
 
 //팀 매치등록 및 정보
 public class MatchVo {
-	private int mat_idx;
+	private int mat_Idx;
 	private Date mat_Date;
 	private char mat_Cate;
 	private String mat_Matchday;
@@ -14,10 +14,10 @@ public class MatchVo {
 	private char mat_Status;
 	
 	public int getMat_idx() {
-		return mat_idx;
+		return mat_Idx;
 	}
 	public void setMat_idx(int mat_idx) {
-		this.mat_idx = mat_idx;
+		this.mat_Idx = mat_idx;
 	}
 	public Date getMat_Date() {
 		return mat_Date;
@@ -64,7 +64,7 @@ public class MatchVo {
 	
 	@Override
 	public String toString() {
-		return "MatchVo [mat_idx=" + mat_idx + ", mat_Date=" + mat_Date + ", mat_Cate=" + mat_Cate + ", mat_Matchday="
+		return "MatchVo [mat_idx=" + mat_Idx + ", mat_Date=" + mat_Date + ", mat_Cate=" + mat_Cate + ", mat_Matchday="
 				+ mat_Matchday + ", mat_Local=" + mat_Local + ", mat_Host=" + mat_Host + ", mat_Guest=" + mat_Guest
 				+ ", mat_Status=" + mat_Status + "]";
 	}
