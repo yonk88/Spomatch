@@ -30,6 +30,10 @@ public class BoardController {
 	public void boardList(MatchVo matVo, Model model, HttpSession session, HttpServletRequest request){
 		logger.info("BoardList");
 		List<MatchVo> boaList = boaService.boardList();
+		
+		int listLeng = boaList.size();
+		
+		logger.info(Integer.toString(listLeng));
 		model.addAttribute("boaList", boaList);
 		logger.info("boardList:" + matVo.toString());
 		
