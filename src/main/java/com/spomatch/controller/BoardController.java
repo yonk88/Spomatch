@@ -29,11 +29,14 @@ public class BoardController {
 	@RequestMapping (value = "/spomatch/board/boardList.do", method = RequestMethod.GET)
 	public void boardList(MatchVo matVo, Model model, HttpSession session, HttpServletRequest request){
 		logger.info("BoardList");
-		List<MatchVo> boaList = boaService.boardList();
 		
+		String attrVal = request.getParameter("catg");
+		logger.info("attr : " + attrVal);
+		
+		List<MatchVo> boaList = boaService.boardList();
 		int listLeng = boaList.size();
 		
-		logger.info(Integer.toString(listLeng));
+		logger.info("boardList Num : " + Integer.toString(listLeng));
 		model.addAttribute("boaList", boaList);
 		logger.info("boardList:" + matVo.toString());
 		

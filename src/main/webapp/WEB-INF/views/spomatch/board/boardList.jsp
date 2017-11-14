@@ -20,6 +20,7 @@
 					<th>경기 날짜</th>
 					<th>수준</th>
 					<th>초청 / 원정</th>
+					<th>대기인원</th>
 				</tr>
 
 				<c:forEach var="i" items="${boaList }">
@@ -30,6 +31,7 @@
 						<td>${i.mat_Matchday }</td>
 						<td>${i.mat_Lv}</td>
 						<td>${i.mat_Status }</td>
+						<td>0</td>
 					</tr>
 				</c:forEach>
 			</table>

@@ -1,4 +1,5 @@
 <!-- GIT 테스트 -->
+<%@page import="com.spomatch.dto.MatchVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
@@ -23,8 +24,11 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
+<!-- js 경로 -->
 <spring:url value="/resources/js/main.js" var="mainJs" />
 <script src="${mainJs }"></script>
+
+<!-- css 경로 -->
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/main.css" />
 
@@ -42,33 +46,47 @@
 			<button type="button" class="btn btn-default">신고게시판</button>
 		</div>
 	</div>
-	<%
 	
-	%>
 	<!-- Board List -->
 	<div id="mainBoardTab">
 		<div class="container">
 			<ul class="nav nav-tabs" role="tablist" id="myTab">
 				<li role="presentation" class="active"><a href="#soccerTab"
-					aria-controls="home" role="tab" data-toggle="tab">축구</a></li>
+					aria-controls="home" role="tab" data-toggle="tab" id="sTab">
+					축구
+					<% request.setAttribute("catg", "1");%>
+					</a>
+					</li>
 
 				<li role="presentation"><a href="#baseballTab"
-					aria-controls="profile" role="tab" data-toggle="tab">야구</a></li>
+					aria-controls="profile" role="tab" data-toggle="tab" id="bTab">
+					야구
+					<% request.setAttribute("catg", "2");%>
+					</a>
+					</li>
 
 				<li role="presentation"><a href="#gameTab"
-					aria-controls="messages" role="tab" data-toggle="tab">게임</a></li>
+					aria-controls="messages" role="tab" data-toggle="tab" id="gTab">
+					게임
+					<% request.setAttribute("catg", "3");%>
+					</a>
+					</li>
 
 				<li role="presentation"><a href="#etcTab"
-					aria-controls="messages" role="tab" data-toggle="tab">기타</a></li>
+					aria-controls="messages" role="tab" data-toggle="tab" id="eTab">
+					기타
+					<% request.setAttribute("catg", "4");%>
+					</a>
+					</li>
 			</ul>
 
 			<div class="tab-content">
-				<div role="tabpanel" class="tab-pane active" id="soccerTab">
+				<div role="tabpanel" class="tab-pane active" id="soccerTab" >
 					<div id="boardList"></div>
 				</div>
 				<div role="tabpanel" class="tab-pane" id="baseballTab">야구</div>
-				<div role="tabpanel" class="tab-pane" id="gameTab">게임</div>
-				<div role="tabpanel" class="tab-pane" id="etcTab">기타</div>
+				<div role="tabpanel" class="tab-pane" id="gameTab" >게임</div>
+				<div role="tabpanel" class="tab-pane" id="etcTab" >기타</div>
 			</div>
 		</div>
 	</div>
