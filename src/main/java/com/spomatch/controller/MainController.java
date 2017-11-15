@@ -11,7 +11,7 @@ public class MainController {
 	private static final Logger logger
 	= LoggerFactory.getLogger(MainController.class);
 	
-	@RequestMapping(value="spomatch/main/main.do")
+	@RequestMapping(value="/spomatch/main/main.do")
 	public void mainAction(){
 		logger.info("SpoMain");
 	}

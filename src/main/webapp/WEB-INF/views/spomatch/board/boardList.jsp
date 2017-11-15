@@ -8,7 +8,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>SPOMATCH-BOARD</title>
 
-
 </head>
 <body>
 	<div id="boardSize">
@@ -32,6 +31,8 @@
 						<td>${i.mat_Lv}</td>
 						<td>${i.mat_Status }</td>
 						<td>0</td>
+						<input type="hidden" value="${i.mat_Idx }" 
+							id="mat_Idx1" onclick="boardS(${i.mat_Idx})">
 					</tr>
 				</c:forEach>
 			</table>

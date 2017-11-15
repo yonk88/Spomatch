@@ -9,6 +9,15 @@
 <body>
 <form action="#" method="post">
 <table class="table">
+팀이름
+날짜
+유니폼
+연령
+실력
+조끼
+계좌번호
+
+장소
 	<tr>
 		<td>팀 이름</td>
 		<td><input type="text" id="teamName" name="teamName" /></td>
@@ -26,11 +35,6 @@
 	
 	<tr>
 		<td>계좌번호</td>
-	</tr>
-	
-	<tr colspan="2">
-		<td><input type="submit" value="매치신청" /></td>
-		<td><input type="button" value="취소" /></td>
 	</tr>
 	
 </table>

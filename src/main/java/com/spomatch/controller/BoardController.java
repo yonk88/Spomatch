@@ -26,13 +26,10 @@ public class BoardController {
 	private static final Logger logger
 	= LoggerFactory.getLogger(BoardController.class);
 	
-	@RequestMapping (value = "/spomatch/board/boardList.do", method = RequestMethod.GET)
-	public void boardList(MatchVo matVo, Model model, HttpSession session, HttpServletRequest request){
+	@RequestMapping (value = "/spomatch/board/boardList.do")
+	public void boardListAction(MatchVo matVo, Model model, HttpSession session, HttpServletRequest request){
 		logger.info("BoardList");
-		
-		String attrVal = request.getParameter("catg");
-		logger.info("attr : " + attrVal);
-		
+
 		List<MatchVo> boaList = boaService.boardList();
 		int listLeng = boaList.size();
 		
@@ -40,6 +37,11 @@ public class BoardController {
 		model.addAttribute("boaList", boaList);
 		logger.info("boardList:" + matVo.toString());
 		
+	}
+	
+	@RequestMapping (value="/spomatch/board/boardPage.do")
+	public void boardPageAction(Model model, HttpSession session, HttpServletRequest request){
+		logger.info("boardPageParam: " + request.getParameter("catg"));
 	}
 
 }
