@@ -1,0 +1,25 @@
+#header {
+	padding-top: 2%;
+	text-align: center;
+}
+
+#boardItem {
+	text-align: left;
+}
+
+#boardSize {
+	width: 650px;
+	padding-top: 2%;
+	border: 1px;
+}
+
+#mainBoardTab {
+	width: 400px;
+	padding-top: 2%;
+	padding-left:10%;
+	border: 1px;
+}
+
+#mainNav {
+	padding-left: 40%;
+}

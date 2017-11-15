@@ -1,11 +1,14 @@
 <!-- GIT 테스트 -->
+<%@page import="com.spomatch.dto.MatchVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>SPOMATCH</title>
+
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
@@ -21,25 +24,32 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
-	<script type="text/javascript" src="./css/main.css"></script>
-	<script type="text/javascript" src="./js/main.js"></script>
+<!-- js 경로 -->
+<spring:url value="/resources/js/main.js" var="mainJs" />
+<script src="${mainJs }"></script>
+
+<!-- css 경로 -->
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/resources/css/main.css" />
+
+<style>
+</style>
 </head>
 <body>
 	<!-- Header -->
-	<div class="header">
-		<div class="container">
-			<button type="button" class="btn btn-default">팀매칭</button>
+	<div id="header">
+		<div>
+			<button type="button" class="btn btn-default ">팀매칭</button>
 			<button type="button" class="btn btn-default">용병매칭</button>
 			<button type="button" class="btn btn-default">대회</button>
 			<button type="button" class="btn btn-default">주최/참가한 대회</button>
 			<button type="button" class="btn btn-default">신고게시판</button>
 		</div>
 	</div>
+	
 	<!-- Board List -->
-	<div class="boardList">
-	test2
-		
-	</div>
+	<div id = "boardPage"></div><br/>
+	
 	
 
 </body>
