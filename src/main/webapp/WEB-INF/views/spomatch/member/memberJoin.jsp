@@ -116,7 +116,7 @@
 </script>
 </head>
 <body>
-	<!-- <article class="container"> -->
+	<article class="container">
 	<div class="page-header">
 		<h1>
 			회원가입 <small>Spomatch</small>
@@ -177,7 +177,7 @@
 			</div>
 		</form>
 	</div>
-	<!-- </article> -->
+	</article>
 
 	<!-- 	<form class="form-horizontal" action="#" method="post">
 		<div class="form-group ">
