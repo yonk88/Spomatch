@@ -48,7 +48,7 @@
 	</div>
 	
 	<!-- Board List -->
-	<div id = "boardPage"></div><br/>
+	<div id = "boardPage"></div>
 	
 	
 
