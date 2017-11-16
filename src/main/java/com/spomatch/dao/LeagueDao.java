@@ -1,5 +1,7 @@
 package com.spomatch.dao;
 
-public interface LeagueDao {
+import java.util.List;
 
+public interface LeagueDao {
+	public List leagueList();
 }

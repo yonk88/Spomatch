@@ -6,20 +6,18 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-<<<<<<< HEAD
+
 	<!-- DispatcherServlet Context: defines this servlet's request-processing 
 		infrastructure -->
 
-=======
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
->>>>>>> branch 'master' of https://github.com/yonk88/Spomatch.git
+
 	<!-- Interceptor -->
-<<<<<<< HEAD
+
 	<!-- <interceptors> <interceptor> <mapping path="/test/test*" /> <beans:bean 
 		id="spoInterceptor" class="com.spomatch.interceptor.spoInterceptor"> </beans:bean> 
 		</interceptor> </interceptors> -->
 
-=======
 	<!-- <interceptors>
 		<interceptor>
 			<mapping path="/spomatch/*" />
@@ -28,7 +26,7 @@
 		</interceptor>
 	</interceptors> -->
 	
->>>>>>> branch 'master' of https://github.com/yonk88/Spomatch.git
+
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven />
 
@@ -45,7 +43,7 @@
 	</beans:bean>
 
 	<context:component-scan base-package="com.spomatch" />
-<<<<<<< HEAD
+
 
 	<!-- 이메일 관련 -->
 	<beans:bean id="javaMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
@@ -65,9 +63,6 @@
 		<beans:property name="javaMailSender" ref="javaMailSender" />
 	</beans:bean>
 
-
-
-=======
 	
->>>>>>> branch 'master' of https://github.com/yonk88/Spomatch.git
+
 </beans:beans>
