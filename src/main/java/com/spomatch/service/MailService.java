@@ -12,5 +12,5 @@ public interface MailService {
      *  @param filePath 첨부 파일 경로: 첨부파일 없을시 null **/
     public boolean send(String subject, String text, String from, String to, String filePath);
 
-    public List emailCheck(String userid);
+    public List emailCheck(String mem_Id);
 }

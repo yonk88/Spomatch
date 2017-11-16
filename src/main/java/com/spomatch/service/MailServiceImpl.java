@@ -54,8 +54,8 @@ public class MailServiceImpl implements MailService {
         return false;
     }
     
-    public List emailCheck(String userid) {
-    	return dao.emailCheck(userid);
+    public List emailCheck(String mem_Id) {
+    	return dao.emailCheck(mem_Id);
     }
 }
 
