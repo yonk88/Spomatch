@@ -34,6 +34,7 @@ public class BoardController {
 		List<MatchVo> boaList = boaService.boardList();
 		int listLeng = boaList.size();
 		
+		model.addAttribute("totalPage", listLeng);
 		logger.info("boardList Num : " + Integer.toString(listLeng));
 		model.addAttribute("boaList", boaList);
 		logger.info("boardList:" + matVo.toString());
@@ -42,7 +43,9 @@ public class BoardController {
 	
 	@RequestMapping (value="/spomatch/board/boardPage.do")
 	public void boardPageAction(Model model, HttpSession session, HttpServletRequest request){
-		logger.info("boardPageParam: " + request.getParameter("catg"));
+		List<MatchVo> boaList = boaService.boardList();
+		model.addAttribute("totalPages", boaList.size());
+		logger.info("boardPageParam: " + boaList.size());
 	}
 
 }
