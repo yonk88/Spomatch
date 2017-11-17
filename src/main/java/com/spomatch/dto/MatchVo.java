@@ -6,7 +6,7 @@ import java.util.Date;
 public class MatchVo {
 	private int mat_Idx;
 	private Date mat_Date;
-	private char mat_Cate;
+	private String mat_Cate;
 	private String mat_Matchday;
 	private String mat_Local;
 	private String mat_Host;
@@ -32,10 +32,10 @@ public class MatchVo {
 	public void setMat_Date(Date mat_Date) {
 		this.mat_Date = mat_Date;
 	}
-	public char getMat_Cate() {
+	public String getMat_Cate() {
 		return mat_Cate;
 	}
-	public void setMat_Cate(char mat_Cate) {
+	public void setMat_Cate(String mat_Cate) {
 		this.mat_Cate = mat_Cate;
 	}
 	public String getMat_Matchday() {

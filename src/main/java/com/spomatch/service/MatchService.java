@@ -4,6 +4,6 @@ import com.spomatch.dto.MatchVo;
 
 public interface MatchService {
 	
-	public void insertMatch(MatchVo matVo);
+	public void insertTeamMatch(MatchVo matVo);
 
 }

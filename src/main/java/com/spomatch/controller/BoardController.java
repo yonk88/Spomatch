@@ -26,25 +26,40 @@ public class BoardController {
 	private static final Logger logger
 	= LoggerFactory.getLogger(BoardController.class);
 	
-	@RequestMapping (value = "/spomatch/board/boardList.do")
-	public void boardListAction(MatchVo matVo, Model model, HttpSession session, HttpServletRequest request){
-		logger.info("BoardList");
-
-		List<MatchVo> boaList = boaService.boardList();
-		int listLeng = boaList.size();
+	@RequestMapping (value = "/spomatch/board/matchList.do")
+	public void matchListAction(MatchVo matVo, Model model, HttpSession session, HttpServletRequest request){
+		logger.info("MatchList");
+		String catg = request.getParameter("catg");
 		
-		model.addAttribute("totalPage", listLeng);
-		logger.info("boardList Num : " + Integer.toString(listLeng));
-		model.addAttribute("boaList", boaList);
-		logger.info("boardList:" + matVo.toString());
+		if(catg == (null)){
+			catg = "S";
+			List<MatchVo> boaList = boaService.boardList(catg);
+			int listLeng = boaList.size();	
+			model.addAttribute("totalPage", listLeng);
+			//logger.info("boardList Num : " + Integer.toString(listLeng));
+			model.addAttribute("boaList", boaList);
+			logger.info("boardList:" + matVo.toString());
+			model.addAttribute("catg", catg);
+		}else{
+			logger.info("=*=*=*==*MatCatg is NOT null");
+			logger.info(request.getParameter("catg"));
+			catg = "B";
+			model.addAttribute("catg", catg);
+			List<MatchVo> boaList = boaService.boardList(catg);
+			model.addAttribute("catg", catg);
+		}
 		
 	}
 	
+	@RequestMapping (value = "/spomatch/board/matchListProc.do")
+	public String matchListProcAction(MatchVo matVo, Model model, HttpSession session, HttpServletRequest request){
+		
+		return "matchList.do";
+	}
+	
 	@RequestMapping (value="/spomatch/board/boardPage.do")
-	public void boardPageAction(Model model, HttpSession session, HttpServletRequest request){
-		List<MatchVo> boaList = boaService.boardList();
-		model.addAttribute("totalPages", boaList.size());
-		logger.info("boardPageParam: " + boaList.size());
+	public void boardPageAction(MatchVo matVo, Model model, HttpSession session, HttpServletRequest request){
+		
 	}
 
 }

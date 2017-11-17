@@ -10,18 +10,18 @@
 <title>SPOMATCH-BOARD</title>
 
 <!-- js 경로 -->
-<spring:url value="/resources/js/boardList.js" var="boardListJs" />
-<script src="${boardListJs }"></script>
+<spring:url value="/resources/js/matchList.js" var="matchListJs" />
+<script src="${matchListJs }"></script>
 
 <!-- css 경로 -->
 <link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/css/board.css" />
+	href="${pageContext.request.contextPath}/resources/css/matchList.css" />
 
 </head>
 <body>
-	<div id="boardSize">
+	<div id="match_bSize">
 		<div class="container">
-			<table class="table table-striped table-hover" id="boardItem">
+			<table class="table table-striped table-hover" id="match_bItem">
 				<tr>
 					<th>등록 날짜</th>
 					<th>지역</th>
@@ -33,7 +33,7 @@
 				</tr>
 
 				<c:forEach var="i" items="${boaList }">
-					<tr id="b_Hidden">
+					<tr>
 						<td><fmt:formatDate value="${i.mat_Date }"
 								pattern="yyyy-MM-dd" /></td>
 						<td>${i.mat_Local }</td>
