@@ -31,7 +31,6 @@ $("#tabs> ul li").click(function(){
 	if(tabIndex == 0){
 		catgVal = "S";
 		if(catgVal == "S"){
-			
 		}
 	}else if(tabIndex == 1){
 		catgVal = "B";
@@ -47,10 +46,9 @@ $("#tabs> ul li").click(function(){
 	/*$.ajax({
 		url: "/spomatch/board/matchList.do"
 		,type: "get"
-		,data: { "catg":catgVal }
+		,data: { "catg"d:catgVal }
 		,dataType: "json"
 		,success : function(data){
-			
 		}
 	});*/
 })

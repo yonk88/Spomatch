@@ -1,7 +1,9 @@
-#mainNav{
-	text-align:center;
+#mainBoardTab{
+	padding-top: 2%;
+	padding-left:20%;
+	width:600px;
 }
 
-#mCatg{
-	display:none;
+#mainNav{
+	text-align:center;
 }

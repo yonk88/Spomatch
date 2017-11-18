@@ -53,8 +53,6 @@
 	
 	<!-- Board List -->
 	<div id = "boardPage"></div>
-	
-	
 
 </body>
 </html>

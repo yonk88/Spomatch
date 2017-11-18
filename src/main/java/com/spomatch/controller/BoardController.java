@@ -32,6 +32,7 @@ public class BoardController {
 		logger.info("MatchList");
 		//String catg = request.getParameter("catg");
 		List<MatchVo> boaList = boaService.boardList();
+		model.addAttribute("boaList", boaList);
 		int listLeng = boaList.size();
 		
 		/*if(catg == (null)){
