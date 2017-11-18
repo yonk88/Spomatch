@@ -7,17 +7,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <title>SPOMATCH-TOURMENT</title>
 </head>
 <body>
 
-<%int num=16;%>
-
+<%int num = (Integer)request.getAttribute("teamNum"); %>
 <%int temp=0, cnt=2; %>
 
-
-
-<div class="table-responsive table-center">
+<div id="LTmt" class="table-responsive table-center">
 
 <table class="table" border="1" style="width:50%">
 	<tr><td colspan=<%=num %>><h2 class="text-center">대진표</h2></td></tr>
@@ -27,11 +25,11 @@
 		<option id="op">16강</option>
 		<option id="op">32강</option>
 	</select>
-	${teamNum }
 	<button id="click">눌러</button>
 	</p>
 	</td>
 	</tr>
+
 <%temp=num/2; while(true){
 	%>
 	<tr>
@@ -59,7 +57,7 @@
 } %>
 
 <c:forEach var="i" items="${leaTmList }">
-	<td colspan=<%=temp %>><p align=center>${i.team_Idx }</p></td>
+	<td colspan=<%=temp %>><p align=center>${i.team_Name }</p></td>
 </c:forEach>
 
 </body>

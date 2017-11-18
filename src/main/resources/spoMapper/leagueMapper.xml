@@ -7,4 +7,12 @@
   	<select id="leagueList" resultType="com.spomatch.dto.LeagueVo">
   	SELECT * FROM SPO_LEAGUE <!-- WHERE MAT_CATE = ${param.catg } -->
   	</select>
+  	
+  	<select id="leagueRankList" resultType="com.spomatch.dto.LeagueTmVo">
+  	<!-- SELECT * FROM SPO_LEAGUETMM WHERE LEA_IDX = 7 and LT_STATUS = 'S' ORDER BY LT_POINT DESC -->
+  	
+  	SELECT LT.LEA_IDX, TM.TEAM_IDX, TM.TEAM_NAME, LT.LT_POINT, LT.LT_WIN, LT.LT_DRAW, LT.LT_LOSE, 
+	LT.LT_GOAL, LT.LT_LOSEPNT FROM SPO_TEAM TM, SPO_LEAGUETMM LT WHERE TM.TEAM_IDX=LT.TEAM_IDX
+	AND LT.LEA_IDX=7 ORDER BY LT.LT_POINT DESC
+  	</select>
   </mapper>

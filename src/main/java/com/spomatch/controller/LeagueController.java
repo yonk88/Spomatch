@@ -41,14 +41,28 @@ public class LeagueController {
 	@Autowired LeagueTmService leaTmService;
 	
 	@RequestMapping(value="/spomatch/league/leagueTmt.do")
-	public void leagueTmListAction(LeagueTmVo leaTmVo, Model model, HttpSession session, HttpServletRequest request){
-		List<MatchVo> leaTmList = leaTmService.leagueTmList();
+	public void leagueTmListAction(LeagueTmVo leaTmVo, Model model, 
+			HttpSession session, HttpServletRequest request){
+		List<LeagueTmVo> leaTmList = leaTmService.leagueTmList();
 		int listLeng = leaTmList.size();
 		
+//		model.addAttribute("teamNum", "AAA");
 		model.addAttribute("teamNum", listLeng);
-		logger.info("leagueTmList Num : " + Integer.toString(listLeng));
+		logger.info("leagueTmList Num : " + Integer.toString(leaTmList.size()));
 		model.addAttribute("leaTmList", leaTmList);
 		logger.info("leagueTmList:" + leaTmVo.toString());
+	}
+	
+	@RequestMapping(value="/spomatch/league/leagueRank.do")
+	public void leagueRkListAction(LeagueTmVo leaTmVo, Model model, 
+			HttpSession session, HttpServletRequest request){
+		List<LeagueTmVo> leaRkList = leaService.leagueRankList();
+
+		model.addAttribute("teamNum", leaRkList.size());
+		logger.info("leagueRkListNum = "+Integer.toString(leaRkList.size()));
+		
+		model.addAttribute("leaRkList", leaRkList);
+		logger.info("leagueRkList = "+leaTmVo.toString());
 	}
 
 }

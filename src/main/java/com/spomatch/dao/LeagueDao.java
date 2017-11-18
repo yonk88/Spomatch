@@ -6,4 +6,6 @@ public interface LeagueDao {
 	public List leagueList();
 	
 	public List leagueTmList();
+	
+	public List leagueRankList();
 }
