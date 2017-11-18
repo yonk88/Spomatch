@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	//최초 로딩
+	//최초 로딩 
 	$("#boardPage").load("../board/boardPage.do");
 	
 	//메뉴 클릭 이벤트
