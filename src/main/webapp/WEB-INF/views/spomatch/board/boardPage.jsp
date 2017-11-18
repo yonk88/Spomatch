@@ -12,10 +12,17 @@
 <spring:url value="/resources/js/boardPage.js" var="boardPageJs" />
 <script src="${boardPageJs }"></script>
 
+<!-- js 페이지네이션  -->
+<!-- <script type="text/javascript" src="/resources/js/jquery.simplePagination.js"></script> -->
+
 <!-- css 경로 -->
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/boardPage.css" />
 
+<!-- css 페이지네이션 -->	
+<%-- <link type="text/css" rel="stylesheet"
+	href="${pageContext.request.contextPath}/resources/css/simplePagination.css"/>
+ --%>
 <style>
 </style>
 </head>
@@ -91,9 +98,13 @@
 			</div><!-- modal Dialog -->
 		</div><!-- mainBoardTab -->
 
-	<div id="mainNav">
+<!-- 페이지네이션 -->
+<div id="pgNation">
+	
+</div>
+	<!-- <div id="pgNation">
 		<nav>
-		<ul class="pagination">
+		<ul id="pgNation">
 			<li><a href="#" aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
 			</a></li>
 			<li><a href="#">1</a></li>
@@ -105,7 +116,7 @@
 			</a></li>
 		</ul>
 		</nav>
-	</div>
+	</div> -->
 
 </body>
 </html>

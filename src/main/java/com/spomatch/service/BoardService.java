@@ -8,6 +8,6 @@ import com.spomatch.dto.MatchVo;
 
 public interface BoardService {
 	
-	public List boardList(String catg);
+	public List boardList();
 
 }

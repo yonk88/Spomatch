@@ -35,6 +35,11 @@ public class MatchController {
 		
 	}
 	
+	@RequestMapping (value = "/spomatch/recruit/recruitList.do")
+	public void recuruitListAction(){
+		
+	}
+	
 	@RequestMapping (value = "/spomatch/recruit/recruitProc.do", method=RequestMethod.POST)
 	public String insertRecuMatProcAction(MatchVo matVo){
 		logger.info(matVo.toString());

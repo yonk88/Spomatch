@@ -26,12 +26,16 @@ public class BoardController {
 	private static final Logger logger
 	= LoggerFactory.getLogger(BoardController.class);
 	
+	//메치 리스트 가져오기
 	@RequestMapping (value = "/spomatch/board/matchList.do")
 	public void matchListAction(MatchVo matVo, Model model, HttpSession session, HttpServletRequest request){
 		logger.info("MatchList");
-		String catg = request.getParameter("catg");
+		//String catg = request.getParameter("catg");
+		List<MatchVo> boaList = boaService.boardList();
+		int listLeng = boaList.size();
 		
-		if(catg == (null)){
+		/*if(catg == (null)){
+			logger.info("////MatCatg is NOT null//////");
 			catg = "S";
 			List<MatchVo> boaList = boaService.boardList(catg);
 			int listLeng = boaList.size();	
@@ -43,14 +47,17 @@ public class BoardController {
 		}else{
 			logger.info("=*=*=*==*MatCatg is NOT null");
 			logger.info(request.getParameter("catg"));
-			catg = "B";
-			model.addAttribute("catg", catg);
+			catg = request.getParameter("catg");
+			logger.info("Before : " + request.getParameter("catg"));
 			List<MatchVo> boaList = boaService.boardList(catg);
-			model.addAttribute("catg", catg);
-		}
+			logger.info(String.valueOf(boaList.size()));
+			model.addAttribute("boaList", boaList);
+			logger.info("After : " + request.getParameter("catg"));
+		}*/
 		
 	}
 	
+	//매치 신청
 	@RequestMapping (value = "/spomatch/board/matchListProc.do")
 	public String matchListProcAction(MatchVo matVo, Model model, HttpSession session, HttpServletRequest request){
 		

@@ -30,7 +30,9 @@ $("#tabs> ul li").click(function(){
 	var catgVal ="S";
 	if(tabIndex == 0){
 		catgVal = "S";
-		//alert(catgVal);
+		if(catgVal == "S"){
+			
+		}
 	}else if(tabIndex == 1){
 		catgVal = "B";
 		//alert(catgVal);
@@ -41,15 +43,16 @@ $("#tabs> ul li").click(function(){
 		catgVal = "E";
 		//alert(catgVal);
 	}
-	var setting ={
-			
-	}
-	$.ajax({
+	
+	/*$.ajax({
 		url: "/spomatch/board/matchList.do"
 		,type: "get"
 		,data: { "catg":catgVal }
-		,success : function(data){	}
-	});
+		,dataType: "json"
+		,success : function(data){
+			
+		}
+	});*/
 })
 /////////////////////////////////////////
 

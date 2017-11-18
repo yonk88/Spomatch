@@ -5,6 +5,6 @@
   
   <mapper namespace="com.spomatch.dao.BoardDao">
   	<select id="boardList" resultType="com.spomatch.dto.MatchVo" parameterType="String">
-  	SELECT * FROM SPO_MATCH WHERE MAT_CATE = #{catg }
+  	SELECT * FROM SPO_MATCH <!-- WHERE MAT_CATE = #{catg } -->
   	</select>
   </mapper>

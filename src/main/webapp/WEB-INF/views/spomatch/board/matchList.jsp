@@ -33,9 +33,9 @@
 				</tr>
 
 				<c:forEach var="i" items="${boaList }">
-					<tr>
+					<tr id="matchL_tr">
 						<td><fmt:formatDate value="${i.mat_Date }"
-								pattern="yyyy-MM-dd" /></td>
+								pattern="yy-MM-dd" /></td>
 						<td>${i.mat_Local }</td>
 						<td>${i.mat_Host }</td>
 						<td>${i.mat_Matchday }</td>
