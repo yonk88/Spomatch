@@ -64,5 +64,11 @@ public class LeagueController {
 		model.addAttribute("leaRkList", leaRkList);
 		logger.info("leagueRkList = "+leaTmVo.toString());
 	}
+	
+	@RequestMapping(value="/spomatch/league/leagueCreate.do")
+	public void leagueCrtAction(LeagueVo leaVo, Model model,
+			HttpSession session, HttpServletRequest request){
+		
+	}
 
 }

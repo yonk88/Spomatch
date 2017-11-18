@@ -27,25 +27,47 @@ public class BoardController {
 	private static final Logger logger
 	= LoggerFactory.getLogger(BoardController.class);
 	
-	@RequestMapping (value = "/spomatch/board/boardList.do")
-	public void boardListAction(MatchVo matVo, Model model, HttpSession session, HttpServletRequest request){
-		logger.info("BoardList");
-
+	//메치 리스트 가져오기
+	@RequestMapping (value = "/spomatch/board/matchList.do")
+	public void matchListAction(MatchVo matVo, Model model, HttpSession session, HttpServletRequest request){
+		logger.info("MatchList");
+		//String catg = request.getParameter("catg");
 		List<MatchVo> boaList = boaService.boardList();
 		int listLeng = boaList.size();
 		
-		model.addAttribute("totalPage", listLeng);
-		logger.info("boardList Num : " + Integer.toString(listLeng));
-		model.addAttribute("boaList", boaList);
-		logger.info("boardList:" + matVo.toString());
+		/*if(catg == (null)){
+			logger.info("////MatCatg is NOT null//////");
+			catg = "S";
+			List<MatchVo> boaList = boaService.boardList(catg);
+			int listLeng = boaList.size();	
+			model.addAttribute("totalPage", listLeng);
+			//logger.info("boardList Num : " + Integer.toString(listLeng));
+			model.addAttribute("boaList", boaList);
+			logger.info("boardList:" + matVo.toString());
+			model.addAttribute("catg", catg);
+		}else{
+			logger.info("=*=*=*==*MatCatg is NOT null");
+			logger.info(request.getParameter("catg"));
+			catg = request.getParameter("catg");
+			logger.info("Before : " + request.getParameter("catg"));
+			List<MatchVo> boaList = boaService.boardList(catg);
+			logger.info(String.valueOf(boaList.size()));
+			model.addAttribute("boaList", boaList);
+			logger.info("After : " + request.getParameter("catg"));
+		}*/
 		
 	}
 	
+	//매치 신청
+	@RequestMapping (value = "/spomatch/board/matchListProc.do")
+	public String matchListProcAction(MatchVo matVo, Model model, HttpSession session, HttpServletRequest request){
+		
+		return "matchList.do";
+	}
+	
 	@RequestMapping (value="/spomatch/board/boardPage.do")
-	public void boardPageAction(Model model, HttpSession session, HttpServletRequest request){
-		List<MatchVo> boaList = boaService.boardList();
-		model.addAttribute("totalPages", boaList.size());
-		logger.info("boardPageParam: " + boaList.size());
+	public void boardPageAction(MatchVo matVo, Model model, HttpSession session, HttpServletRequest request){
+		
 	}
 
 }
