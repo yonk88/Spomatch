@@ -12,6 +12,8 @@
 
 $("#teamBtn").click(function(){
 	alert("teamBtn");
+	$("#boardPage").attr("menuCatg","team");
+	alert($("#boardPage").attr("val"));
 	$("#boardPage").load("../board/boardPage.do");	
 });
 
