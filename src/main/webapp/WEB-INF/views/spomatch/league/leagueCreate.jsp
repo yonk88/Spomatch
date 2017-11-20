@@ -8,62 +8,59 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+
+
+
 </head>
 <body>
 <div>
-	<table class="table" style="width:30%">
+	<table class="table">
 		<tr><td colspan=2><p align=center>대회 만들기</p></td></tr>
 		<tr>
-			<td><p align=center>대회명</p></td> <td><input type="text" style="width:100%"></input></td>
+			<td><p align=center>대회명</p></td> <td><input type="text"></input></td>
+			<td>대회 상세정보 입력</td>
 		</tr>
 		<tr>
 			<td><p align=center>종목</p></td> <td>
-			<select class="text-center" style="width:50%; height:100%">
+			<select class="text-center">
 				<option id="op">축구</option>
 				<option id="op">야구</option>
 				<option id="op">게임</option>
 				<option id="op">기타(직접입력)</option>
 			</select></td>
+			<td rowspan=4><textarea name="info" style="width:100%; height:250px; resize:none"></textarea></td>
 		</tr>
 		<tr>
 			<td rowspan=2><p align=center>참가 팀 수</p></td>
-			<td>최소:<input type="text" name="min" style="width:50%"></input></td>
+			<td>최소:<input type="text" name="min" style="width:30px"></input></td>
 		</tr>
 		<tr>
-			<td>최대:<input type="text" name="max" style="width:50%"></input></td>
+			<td>최대:<input type="text" name="max" style="width:30px"></input></td>
 		</tr>
 		<tr>
-			<td><p align=center>참가비</p></td><td><p align=left><input type="text" name="cost" style="width:40%"></input></p></td>
+			<td><p align=center>참가비</p></td><td><p align=left><input type="text" name="cost"></input></p></td>
 		</tr>
 		<tr>
-			<td><p align=center>총 상금</p></td><td><p align=left><input type="text" name="prize" style="width:40%"></input></p></td>
+			<td><p align=center>총 상금</p></td><td><p align=left><input type="text" name="prize"></input></p></td>
+			<td>이미지 첨부</td>
 		</tr>
 		<tr>
-			<td><p align=center>마감일</p></td> <td><input type="text" id="deadline" style="width:100%"/></td>
+			<td><p align=center>마감일</p></td> <td><input type="text" id="deadline"/></td>
+			<td rowspan=3>이미지이이이</td>
 		</tr>
 		<tr>
 			<td><p align=center>개최지역</p></td>
 			<td>
-			<select class="text-center" style="width:50%; height:100%">
-				<option id="op">서울특별시</option>
-				<option id="op">경기도 고양시</option>
-				<option id="op">부산광역시</option>
-				<option id="op">경기도 수원시(직접입력)</option>
-			</select>
-			<select class="text-center" style="width:50%; height:100%">
-				<option id="op">용산구</option>
-				<option id="op">강남구</option>
-				<option id="op">강서구</option>
-				<option id="op">강북구</option>
-			</select>
-			</td>
+			<input type="text" /></td>
+			
 		</tr>
 		<tr>
-			<td colspan=2><p align=center>대회 상세정보 입력</p></td>
+			<td><p align=center>이미지 첨부</p></td>
+			<td>눌러서첨부</td>
 		</tr>
-		<tr>
-			<td rowspan=3 colspan=2><textarea name="info" style="width:100%; height:100%"></textarea></td>
-		</tr>
+		<tr><td colspan=3>
+		<p align=right><input type="button" value="등록"></input>
+		<input type="button"  value="취소"></input></p></td></tr>
 	</table>
 </div>
 	<script >
