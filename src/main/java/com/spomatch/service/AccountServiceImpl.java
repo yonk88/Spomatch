@@ -29,5 +29,16 @@ public class AccountServiceImpl implements AccountService{
 		return dao.loginAction(vo);
 	}
 
+	@Override
+	public MemberVo findEmail(MemberVo vo) {
+		return dao.findEmail(vo);
+	}
+
+	@Override
+	public void findPassword(String mem_Pass, String mem_Id) {
+		dao.findPassword(mem_Pass, mem_Id);
+		
+	}
+
 	
 }

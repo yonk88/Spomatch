@@ -20,18 +20,6 @@ import com.spomatch.service.MailService;
 @Controller
 public class MailController {
 	Logger logger = Logger.getLogger(MailController.class);
-//	
-//    //private UserService userService;
-//    private MailService mailService;
-// 
-//    /*public void setUserService(UserService userService) {
-//        this.userService = userService;
-//    }*/
-// 
-//    public void setMailService(MailService mailService) {
-//        this.mailService = mailService;
-//    }
- 
 
     @Autowired
     private MailService mailService;
@@ -69,8 +57,8 @@ public class MailController {
 			return 1;
 		}
     }
- /*
-    // 아이디 찾기
+ 
+    /*// 아이디 찾기
     @RequestMapping(value = "/sendMail/id", method = RequestMethod.POST)
     public String sendMailId(HttpSession session, @RequestParam String email, @RequestParam String captcha, RedirectAttributes ra) {
         String captchaValue = (String) session.getAttribute("captcha");
@@ -90,10 +78,10 @@ public class MailController {
             ra.addFlashAttribute("resultMsg", "귀하의 이메일로 가입된 아이디가 존재하지 않습니다.");
         }
         return "redirect:/find/id";
-    }
+    }*/
  
     // 비밀번호 찾기
-    @RequestMapping(value = "/sendMail/password", method = RequestMethod.POST)
+    /*@RequestMapping(value = "/sendMail/password", method = RequestMethod.POST)
     public String sendMailPassword(HttpSession session, @RequestParam String id, @RequestParam String email, @RequestParam String captcha, RedirectAttributes ra) {
         String captchaValue = (String) session.getAttribute("captcha");
         if (captchaValue == null || !captchaValue.equals(captcha)) {

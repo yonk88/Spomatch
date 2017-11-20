@@ -15,4 +15,8 @@ public interface AccountDao {
 	public List idxCheck(String mem_idx);
 
 	public MemberVo loginAction(MemberVo vo);
+
+	public MemberVo findEmail(MemberVo vo);
+
+	public void findPassword(String mem_Pass, String mem_Id);
 }

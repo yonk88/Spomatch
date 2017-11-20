@@ -11,4 +11,9 @@ public interface AccountService {
 	public List idxCheck(String mem_Idx);
 
 	public MemberVo loginAction(MemberVo vo);
+
+	public MemberVo findEmail(MemberVo vo);
+
+	public void findPassword(String mem_Pass, String mem_Id);
+
 }
