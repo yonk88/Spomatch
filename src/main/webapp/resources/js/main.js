@@ -9,23 +9,22 @@ $(document).ready(function() {
 	});
 
 	$("#recuBtn").click(function() {
-		
 		$("#matchList").load("/spomatch/recruit/recruitList.do");
 		alert("recuBtn");
 	});
 
 	$("#leagueBtn").click(function() {
 		alert("leagueBtn");
-		// $("#boardPage").load("../board/boardPage.do");
+		// $("#matchList").load("../board/boardPage.do");
 	});
 
 	$("#jLeagueBtn").click(function() {
 		// alert("jLeagueBtn");
-		// $("#boardPage").load("../board/boardPage.do");
+		// $("#matchList").load("../board/boardPage.do");
 	});
 
 	$("#reportBtn").click(function() {
 		// alert("reportBtn");
-		// $("#boardPage").load("../board/boardPage.do");
+		// $("#matchList").load("../board/boardPage.do");
 	});
 });
