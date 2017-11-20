@@ -1,6 +1,25 @@
 $(document).ready(function(){
-	$("#matchList").load("/spomatch/board/matchList.do");
+	var catg = "S";
 	
+	$("#matchList").load("/spomatch/board/matchList.do?catg=" + catg);
+
+	//////li 클릭 이벤트 방식 /////////
+	$("#tabs> ul li").click(function(){
+		
+		var tabIndex = $(this).index();
+		var catgVal ="S";
+
+		if(tabIndex == 0){
+			catgVal ="S";
+		}else if(tabIndex == 1){
+			catgVal ="B";
+		}else if(tabIndex == 2){
+			catgVal ="G";
+		}else if(tabIndex == 3){
+			catgVal ="E";
+		}
+		$("#matchList").load("/spomatch/board/matchList.do?catg=" + catgVal);
+	})
 });
 
 /////// 탭 매뉴 onclick형식 경로설정
@@ -20,6 +39,7 @@ function catg3(){
 function catg4(){
 	$("#matchList").load("/spomatch/board/matchList.do?catg=E");
 }*/
+
 
 ///////////////////모달 버튼////////////////////
 function matchT_Btn(){
