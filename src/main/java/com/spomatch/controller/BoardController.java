@@ -31,30 +31,30 @@ public class BoardController {
 	@RequestMapping (value = "/spomatch/board/matchList.do")
 	public void matchListAction(MatchVo matVo, Model model, HttpSession session, HttpServletRequest request){
 		logger.info("MatchList");
-		//String catg = request.getParameter("catg");
-		List<MatchVo> boaList = boaService.boardList();
-		int listLeng = boaList.size();
+		String catg = request.getParameter("catg");
+		/*List<MatchVo> boaList = boaService.boardList();
+		model.addAttribute("boaList", boaList);
+		int listLeng = boaList.size();*/
 		
-		/*if(catg == (null)){
-			logger.info("////MatCatg is NOT null//////");
+		if(catg == (null)){
+			logger.info("////MatCatg is null//////");
 			catg = "S";
 			List<MatchVo> boaList = boaService.boardList(catg);
+			model.addAttribute("boaList", boaList);
 			int listLeng = boaList.size();	
 			model.addAttribute("totalPage", listLeng);
 			//logger.info("boardList Num : " + Integer.toString(listLeng));
-			model.addAttribute("boaList", boaList);
-			logger.info("boardList:" + matVo.toString());
-			model.addAttribute("catg", catg);
 		}else{
 			logger.info("=*=*=*==*MatCatg is NOT null");
 			logger.info(request.getParameter("catg"));
 			catg = request.getParameter("catg");
+			session.setAttribute("catg", catg);
 			logger.info("Before : " + request.getParameter("catg"));
 			List<MatchVo> boaList = boaService.boardList(catg);
 			logger.info(String.valueOf(boaList.size()));
 			model.addAttribute("boaList", boaList);
 			logger.info("After : " + request.getParameter("catg"));
-		}*/
+		}
 		
 	}
 	

@@ -1,4 +1,3 @@
-<!-- GIT 테스트 -->
 <%@page import="com.spomatch.dto.MatchVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -53,8 +52,6 @@
 	
 	<!-- Board List -->
 	<div id = "boardPage"></div>
-	
-	
 
 </body>
 </html>

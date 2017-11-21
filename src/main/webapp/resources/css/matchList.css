@@ -1,13 +1,7 @@
-#mainBoardTab{
-	padding-top: 2%;
-	padding-left:20%;
-	width:600px;
-}
+
 #match_bSize{
 	padding-top:2%;
 	text-align:center;
-	border:1px;
-	border-color:black;
 }
 #match_bItem{
 	width:600px;
@@ -15,13 +9,13 @@
 }
 
 #b_Hidden{
-	display:black;
+	display: block;
 }
 
 #mIdx{
-	display:none;
+	display: none;
 }
 
-#matchL_tr{
-	display:none;
+#mCatg{
+	display: none;
 }

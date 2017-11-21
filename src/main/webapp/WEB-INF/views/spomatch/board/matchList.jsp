@@ -22,7 +22,7 @@
 	<div id="match_bSize">
 		<div class="container">
 			<table class="table table-striped table-hover" id="match_bItem">
-				<tr>
+				<tr id="dontOpen" name="dontOpen">
 					<th>등록 날짜</th>
 					<th>지역</th>
 					<th>팀명</th>
@@ -33,7 +33,7 @@
 				</tr>
 
 				<c:forEach var="i" items="${boaList }">
-					<tr id="matchL_tr">
+					<tr id="${i.mat_Cate }" class="mCatgTr">
 						<td><fmt:formatDate value="${i.mat_Date }"
 								pattern="yy-MM-dd" /></td>
 						<td>${i.mat_Local }</td>
@@ -42,8 +42,7 @@
 						<td>${i.mat_Lv}</td>
 						<td>${i.mat_Status }</td>
 						<td>0</td>
-						<td id="mIdx">${i.mat_Idx }</td>
-						<td id="mCatg">${i.mat_Cate }</td>
+						<td id="mIdx" class="mIdx">${i.mat_Idx }</td>
 					</tr>
 				</c:forEach>
 			</table>

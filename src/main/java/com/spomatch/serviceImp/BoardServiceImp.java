@@ -17,8 +17,8 @@ public class BoardServiceImp implements BoardService{
 	@Autowired BoardDao boaDao;
 
 	@Override
-	public List boardList() {
-		return boaDao.boardList();
+	public List boardList(String catg) {
+		return boaDao.boardList(catg);
 	}
 	
 	

@@ -29,6 +29,7 @@ public class LeagueController {
 	@RequestMapping(value="/spomatch/league/leagueList.do")	// 신청가능 대회
 	public void leagueListAction(LeagueVo leaVo, Model model, HttpSession session, HttpServletRequest request){
 		logger.info("LeagueList");
+		String catg = request.getParameter("catg");
 		
 		List<LeagueVo> leaList = leaService.leagueList();
 		int listLeng = leaList.size();
