@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-용병게시판리스트
+
 </body>
 </html>

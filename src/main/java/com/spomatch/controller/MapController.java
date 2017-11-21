@@ -6,13 +6,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class AdminController {
-	
+public class MapController {
+
 	private static final Logger logger
 	= LoggerFactory.getLogger(BoardController.class);
 	
-	@RequestMapping(value = "/spomatch/admin/adminMain.do")
-	public void adminMainAction(){
+	@RequestMapping(value="/spomatch/map/mapApi.do")
+	public void mapApiAction(){
 		
 	}
 

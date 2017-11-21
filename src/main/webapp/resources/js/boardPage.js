@@ -1,9 +1,39 @@
-$(document).ready(function(){
+$(document).ready(function(){ 
+	//기본 카테고리 설정
 	var catg = "S";
-	
 	$("#matchList").load("/spomatch/board/matchList.do?catg=" + catg);
+	
+///////////////메인 메뉴 경로 설정////////////////////////////
+	//클릭시 경로 설정//
+	var url = "/spomatch/board/matchList.do?catg=";
 
-	//////li 클릭 이벤트 방식 /////////
+	//메뉴 클릭 이벤트
+	$("#teamBtn").click(function() {
+		url = "/spomatch/board/matchList.do?catg=";
+		$("#tabs> ul li").focus(0);
+	});
+
+	$("#recuBtn").click(function() {
+		url = "/spomatch/board/recruitList.do?catg=";
+	});
+
+	$("#leagueBtn").click(function() {
+		alert("leagueBtn");
+		// $("#matchList").load("../board/boardPage.do");
+	});
+
+	$("#jLeagueBtn").click(function() {
+		// alert("jLeagueBtn");
+		// $("#matchList").load("../board/boardPage.do");
+	});
+
+	$("#reportBtn").click(function() {
+		// alert("reportBtn");
+		// $("#matchList").load("../board/boardPage.do");
+	});
+////////////////////////////////////////////////////////////////	
+	
+/////////////////////li 클릭 이벤트 방식 ////////////////////
 	$("#tabs> ul li").click(function(){
 		
 		var tabIndex = $(this).index();
@@ -18,7 +48,7 @@ $(document).ready(function(){
 		}else if(tabIndex == 3){
 			catgVal ="E";
 		}
-		$("#matchList").load("/spomatch/board/matchList.do?catg=" + catgVal);
+		$("#matchList").load(url + catgVal);
 	})
 });
 

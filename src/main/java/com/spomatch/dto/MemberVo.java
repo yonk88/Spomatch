@@ -9,7 +9,7 @@ public class MemberVo {
 	private String mem_Id;
 	private String mem_Pass;
 	private String mem_Name;
-	private Date mem_Birth;
+	private String mem_Birth;
 	private String mem_Local;
 	private String mem_Phone;
 	private int mem_Lv;
@@ -38,10 +38,10 @@ public class MemberVo {
 	public void setMem_Name(String mem_Name) {
 		this.mem_Name = mem_Name;
 	}
-	public Date getMem_Birth() {
+	public String getMem_Birth() {
 		return mem_Birth;
 	}
-	public void setMem_Birth(Date mem_Birth) {
+	public void setMem_Birth(String mem_Birth) {
 		this.mem_Birth = mem_Birth;
 	}
 	public String getMem_Local() {

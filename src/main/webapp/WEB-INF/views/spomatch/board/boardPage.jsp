@@ -7,10 +7,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>SPOMATCH</title>
-
+ 
 <!-- js 경로 -->
 <spring:url value="/resources/js/boardPage.js" var="boardPageJs" />
 <script src="${boardPageJs }"></script>
+
 
 <!-- js 페이지네이션  -->
 <!-- <script type="text/javascript" src="/resources/js/jquery.simplePagination.js"></script> -->
