@@ -59,6 +59,8 @@
 <c:forEach var="i" items="${leaTmList }">
 	<td colspan=<%=temp %>><p align=center>${i.team_Name }</p></td>
 </c:forEach>
+</table>
+</div>
 
 </body>
 </html>

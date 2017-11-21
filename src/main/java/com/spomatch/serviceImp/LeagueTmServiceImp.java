@@ -17,5 +17,7 @@ public class LeagueTmServiceImp implements LeagueTmService{
 	public List leagueTmList() {
 		return leaDao.leagueTmList();
 	}
+
+	
 	
 }

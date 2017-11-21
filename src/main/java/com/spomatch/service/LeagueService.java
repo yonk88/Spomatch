@@ -6,4 +6,6 @@ public interface LeagueService {
 	public List leagueList();
 	
 	public List leagueRankList();
+	
+	public List leagueMyList();
 }

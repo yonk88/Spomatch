@@ -29,7 +29,7 @@ $("#leagueBtn").click(function(){
 
 $("#jLeagueBtn").click(function(){
 	alert("jLeagueBtn");
-	//$("#boardPage").load("../board/boardPage.do");	
+	$("#boardPage").load("../league/leagueMyList.do");	
 });
 
 $("#reportBtn").click(function(){

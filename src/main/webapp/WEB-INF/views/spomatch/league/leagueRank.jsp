@@ -56,8 +56,8 @@
 			<c:otherwise>
 				<tr>
 			</c:otherwise>
-		
 		</c:choose>
+		
 			<td><p align="center">${index.count }</p></td>
 			<td><p align="center">${i.team_Name }</p></td>
 			<td><p align="center">${i.lt_Point }</p></td>

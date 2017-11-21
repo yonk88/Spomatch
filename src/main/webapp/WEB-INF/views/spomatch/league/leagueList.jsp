@@ -26,7 +26,25 @@
 				<c:forEach var="i" items="${leaList }">
 					<tr>
 						<td>${i.lea_Name }</td>
-						<td>${i.lea_Cate }</td>
+						<td>
+							<c:choose>
+								<c:when test="${i.lea_Cate eq 'S'.charAt(0) }">
+									축구
+								</c:when>
+								<c:when test="${i.lea_Cate eq 'B'.charAt(0) }">
+									야구
+								</c:when>
+								<c:when test="${i.lea_Cate eq 'G'.charAt(0) }">
+									게임
+								</c:when>
+								<c:when test="${i.lea_Cate eq 'E'.charAt(0) }">
+									기타
+								</c:when>
+								<c:otherwise>
+									??
+								</c:otherwise>
+							</c:choose>
+						</td>
 						<td>${i.lea_Prize }</td>
 						<td>${i.lea_Cost }</td>
 						<td>${i.lea_Deadline }</td>

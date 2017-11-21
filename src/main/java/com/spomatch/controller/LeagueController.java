@@ -26,7 +26,7 @@ public class LeagueController {
 	private static final Logger logger
 	= LoggerFactory.getLogger(BoardController.class);
 	
-	@RequestMapping(value="/spomatch/league/leagueList.do")
+	@RequestMapping(value="/spomatch/league/leagueList.do")	// 신청가능 대회
 	public void leagueListAction(LeagueVo leaVo, Model model, HttpSession session, HttpServletRequest request){
 		logger.info("LeagueList");
 		
@@ -69,6 +69,32 @@ public class LeagueController {
 	public void leagueCrtAction(LeagueVo leaVo, Model model,
 			HttpSession session, HttpServletRequest request){
 		
+	}
+	
+	@RequestMapping(value="/spomatch/league/tmtTest.do")
+	public void tmtTestAction(LeagueTmVo leaTmVo, Model model, 
+			HttpSession session, HttpServletRequest request){
+		List<LeagueTmVo> leaTmList = leaTmService.leagueTmList();
+		int listLeng = leaTmList.size();
+		
+//		model.addAttribute("teamNum", "AAA");
+		model.addAttribute("teamNum", listLeng);
+		logger.info("leagueTmList Num : " + Integer.toString(leaTmList.size()));
+		model.addAttribute("leaTmList", leaTmList);
+		logger.info("leagueTmList:" + leaTmVo.toString());
+	}
+	
+	@RequestMapping(value="/spomatch/league/leagueMyList.do")	// 내팀이 참가한 대회
+	public void leagueMyListAction(LeagueVo leaVo, Model model, HttpSession session, 
+			HttpServletRequest request){
+		logger.info("LeagueMyList");
+		
+		List<LeagueVo> leaMyList = leaService.leagueMyList();
+		int listLeng = leaMyList.size();
+		
+		logger.info("leagueMyList Num = "+Integer.toString(listLeng));
+		model.addAttribute("leaMyList", leaMyList);
+		logger.info("leagueMyList : "+leaVo.toString());
 	}
 
 }

@@ -22,4 +22,9 @@ public class LeagueServiceImp implements LeagueService{
 	public List leagueRankList() {
 		return leaDao.leagueRankList();
 	}
+	
+	@Override
+	public List leagueMyList() {
+		return leaDao.leagueMyList();
+	}
 }
