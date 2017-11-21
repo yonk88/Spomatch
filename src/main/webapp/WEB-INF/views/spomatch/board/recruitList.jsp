@@ -16,7 +16,7 @@
 <!-- css 경로 -->
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/recruitList.css" />
-
+ 
 </head>
 <body>
 	<div id="match_bSize">

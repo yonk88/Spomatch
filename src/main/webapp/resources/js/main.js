@@ -28,4 +28,4 @@ $(document).ready(function() {
 		// $("#matchList").load("/spomatch/board/matchList.do");
 	});
 });
- 
+  
