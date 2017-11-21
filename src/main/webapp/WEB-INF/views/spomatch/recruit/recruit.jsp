@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
- 
+
 <table class="table">
 	<tr>
 		<td>팀 이름</td>

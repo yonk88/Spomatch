@@ -1,4 +1,4 @@
-$(document).ready(function(){ 
+$(document).ready(function(){
 	//기본 카테고리 설정
 	var catg = "S";
 	$("#matchList").load("/spomatch/board/matchList.do?catg=" + catg);

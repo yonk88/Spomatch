@@ -26,7 +26,7 @@ public class BoardController {
 	
 	private static final Logger logger
 	= LoggerFactory.getLogger(BoardController.class);
-	
+
 	//메치 리스트 가져오기
 	@RequestMapping (value = "/spomatch/board/matchList.do")
 	public void matchListAction(MatchVo matVo, Model model, HttpSession session, HttpServletRequest request){
