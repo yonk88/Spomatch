@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.spomatch.dto.MatchVo;
 import com.spomatch.dto.RecruitVo;
 import com.spomatch.service.BoardService;
- 
+
 @Controller
 public class BoardController {
 	

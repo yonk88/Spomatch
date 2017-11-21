@@ -5,27 +5,27 @@ $(document).ready(function() {
 	//메뉴 클릭 이벤트
 	$("#teamBtn").click(function() {
 		$("#matchList").load("/spomatch/board/matchList.do");
-		 alert("teamBtn : ");
+		 //alert("teamBtn : ");
 	});
 
 	$("#recuBtn").click(function() {
 		$("#matchList").load("/spomatch/board/recruitList.do");
-		alert("recuBtn");
+		//alert("recuBtn");
 	});
 
 	$("#leagueBtn").click(function() {
-		alert("leagueBtn");
+		//alert("leagueBtn");
 		$("#matchList").load("/spomatch/board/matchList.do");
 	});
 
 	$("#jLeagueBtn").click(function() {
-		alert("jLeagueBtn");
+		//alert("jLeagueBtn");
 		// $("#matchList").load("/spomatch/board/matchList.do");
 	});
 
 	$("#reportBtn").click(function() {
-		alert("reportBtn");
+		//alert("reportBtn");
 		// $("#matchList").load("/spomatch/board/matchList.do");
 	});
 });
-  
+ 

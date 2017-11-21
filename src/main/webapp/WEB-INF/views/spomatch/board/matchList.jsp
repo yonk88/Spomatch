@@ -18,7 +18,7 @@
 	href="${pageContext.request.contextPath}/resources/css/matchList.css" />
 
 </head>
-<body> 
+<body>
 	<div id="match_bSize">
 		<div class="container">
 			<table class="table table-striped table-hover" id="match_bItem">

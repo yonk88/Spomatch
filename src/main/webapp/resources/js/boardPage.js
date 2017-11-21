@@ -2,7 +2,7 @@ $(document).ready(function(){
 	//기본 카테고리 설정
 	var catg = "S";
 	$("#matchList").load("/spomatch/board/matchList.do?catg=" + catg);
-	 
+	
 ///////////////메인 메뉴 경로 설정////////////////////////////
 	//클릭시 경로 설정//
 	var url = "/spomatch/board/matchList.do?catg=";
@@ -10,7 +10,6 @@ $(document).ready(function(){
 	//메뉴 클릭 이벤트
 	$("#teamBtn").click(function() {
 		url = "/spomatch/board/matchList.do?catg=";
-		$("#tabs> ul li").focus(0);
 	});
 
 	$("#recuBtn").click(function() {
@@ -18,7 +17,7 @@ $(document).ready(function(){
 	});
 
 	$("#leagueBtn").click(function() {
-		alert("leagueBtn");
+		//alert("leagueBtn");
 		// $("#matchList").load("../board/boardPage.do");
 	});
 
