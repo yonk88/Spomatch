@@ -19,12 +19,12 @@ public class LeagueServiceImp implements LeagueService{
 	}
 
 	@Override
-	public List leagueRankList() {
-		return leaDao.leagueRankList();
+	public List leagueRankList(String lea_Idx) {
+		return leaDao.leagueRankList(lea_Idx);
 	}
 	
 	@Override
-	public List leagueMyList() {
-		return leaDao.leagueMyList();
+	public List leagueMyList(String mem_Idx) {
+		return leaDao.leagueMyList(mem_Idx);
 	}
 }

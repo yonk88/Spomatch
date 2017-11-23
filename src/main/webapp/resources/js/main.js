@@ -22,6 +22,15 @@ $(document).ready(function() {
 		//alert("jLeagueBtn");
 		$("#boardPage").load("/spomatch/league/leagueMyList.do");
 	});
+	
+	function showModal(cnt, lea_Idx, status, modal){
+		console.log(cnt, lea_Idx, status, modal);
+		if(status == 'T'){
+			$("#boardPage").load("/spomatch/league/leagueTmt.do?lea_Idx="+lea_Idx);
+		}else{
+			$("#boardPage").load("/spomatch/league/leagueRank.do?lea_Idx="+lea_Idx);
+		}
+	};
 
 	$("#reportBtn").click(function() {
 		//alert("reportBtn");

@@ -5,9 +5,9 @@ import java.util.List;
 public interface LeagueDao {
 	public List leagueList(String catg);
 	
-	public List leagueTmList();
+	public List leagueTmList(String lea_Idx);
 	
-	public List leagueRankList();
+	public List leagueRankList(String lea_Idx);
 	
-	public List leagueMyList();
+	public List leagueMyList(String mem_Idx);
 }

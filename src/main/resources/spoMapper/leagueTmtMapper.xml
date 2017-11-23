@@ -7,7 +7,7 @@
   	<select id="leagueTmList" resultType="com.spomatch.dto.LeagueTmVo">
   	<!-- SELECT * FROM SPO_LEAGUETM WHERE LEA_IDX = 5 and LT_STATUS = 'T' ORDER BY LT_GROUP ASC -->
   	
-  	SELECT * FROM SPO_TEAM TM, SPO_LEAGUETM LT WHERE TM.TEAM_IDX=LT.TEAM_IDX AND LT.LEA_IDX=5 
+  	SELECT * FROM SPO_TEAM TM, SPO_LEAGUETM LT WHERE TM.TEAM_IDX=LT.TEAM_IDX AND LT.LEA_IDX = #{lea_Idx } 
   	ORDER BY LT_GROUP ASC
   	</select>
   	
