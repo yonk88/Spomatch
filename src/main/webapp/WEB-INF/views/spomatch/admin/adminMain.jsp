@@ -1,13 +1,10 @@
-<%@page import="com.spomatch.dto.MatchVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>SPOMATCH</title>
- 
+<title>SPOMATCH ADMIN MAIN</title>
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
@@ -26,24 +23,10 @@
 <!-- js 경로 -->
 <spring:url value="/resources/js/main.js" var="mainJs" />
 <script src="${mainJs }"></script>
-
-<!-- js matchList 경로 -->
-<spring:url value="/resources/js/matchList.js" var="matchListJs" />
-<script src="${matchListJs }"></script>
-
-<!-- js 경로 -->
-<spring:url value="/resources/js/boardPage.js" var="boardPageJs" />
-<script src="${boardPageJs }"></script>
-
-<!-- css 경로 -->
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/css/main.css" />
-
-<style>
-</style>
 </head>
 <body>
-	<!-- Header -->
+Admin Main Page
+<!-- Header -->
 	<div id="header">
 		<div>
 			<button type="button" class="btn btn-default" id="teamBtn">팀매칭</button>
@@ -56,6 +39,5 @@
 	
 	<!-- Board List -->
 	<div id = "boardPage"></div>
-
 </body>
 </html>

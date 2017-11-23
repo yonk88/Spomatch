@@ -14,8 +14,8 @@ public class LeagueServiceImp implements LeagueService{
 	@Autowired LeagueDao leaDao;
 
 	@Override
-	public List leagueList() {
-		return leaDao.leagueList();
+	public List leagueList(String catg) {
+		return leaDao.leagueList(catg);
 	}
 
 	@Override

@@ -20,31 +20,19 @@ import com.spomatch.service.MailService;
 @Controller
 public class MailController {
 	Logger logger = Logger.getLogger(MailController.class);
-//	
-//    //private UserService userService;
-//    private MailService mailService;
-// 
-//    /*public void setUserService(UserService userService) {
-//        this.userService = userService;
-//    }*/
-// 
-//    public void setMailService(MailService mailService) {
-//        this.mailService = mailService;
-//    }
- 
 
     @Autowired
     private MailService mailService;
  
-    // 회원가입 이메일 인증
+    // 회원가입 이메일 전송
     @RequestMapping(value = "/spomatch/member/emailVerify.do", method = RequestMethod.POST)
     @ResponseBody
-    public boolean emailVerify(HttpSession session, @RequestParam String userid) {
+    public boolean emailVerify(HttpSession session, @RequestParam String mem_Id) {
         int ran = new Random().nextInt(100000) + 10000; // 10000 ~ 99999
         String joinCode = String.valueOf(ran);
         session.setAttribute("joinCode", joinCode);
         logger.info("메일 컨트롤러");
-        logger.info("아이디 : "+ userid);
+        logger.info("아이디 : "+ mem_Id);
  
         String subject = "회원가입 인증 코드 발급 안내 입니다.";
         StringBuilder sb = new StringBuilder();
@@ -52,16 +40,16 @@ public class MailController {
         
         logger.info(sb.toString());
 
-        boolean result = mailService.send(subject, sb.toString(), "spomatch12@gmail.com", userid, null);
+        boolean result = mailService.send(subject, sb.toString(), "spomatch12@gmail.com", mem_Id, null);
         return result;
     }
     
+    //이메일 중복확인
     @RequestMapping(value = "/spomatch/member/emailCheck.do", method = RequestMethod.POST)
     @ResponseBody
-    public int emailCheck(HttpServletRequest request, @RequestParam String userid) {
-    	//String userid = request.getParameter("userid");
+    public int emailCheck(HttpServletRequest request, @RequestParam String mem_Id) {
     	logger.info("메일 중복확인");
-    	List list = mailService.emailCheck(userid);
+    	List list = mailService.emailCheck(mem_Id);
     	logger.info(list);
 		if(list.size()==0) {
 			return -1;
@@ -69,8 +57,8 @@ public class MailController {
 			return 1;
 		}
     }
- /*
-    // 아이디 찾기
+ 
+    /*// 아이디 찾기
     @RequestMapping(value = "/sendMail/id", method = RequestMethod.POST)
     public String sendMailId(HttpSession session, @RequestParam String email, @RequestParam String captcha, RedirectAttributes ra) {
         String captchaValue = (String) session.getAttribute("captcha");
@@ -90,10 +78,10 @@ public class MailController {
             ra.addFlashAttribute("resultMsg", "귀하의 이메일로 가입된 아이디가 존재하지 않습니다.");
         }
         return "redirect:/find/id";
-    }
+    }*/
  
     // 비밀번호 찾기
-    @RequestMapping(value = "/sendMail/password", method = RequestMethod.POST)
+    /*@RequestMapping(value = "/sendMail/password", method = RequestMethod.POST)
     public String sendMailPassword(HttpSession session, @RequestParam String id, @RequestParam String email, @RequestParam String captcha, RedirectAttributes ra) {
         String captchaValue = (String) session.getAttribute("captcha");
         if (captchaValue == null || !captchaValue.equals(captcha)) {

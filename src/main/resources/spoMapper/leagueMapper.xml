@@ -4,8 +4,8 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
   <mapper namespace="com.spomatch.dao.LeagueDao">
-  	<select id="leagueList" resultType="com.spomatch.dto.LeagueVo">
-  	SELECT * FROM SPO_LEAGUE <!-- WHERE MAT_CATE = ${param.catg } -->
+  	<select id="leagueList" resultType="com.spomatch.dto.LeagueVo" parameterType="String">
+  	SELECT * FROM SPO_LEAGUE WHERE LEA_CATE = #{catg }
   	</select>
   	
   	<select id="leagueRankList" resultType="com.spomatch.dto.LeagueTmVo">

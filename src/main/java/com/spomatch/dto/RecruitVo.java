@@ -5,10 +5,10 @@ import java.util.Date;
 public class RecruitVo {
 	
 	private int rc_Idx;
-	private char rc_Status;
+	private String rc_Status;
 	private String rc_TeamIdx;
-	private String rc_ReqMem;
-	private char rc_Cate;
+	private String rc_MemIdx;
+	private String rc_Cate;
 	private Date rc_Date;
 	private String rc_Local;
 	private String rc_MatchDay;
@@ -21,10 +21,10 @@ public class RecruitVo {
 	public void setRc_Idx(int rc_Idx) {
 		this.rc_Idx = rc_Idx;
 	}
-	public char getRc_Status() {
+	public String getRc_Status() {
 		return rc_Status;
 	}
-	public void setRc_Status(char rc_Status) {
+	public void setRc_Status(String rc_Status) {
 		this.rc_Status = rc_Status;
 	}
 	public String getRc_TeamIdx() {
@@ -34,15 +34,15 @@ public class RecruitVo {
 		this.rc_TeamIdx = rc_TeamIdx;
 	}
 	public String getRc_ReqMem() {
-		return rc_ReqMem;
+		return rc_MemIdx;
 	}
-	public void setRc_ReqMem(String rc_ReqMem) {
-		this.rc_ReqMem = rc_ReqMem;
+	public void setRc_ReqMem(String rc_MemIdx) {
+		this.rc_MemIdx = rc_MemIdx;
 	}
-	public char getRc_Cate() {
+	public String getRc_Cate() {
 		return rc_Cate;
 	}
-	public void setRc_Cate(char rc_Cate) {
+	public void setRc_Cate(String rc_Cate) {
 		this.rc_Cate = rc_Cate;
 	}
 	public Date getRc_Date() {
@@ -79,7 +79,7 @@ public class RecruitVo {
 	@Override
 	public String toString() {
 		return "RecruitVo [rc_Idx=" + rc_Idx + ", rc_Status=" + rc_Status + ", rc_TeamIdx=" + rc_TeamIdx
-				+ ", rc_ReqMem=" + rc_ReqMem + ", rc_Cate=" + rc_Cate + ", rc_Date=" + rc_Date + ", rc_Local="
+				+ ", rc_ReqMem=" + rc_MemIdx + ", rc_Cate=" + rc_Cate + ", rc_Date=" + rc_Date + ", rc_Local="
 				+ rc_Local + ", rc_MatchDay=" + rc_MatchDay + ", rc_Num=" + rc_Num + ", rc_Posit=" + rc_Posit + "]";
 	}
 	
