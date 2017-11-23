@@ -17,8 +17,7 @@
 <!-- js 경로 -->
 <script src="<c:url value="/resources/js/matchTeam.js" />"></script>
 
-<script type="text/javascript"
-	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=30fd3b061544e407b75d899b10dec151&libraries=services"></script>
+
 </head>
 
 <body>
