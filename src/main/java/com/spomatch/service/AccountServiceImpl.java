@@ -35,10 +35,16 @@ public class AccountServiceImpl implements AccountService{
 	}
 
 	@Override
+	public void findPassword(MemberVo vo) {
+		dao.findPassword(vo);
+		
+	}
+
+	/*@Override
 	public void findPassword(String mem_Pass, String mem_Id) {
 		dao.findPassword(mem_Pass, mem_Id);
 		
-	}
+	}*/
 
 	
 }

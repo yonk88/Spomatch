@@ -14,6 +14,7 @@ public class MainController {
 	@RequestMapping(value="/spomatch/main/main.do")
 	public void mainAction(){
 		logger.info("SpoMain");
+		
 	}
 
 }

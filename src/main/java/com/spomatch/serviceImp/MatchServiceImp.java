@@ -13,8 +13,8 @@ public class MatchServiceImp implements MatchService{
 	@Autowired MatchDao matDao;
 
 	@Override
-	public void insertMatch(MatchVo matVo) {
-		matDao.insertMatch(matVo);
+	public void insertTeamMatch(MatchVo matVo) {
+		matDao.insertTeamMatch(matVo);
 	}
 
 }

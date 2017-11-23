@@ -7,10 +7,48 @@
 <title>Insert title here</title>
 </head>
 <body>
-용병페이지<br/>
 
-<input type="text" name="id" /><br/>
-<input type="text" name="id" /><br/>
-<input type="text" name="id" /><br/>
+<table class="table">
+	<tr>
+		<td>팀 이름</td>
+		<td><input type="text" id="teamName" /></td>
+	</tr>
+	
+	<tr>
+		<td>날짜</td>
+		<td><input type="text" id="teamDate" /></td>
+	</tr>
+	
+	<tr>
+		<td>장소</td>
+		<td><input type="text" id="teamLocal"  /></td>
+	</tr>
+	
+	<tr>
+		<td>모집인원</td>
+		<td><input type="text" id="recuNum" /></td>
+	</tr>
+	
+	<tr>
+		<td>연령</td>
+		<td><input type="text" id="teamAge" /></td>
+	</tr>
+	
+	<tr>
+		<td>실력</td>
+		<td><input type="text" id="teamLv" /></td>
+	</tr>
+	
+	<tr>
+		<td>유니폼</td>
+		<td><input type="text" id="teamColor" /></td>
+	</tr>
+	
+	<tr>
+		<td>대표연락처</td>
+		<td><input type="text" id="teamPhone" /></td>
+	</tr>
+</table>
+
 </body>
 </html>

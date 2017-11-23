@@ -26,7 +26,6 @@ import com.spomatch.service.MailService;
 @Controller
 public class AccountController {
 
-	boolean joinbool = false;
 	Logger logger = Logger.getLogger(AccountController.class);
 
 	@Autowired
@@ -58,7 +57,6 @@ public class AccountController {
 		logger.info("입력 인증코드 : " + joincode);
 
 		if (emailJoincode.equals(joincode)) {
-			joinbool = true;
 			return true;
 		} else {
 			return false;
@@ -67,9 +65,9 @@ public class AccountController {
 
 	// 회원가입 처리
 	@RequestMapping(value = "/spomatch/member/memberJoinAction.do", method = RequestMethod.POST)
-	public String memberJoinAction(MemberVo vo, @RequestParam String mem_Pass2) {
+	public String memberJoinAction(HttpSession session ,MemberVo vo, @RequestParam String mem_Pass2) {
 		logger.info("멤버 : memberJoinAction");
-		Map<String, String> map = new HashMap<String, String>();
+		//Map<String, String> map = new HashMap<String, String>();
 
 		int ran = new Random().nextInt(10000) + 1000;
 		SimpleDateFormat sdf = new SimpleDateFormat("yyMMdd");
@@ -84,6 +82,7 @@ public class AccountController {
 		}
 		vo.setMem_Idx(mem_Idx);
 		aService.memberJoinAction(vo);
+		session.removeAttribute("joinCode");
 		
 		return "redirect:/memberLogin.do";
 
@@ -98,15 +97,15 @@ public class AccountController {
 		vo.setMem_Id(mem_Id);
 		vo.setMem_Pass(mem_Pass);
 
-		logger.info("Ver1");
 		logger.info("입력 ID:" + mem_Id);
 		logger.info("입력 PW:" + mem_Pass);
 		MemberVo result = aService.loginAction(vo);
+		String mem_Idx = result.getMem_Idx();
 		logger.info("result:" + result);
 
 		if (result != null) {
 			if (mem_Pass.equals(result.getMem_Pass())) {
-				session.setAttribute("sessionid", mem_Id);
+				session.setAttribute("loginSession", mem_Idx);
 				return true;
 			}
 		}
@@ -137,25 +136,33 @@ public class AccountController {
 	}
 
 	// 비밀번호 찾기
-	@RequestMapping(value = "findPassword", method = RequestMethod.POST)
+	@RequestMapping(value = "findPassword.do", method = RequestMethod.POST)
 	@ResponseBody
-	public String findPassword(@RequestParam String mem_Id) {
+	public boolean findPassword(MemberVo vo, @RequestParam String mem_Id) {
+		logger.info("비밀번호 찾기");
 
 		int ran = new Random().nextInt(100000) + 10000; // 10000 ~ 99999
 		String mem_Pass = String.valueOf(ran);
+		
+		vo.setMem_Id(mem_Id);
+		vo.setMem_Pass(mem_Pass);
 		
 		List list = mailService.emailCheck(mem_Id);
 		logger.info("list : "+ list);
 		
 		if(list.size() != 0) {
-			aService.findPassword(mem_Pass, mem_Id); // 해당 유저의 DB정보 변경
-			String subject = "임시 비밀번호 발급 안내 입니다.";
+			logger.info(mem_Pass);
+			aService.findPassword(vo); // 해당 유저의 DB정보 변경
+			String subject = "Spomatch 임시 비밀번호 발급 안내 입니다.";
 			StringBuilder sb = new StringBuilder();
 			sb.append("귀하의 임시 비밀번호는 " + mem_Pass + " 입니다.");
 			mailService.send(subject, sb.toString(), "spomatch12@gmail.com", mem_Id, null);
+			return true;
+		}else {
+			return false;
 		}
 
-		return "redirect:/find/password";
+		
 	}
 
 }

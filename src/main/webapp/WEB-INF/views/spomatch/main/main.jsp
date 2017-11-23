@@ -1,4 +1,3 @@
-<!-- GIT 테스트 -->
 <%@page import="com.spomatch.dto.MatchVo"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -28,6 +27,10 @@
 <spring:url value="/resources/js/main.js" var="mainJs" />
 <script src="${mainJs }"></script>
 
+<!-- js matchList 경로 -->
+<spring:url value="/resources/js/matchList.js" var="matchListJs" />
+<script src="${matchListJs }"></script>
+
 <!-- css 경로 -->
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/main.css" />
@@ -39,18 +42,16 @@
 	<!-- Header -->
 	<div id="header">
 		<div>
-			<button type="button" class="btn btn-default ">팀매칭</button>
-			<button type="button" class="btn btn-default">용병매칭</button>
-			<button type="button" class="btn btn-default">대회</button>
-			<button type="button" class="btn btn-default">주최/참가한 대회</button>
-			<button type="button" class="btn btn-default">신고게시판</button>
+			<button type="button" class="btn btn-default" id="teamBtn">팀매칭</button>
+			<button type="button" class="btn btn-default" id="recuBtn">용병매칭</button>
+			<button type="button" class="btn btn-default" id="leagueBtn">대회</button>
+			<button type="button" class="btn btn-default" id="jLeagueBtn">주최/참가한 대회</button>
+			<button type="button" class="btn btn-default" id="reportBtn">신고게시판</button>
 		</div>
 	</div>
 	
 	<!-- Board List -->
-	<div id = "boardPage"></div><br/>
-	
-	
+	<div id = "boardPage"></div>
 
 </body>
 </html>

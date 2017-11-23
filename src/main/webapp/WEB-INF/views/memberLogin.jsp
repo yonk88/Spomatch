@@ -105,10 +105,10 @@ body {
 	//	비밀번호 찾기
 	$(document).ready(function() {
 		$("#findPassword").click(function() {
-			if ($("#mem_Id").val()) {
+			if ($("#mem_Id2").val()) {
 				console.log("1");
 				var query = {
-					mem_Id : $("#mem_Id").val()
+					mem_Id : $("#mem_Id2").val()
 				};
 				$.ajax({
 					url : "findPassword.do",
@@ -116,11 +116,11 @@ body {
 					data : query,
 					success : function(data) {
 						console.log("success");
-						console.log(data.mem_Id);
-						if (data.mem_Id == null) {
-							alert("입력하신 정보로 가입된 이메일이 없습니다.")
+						//console.log(data.mem_Id);
+						if (data == true) {
+							alert("가입하신 이메일로 임시 비밀번호가 전송되었습니다.")
 						} else {
-							alert("가입하신 이메일은 " + data.mem_Id + " 입니다.")
+							alert("가입되지 않은 이메일입니다.")
 						}
 					},
 					error : function() {
@@ -129,7 +129,7 @@ body {
 				});
 			} else {
 				alert("정보를 입력하세요.");
-				$("#mem_Name").focus();
+				$("#mem_Id2").focus();
 			}
 		});
 	});
@@ -224,7 +224,7 @@ body {
 							<div class="modal-body">
 								<div style="padding: 10px;">
 									<label for="mem_Id">Email</label> <input type="text"
-										class="form-control" id="mem_Id" name="mem_Id"
+										class="form-control" id="mem_Id2" name="mem_Id2"
 										placeholder="이메일" autofocus>
 								</div>
 							</div>

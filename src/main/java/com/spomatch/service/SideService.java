@@ -1,15 +1,14 @@
-package com.spomatch.dao;
+package com.spomatch.service;
 
 import java.util.List;
 
 import com.spomatch.dto.MemberVo;
 
-public interface SideDao {
+public interface SideService {
 
 	public MemberVo getMemberInfo(String mem_Id);
 
 	public void setMemberUpdate(MemberVo vo);
 
 	
-
 }
