@@ -31,12 +31,17 @@ public class LeagueController {
 		logger.info("LeagueList");
 		String catg = request.getParameter("catg");
 		
-		List<LeagueVo> leaList = leaService.leagueList(catg);
-		int listLeng = leaList.size();
-		
-		logger.info("leagueList Num = "+Integer.toString(listLeng));
-		model.addAttribute("leaList", leaList);
-		logger.info("leagueList : "+leaVo.toString());
+		if(catg==null){
+			catg="S";
+			List<LeagueVo> leaList = leaService.leagueList(catg);
+			model.addAttribute("leaList", leaList);
+		}else{
+			List<LeagueVo> leaList = leaService.leagueList(catg);
+			int listLeng = leaList.size();
+			logger.info("leagueList Num = "+Integer.toString(listLeng));
+			model.addAttribute("leaList", leaList);
+			logger.info("leagueList : "+leaVo.toString());
+		}
 	}
 	
 	@Autowired LeagueTmService leaTmService;

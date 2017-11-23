@@ -5,9 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+
 </head>
 <body>
 
+<div id= "tabMenu"></div>
 <table class="table">
 	<tr>
 		<td>팀 이름</td>
@@ -48,6 +50,7 @@
 		<td>대표연락처</td>
 		<td><input type="text" id="teamPhone" /></td>
 	</tr>
+	
 </table>
 
 </body>

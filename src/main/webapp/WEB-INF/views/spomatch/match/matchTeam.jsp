@@ -1,11 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>팀 매칭</title>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<%-- <!-- js 경로 -->
+<spring:url value="/resources/js/matchTeam.js" var="matchTeamJs" />
+<script src="${matchTeamJs }"></script>
+ --%>
+<!-- js 경로 -->
+<script src="<c:url value="/resources/js/matchTeam.js" />"></script>
+
+<script type="text/javascript"
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=30fd3b061544e407b75d899b10dec151&libraries=services"></script>
 </head>
+
 <body>
 
 <table class="table">
@@ -58,6 +73,12 @@
 		<td>계좌번호</td>
 		<td><input type="text" id="teamAccount" name="teamLocal" /></td>
 	</tr>
+	
+	<tr>
+		<td>지도확인</td>
+		<td><div id="mapLoad"></div></td>
+	</tr>
+	
 </table>
 
 </body>

@@ -1,7 +1,6 @@
-$(document).ready(function(){
+/*$(document).ready(function(){
 	//기본 카테고리 설정
 	var catg = "S";
-	$("#matchList").load("/spomatch/board/matchList.do?catg=" + catg);
 	
 ///////////////메인 메뉴 경로 설정////////////////////////////
 	//클릭시 경로 설정//
@@ -10,18 +9,23 @@ $(document).ready(function(){
 	//메뉴 클릭 이벤트
 	$("#teamBtn").click(function() {
 		url = "/spomatch/board/matchList.do?catg=";
+		$("#matchList").load(url + catg);
 	});
 
 	$("#recuBtn").click(function() {
 		url = "/spomatch/board/recruitList.do?catg=";
+		$("#matchList").load(url + catg);
 	});
 
 	$("#leagueBtn").click(function() {
 		//alert("leagueBtn");
 		url = "/spomatch/league/leagueList.do?catg=";
+		$("#matchList").load(url + catg);
+		// $("#matchList").load("../board/boardPage.do");
 	});
 
 	$("#jLeagueBtn").click(function() {
+		$("#matchList").load("/spomatch/league/leagueMyList.do");
 		// alert("jLeagueBtn");
 		// $("#matchList").load("../board/boardPage.do");
 	});
@@ -39,20 +43,22 @@ $(document).ready(function(){
 		var catgVal ="S";
 
 		if(tabIndex == 0){
-			catgVal ="S";
+			catg ="S";
 		}else if(tabIndex == 1){
-			catgVal ="B";
+			catg ="B";
 		}else if(tabIndex == 2){
-			catgVal ="G";
+			catg ="G";
 		}else if(tabIndex == 3){
-			catgVal ="E";
+			catg ="E";
 		}
 		$("#matchList").load(url + catgVal);
-	})
+	});
+	
 });
+//////////////////////////////////////////////////////////////////
 
 /////// 탭 매뉴 onclick형식 경로설정
-/*var goTo = "/spomatch/board/matchList.do?catg=S";
+var goTo = "/spomatch/board/matchList.do?catg=S";
 function catg1(){
 	$("#matchList").load("/spomatch/board/matchList.do?catg=S");
 }
@@ -67,7 +73,7 @@ function catg3(){
 
 function catg4(){
 	$("#matchList").load("/spomatch/board/matchList.do?catg=E");
-}*/
+}
 
 
 ///////////////////모달 버튼////////////////////
@@ -93,7 +99,7 @@ $('#myModal2').on('shown.bs.modal', function () {
 //////////////////////////////////////////////
 
 ///////////탭 클릭 이벤트 및 텝 카테고리 값 전송///////////
-/*$("#tabs> ul li").click(function(){
+$("#tabs> ul li").click(function(){
 	
 	var tabIndex = $(this).index();
 	var catgVal ="S";
@@ -145,6 +151,7 @@ $('#myModal2').on('shown.bs.modal', function () {
 			
 		}
 	});
-})*/
+})
 /////////////////////////////////////////
 
+*/

@@ -37,4 +37,9 @@ public class MatchController {
 		return "redirect:/spomatch/main/main.do";
 	}
 	
+	@RequestMapping (value = "/spomatch/recruit/recruit.do")
+	public void insertRecuMatAction(){
+		
+	}
+	
 }

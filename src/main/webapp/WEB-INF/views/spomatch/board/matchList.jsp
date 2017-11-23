@@ -9,6 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>SPOMATCH-BOARD</title>
 
+
 <!-- js 경로 -->
 <spring:url value="/resources/js/matchList.js" var="matchListJs" />
 <script src="${matchListJs }"></script>
@@ -19,6 +20,8 @@
 
 </head>
 <body>
+
+<!-- <div id= "tabMenu"></div> -->
 	<div id="match_bSize">
 		<div class="container">
 			<table class="table table-striped table-hover" id="match_bItem">

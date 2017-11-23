@@ -8,8 +8,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>SPOMATCH-LEAGUE</title>
 
+<spring:url value="/resources/js/leagueList.js" var="leagueListJs" />
+<script src="${leagueListJs }"></script>
+
 </head>
 <body>
+
+<!-- <div id= "tabMenu"></div> -->
 	<div id="leagueSize">
 		<div class="container">
 			<table class="table table-striped table-hover" id="leagueItem">

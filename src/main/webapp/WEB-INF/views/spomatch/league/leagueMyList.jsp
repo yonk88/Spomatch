@@ -10,6 +10,7 @@
 
 </head>
 <body>
+league My List
 <!-- 주최자 idx 17110800010 -->
 	<div id="leagueMyListSize">
 		<div class="container">
