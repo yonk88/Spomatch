@@ -7,13 +7,16 @@
 	<select id="emailVerify" resultType="com.spomatch.dto.MemberVo">
 		SELECT * FROM SPO_MEMBER
 	</select>
-	
+
 	<select id="emailCheck" resultType="com.spomatch.dto.MemberVo">
-		SELECT MEM_ID FROM SPO_MEMBER WHERE MEM_ID = #{userid }
+		SELECT MEM_ID FROM SPO_MEMBER
+		WHERE MEM_ID = #{userid }
 	</select>
-	
+
 	<insert id="memberJoin" parameterType="com.spomatch.dto.MemberVo">
-     		INSERT INTO SPO_MEMBER VALUES 
-        	(MEMBERSEQ.NEXTVAL, #{userid }, #{userpw }, #{username }, SYSDATE)
-     	</insert>
+		INSERT INTO SPO_MEMBER
+		VALUES
+		(MEMBERSEQ.NEXTVAL, #{userid }, #{userpw }, #{username },
+		SYSDATE)
+	</insert>
 </mapper>

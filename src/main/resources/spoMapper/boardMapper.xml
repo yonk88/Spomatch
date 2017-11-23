@@ -2,9 +2,10 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  
-  <mapper namespace="com.spomatch.dao.BoardDao">
-  	<select id="boardList" resultType="com.spomatch.dto.MatchVo" parameterType="String">
-  	SELECT * FROM SPO_MATCH <!-- WHERE MAT_CATE = #{catg } -->
-  	</select>
-  </mapper>
+
+<mapper namespace="com.spomatch.dao.BoardDao">
+	<select id="boardList" resultType="com.spomatch.dto.MatchVo"
+		parameterType="String">
+		SELECT * FROM SPO_MATCH <!-- WHERE MAT_CATE = #{catg } -->
+	</select>
+</mapper>
