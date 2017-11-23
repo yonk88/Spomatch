@@ -18,7 +18,7 @@ $(document).ready(function() {
 	$("#leagueBtn").click(function() {
 		//alert("leagueBtn");
 		$('#catgTab a:first').tab('show');
-		$("#matchList").load("/spomatch/board/matchList.do");
+		$("#matchList").load("/spomatch/league/leagueList.do");
 	});
 
 	$("#jLeagueBtn").click(function() {

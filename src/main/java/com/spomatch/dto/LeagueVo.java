@@ -18,7 +18,14 @@ public class LeagueVo {
 	private String lea_Local;
 	private String lea_Info;
 	private char lea_Fin;
+	private String team_Name;
 	
+	public String getTeam_Name() {
+		return team_Name;
+	}
+	public void setTeam_Name(String team_Name) {
+		this.team_Name = team_Name;
+	}
 	public String getLea_Idx() {
 		return lea_Idx;
 	}

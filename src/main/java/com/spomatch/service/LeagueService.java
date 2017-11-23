@@ -1,11 +1,9 @@
-package com.spomatch.dao;
+package com.spomatch.service;
 
 import java.util.List;
 
-public interface LeagueDao {
+public interface LeagueService {
 	public List leagueList(String catg);
-	
-	public List leagueTmList();
 	
 	public List leagueRankList();
 	
