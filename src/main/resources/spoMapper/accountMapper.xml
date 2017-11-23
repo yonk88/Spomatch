@@ -11,6 +11,8 @@
 	<select id="emailCheck" resultType="com.spomatch.dto.MemberVo">
 		SELECT MEM_ID FROM SPO_MEMBER
 		WHERE MEM_ID = #{userid }
+
+		WHERE MEM_ID = #{mem_Id }
 	</select>
 
 	<insert id="memberJoin" parameterType="com.spomatch.dto.MemberVo">
@@ -19,4 +21,29 @@
 		(MEMBERSEQ.NEXTVAL, #{userid }, #{userpw }, #{username },
 		SYSDATE)
 	</insert>
+	<select id="idxCheck" resultType="com.spomatch.dto.MemberVo">
+		SELECT MEM_ID FROM SPO_MEMBER
+		WHERE MEM_IDX = #{mem_Idx }
+	</select>
+
+	<select id="loginAction" resultType="com.spomatch.dto.MemberVo">
+		SELECT * FROM SPO_MEMBER
+		WHERE MEM_ID = #{mem_Id }
+	</select>
+
+	<select id="findEmail" resultType="com.spomatch.dto.MemberVo">
+		SELECT * FROM SPO_MEMBER WHERE
+		MEM_PHONE = #{mem_Phone }
+	</select>
+
+	<insert id="memberJoinAction" parameterType="com.spomatch.dto.MemberVo">
+		INSERT INTO SPO_MEMBER (MEM_IDX, MEM_ID, MEM_PASS, MEM_BIRTH, MEM_PHONE,
+		MEM_LOCAL, MEM_LV, MEM_NAME) VALUES
+		(#{mem_Idx}, #{mem_Id }, #{mem_Pass }, #{mem_Birth }, #{mem_Phone }, #{mem_Local
+		}, '2', #{mem_Name })
+	</insert>
+
+	<update id="findPassword" parameterType="String">
+		UPDATE SPO_MEMBER SET MEM_PASS = #{mem_Pass } WHERE MEM_ID = #{mem_Id }
+	</update>
 </mapper>

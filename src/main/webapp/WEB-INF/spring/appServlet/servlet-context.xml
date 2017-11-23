@@ -6,6 +6,28 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing 
+		infrastructure -->
+
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+
+	<!-- Interceptor -->
+
+	<!-- <interceptors> <interceptor> <mapping path="/test/test*" /> <beans:bean 
+		id="spoInterceptor" class="com.spomatch.interceptor.spoInterceptor"> </beans:bean> 
+		</interceptor> </interceptors> -->
+
+
+	<!-- <interceptors>
+		<interceptor>
+			<mapping path="/spomatch/*" />
+			<beans:bean id="simpleInterceptor" class="com.spomatch.interceptor.SpoInterceptor">
+			</beans:bean>
+		</interceptor>
+	</interceptors> -->
+
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven />
 
