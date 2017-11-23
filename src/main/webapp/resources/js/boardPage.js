@@ -92,6 +92,8 @@ $('#myModal2').on('shown.bs.modal', function () {
 	  $('#myInput').focus();
 	  $("#recuLoad").load("/spomatch/recruit/recruit.do");
 });
+
+
 //////////////////////////////////////////////
 
 ///////////탭 클릭 이벤트 및 텝 카테고리 값 전송///////////

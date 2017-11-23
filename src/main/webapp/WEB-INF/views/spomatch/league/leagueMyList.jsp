@@ -2,11 +2,15 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+
+<spring:url value="/resources/js/league.js" var="leagueJs" />
+<script src="${leagueJs }"></script>
 
 </head>
 <body>
@@ -56,7 +60,27 @@
 				<div id="collapse${index.count }" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading${index.count }">
       			<div class="panel-body">
       				상세 내용 : ${i.lea_Info }<br/>
-      				<input type="button" value="순위/대진표" style="width:100px; height:30px"></input>
+      				<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#leaModal${index.count }">순위/대진표</button>
+      				
+      			<!-- 대진표 모달 -->
+				<div class="modal fade" id="leaModal${index.count }" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+								<h4 class="modal-title" id="myModalLabel">순위/대진표${i.lt_Status }${index.count }</h4>
+							</div><!-- modal-header -->
+								<div class="modal-body">
+									<div id="tmtLoad"></div>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default btn-sm" data-dismiss="modal">닫기</button>
+								</div><!-- modal-footer -->
+						</div><!-- modal-header -->
+					</div><!-- modal Content -->
+				</div><!-- modal Dialog -->
 				</div>
 				</div>
 				</div>

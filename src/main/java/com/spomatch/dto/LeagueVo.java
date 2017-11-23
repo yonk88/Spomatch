@@ -19,7 +19,14 @@ public class LeagueVo {
 	private String lea_Info;
 	private char lea_Fin;
 	private String team_Name;
+	private char lt_Status;
 	
+	public char getLt_Status() {
+		return lt_Status;
+	}
+	public void setLt_Status(char lt_Status) {
+		this.lt_Status = lt_Status;
+	}
 	public String getTeam_Name() {
 		return team_Name;
 	}
