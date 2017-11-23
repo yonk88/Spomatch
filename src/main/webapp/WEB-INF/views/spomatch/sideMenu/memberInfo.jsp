@@ -23,7 +23,7 @@
 <script>
 $(document).ready(function() {
 	$("#memberUpdate").click(function() {
-		 $("#memberUpdatePage").load("memberUpdate.do");
+		 $("#memberUpdatePage").load("/spomatch/sideMenu/memberUpdate.do");
 	})
 });
 </script>

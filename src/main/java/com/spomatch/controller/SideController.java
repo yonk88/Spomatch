@@ -86,7 +86,7 @@ public class SideController {
 		logger.info("사이드메뉴 회원정보 불러오기");
 		ModelAndView mv = new ModelAndView();
 
-		String mem_Idx = session.getAttribute("sessionid").toString();
+		String mem_Idx = session.getAttribute("loginSession").toString();
 		//logger.info(mem_Id);
 		MemberVo result = sideService.getMemberInfo(mem_Idx);
 		
@@ -127,7 +127,7 @@ public class SideController {
 			@RequestParam String mem_Local ) {
 		logger.info("멤버 DB업데이트");
 		String mem_Idx = session.getAttribute("loginSession").toString();
-		vo.setMem_Id(mem_Idx);
+		vo.setMem_Idx(mem_Idx);
 		vo.setMem_Pass(mem_Pass);
 		vo.setMem_Local(mem_Local);
 		

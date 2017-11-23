@@ -22,7 +22,7 @@
 
 </head>
 <body>
-	<div class="container" style="width:500px">
+	<div class="container" style="width:400px">
 		<ul class="nav nav-tabs" role="tablist" id="myTab">
 			<li role="presentation" class="active"><a href="#myInfo"
 				aria-controls="home" role="tab" data-toggle="tab">내정보</a></li>
@@ -47,15 +47,11 @@
 		});
 		
 		$(document).ready(function(){
-
-		    $("#myInfo").load("memberInfo.do");
-
+		    $("#myInfo").load("/spomatch/sideMenu/memberInfo.do");
 		});
 		
 		$(document).ready(function(){
-
-		    $("#myTeam").load("teamInfo.do");
-
+		    $("#myTeam").load("/spomatch/sideMenu/teamInfo.do");
 		});
 		
 	</script>

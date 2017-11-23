@@ -61,10 +61,10 @@ footer {
     SIDEBAR STYLE
 ----------------------------------------------------- */
 #sidebar {
-	width: 330px;
+	width: 430px;
 	position: fixed;
 	top: 0;
-	right: -330px;
+	right: -430px;
 	height: 100vh;
 	z-index: 999;
 	background: #c0c0c0;
