@@ -10,8 +10,6 @@
 
 	<select id="emailCheck" resultType="com.spomatch.dto.MemberVo">
 		SELECT MEM_ID FROM SPO_MEMBER
-		WHERE MEM_ID = #{userid }
-
 		WHERE MEM_ID = #{mem_Id }
 	</select>
 
