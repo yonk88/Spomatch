@@ -25,3 +25,175 @@
 .h2 {
 	text-align:center;
 }
+
+#header {
+	padding-top: 2%;
+	text-align: center;
+}
+
+.topWrapper {
+	width: 1000px;
+	height: 140px;
+	overflow: hidden;
+	display: block;
+}
+
+.wrapper {
+	width: 150px;
+	height: 400px;
+	overflow: hidden;
+	display: block;
+}
+
+.topImg{
+	width: auto; 
+	height: auto;
+	margin-left: -100px; 
+}
+
+.adImg{
+	width: auto; 
+	height: 400px;
+	margin-left: -100px; 
+}
+
+.navbar-default {
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#d9ebff),to(#f8f8f8));
+}
+
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+	margin-bottom: 0;
+	border-radius: 0;
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {
+	height: 750px
+}
+
+/* Set gray background color and 100% height */
+.sidenav {
+	padding-top: 20px;
+	height: 100%;
+}
+
+/* Set black background color, white text and some padding */
+footer {
+	background-color: #555;
+	color: white;
+	padding: 15px;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+	.sidenav {
+		height: auto;
+		padding: 15px;
+	}
+	.row.content {
+		height: auto;
+	}
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+#sidebar {
+	width: 430px;
+	position: fixed;
+	top: 0;
+	right: -430px;
+	height: 100vh;
+	z-index: 999;
+	background: #c0c0c0;
+	transition: all 0.3s;
+	overflow-y: scroll;
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+#sidebar.active {
+	right: 0;
+}
+
+#dismiss {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    background: #808080;
+    position: absolute;
+    top: 10px;
+    right: 280px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+#dismiss:hover {
+    background: #fff;
+    color: #7386D5;
+}
+
+#dismiss:hover {
+	background: #fff;
+	color: #7386D5;
+}
+
+.overlay {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.7);
+	z-index: 998;
+	display: none;
+}
+
+#sidebar .sidebar-header {
+	padding: 20px;
+	background: #c0c0c0;
+}
+
+#sidebar ul.components {
+	padding: 20px 0;
+	border-bottom: 1px solid #47748b;
+}
+
+#sidebar ul p {
+	color: #000080;
+	padding: 10px;
+}
+
+#sidebar ul li a {
+	padding: 10px;
+	font-size: 1.1em;
+	display: block;
+}
+
+#sidebar ul li a:hover {
+	color: #7386D5;
+	background: #fff;
+}
+
+#sidebar ul li.active>a, a[aria-expanded="true"] {
+	color: #000000;
+}	
+
+
+ul ul a {
+	font-size: 0.9em !important;
+	padding-left: 30px !important;
+	background: #6d7fcc;
+}
+
+ul.CTAs {
+	padding: 20px;
+}
+
+ul.CTAs a {
+	text-align: center;
+	font-size: 0.9em !important;
+	display: block;
+	border-radius: 5px;
+	margin-bottom: 5px;
+}

@@ -1,4 +1,4 @@
-package com.spomatch.dao;
+package com.spomatch.service;
 
 import java.util.Map;
 
@@ -6,8 +6,9 @@ import javax.servlet.http.HttpServletRequest;
 
 import com.spomatch.dto.AdVo;
 
-public interface AdDao {
-	public void newAd(AdVo advo);
-	
+
+public interface AdService {
+	public void newAd(AdVo adVo);
+
 	public void insertBoard(Map<String, Object> map, HttpServletRequest request) throws Exception;
 }

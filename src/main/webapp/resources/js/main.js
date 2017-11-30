@@ -3,9 +3,12 @@ $(document).ready(function() {
 ///////////////////////최초 로딩 ///////////////
 	/*var catgVal;
 	var url = "/spomatch/board/matchList.do?=";*/
-	
-///////////////////////////////////////////////////
 
+		//최초 로딩 
+	$("#boardPage").load("/spomatch/board/matchList.do");
+	$("#userInfo").load("/spomatch/sideMenu/sideMenu.do");
+///////////////////////////////////////////////////
+	
 	//메뉴 클릭 이벤트
 	$("#teamBtn").click(function() {
 		location.href = "/spomatch/board/matchList.do";
@@ -45,3 +48,5 @@ $(document).ready(function() {
 	});
 
 });
+
+

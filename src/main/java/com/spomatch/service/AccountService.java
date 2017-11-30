@@ -14,6 +14,8 @@ public interface AccountService {
 
 	public MemberVo findEmail(MemberVo vo);
 
+	public String getNameByIdx(int idx);
+
 	public void findPassword(String mem_Pass, String mem_Id);
 
 }

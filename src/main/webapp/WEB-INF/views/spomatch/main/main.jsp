@@ -4,23 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>SPOMATCH</title>
- 
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-
-<!-- 합쳐지고 최소화된 최신 CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
-<!-- 부가적인 테마 -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
-<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<%@ include file="/WEB-INF/views/commonHeader.jspf"%>
 
 <!-- js 경로 -->
 <spring:url value="/resources/js/main.js" var="mainJs" />
@@ -29,74 +13,100 @@
 <!-- css 경로 -->
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/main.css" />
-	
-<%-- <link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/css/boardPage.css" /> --%>
-	
 
 </head>
 <body>
-	<!-- Header -->
-	<div id="header">
-		<div>
-			<button type="button" class="btn btn-default" id="teamBtn">팀매칭</button>
-			<!-- <button type="button" class="btn btn-default" id="recuBtn">용병매칭</button> -->
-			<button type="button" class="btn btn-default" id="leagueBtn">대회</button>
-			<button type="button" class="btn btn-default" id="jLeagueBtn">주최/참가한 대회</button>
-			<button type="button" class="btn btn-default" id="reportBtn">신고게시판</button>
+	<div class="container-fluid" style="width: 1000px;">
+		<!-- Header -->
+		<div class="topWrapper">
+			<a href="http://www.naver.com"><img class="topImg"
+				src="${pageContext.request.contextPath}/resources/Spomatch2.jpg"
+				alt="ad"></a>
 		</div>
+		<nav class="navbar navbar-default">
+		<div class="container-fluid">
+
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Spomatch</a>
+			</div>
+
+
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">팀 매칭<span class="sr-only">(current)</span></a></li>
+					<li><a href="#">대회</a></li>
+					<li><a href="#">주최/참가대회</a></li>
+					<li><a href="#">신고</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<button type="button" id="sidebarCollapse"
+						class="btn btn-info navbar-btn">
+						<i class="glyphicon glyphicon-user"></i> <span>내정보</span>
+					</button>
+				</ul>
+
+			</div>
+		</div>
+		</nav>
+		<!-- /Header -->
+
+		<!-- Body -->
+		<div class="row content">
+			<nav id="sidebar">
+			<div id="dismiss">
+				<i class="glyphicon glyphicon-arrow-right" style="top: 11px"></i>
+			</div>
+
+			<div class="sidebar-header">
+				<div id="userInfo" style="margin-top: 10%"></div>
+			</div>
+			</nav>
+
+			<div class="col-sm-2 sidenav" style="width: 180px; float: left;">
+				<div class="wrapper">
+					<a href="http://www.naver.com"><img class="adImg"
+						src="${pageContext.request.contextPath}/resources/adExam.jpg"
+						alt="ad"></a>
+				</div>
+				<center>
+					<a class="btn btn-info" href="/spomatch/ad/ad.do" role="button">광고신청하기</a>
+				</center>
+			</div>
+			<div class="col-sm-8" style="width: 470px">
+				<!-- Board List -->
+	<%-- 			<div id="boardPage" title="${test }"></div> --%>
+			</div>
+		</div>
+		<!-- /Body -->
+
+
 	</div>
-	
-	<!-- Board List Tab-->
-	<!-- <div id=mainBoardTab>
-		<div id="tabs">
-			<ul class="nav nav-tabs" role="tablist" id="catgTab">
-				<li role="presentation" class="active"><a href="#sTab"
-					aria-controls="home" role="tab" data-toggle="tab" id="#sTab"> 축구 </a></li>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#sidebar").mCustomScrollbar({
+				theme : "minimal"
+			});
 
-				<li role="presentation"><a href="#bTab"
-					aria-controls="profile" role="tab" data-toggle="tab" id="#bTab"> 야구 </a></li>
+			$('#dismiss, .overlay').on('click', function() {
+				$('#sidebar').removeClass('active');
+				$('.overlay').fadeOut();
+			});
 
-				<li role="presentation"><a href="#gTab"
-					aria-controls="messages" role="tab" data-toggle="tab" id="#gTab"> 게임 </a></li>
-
-				<li role="presentation"><a href="#eTab"
-					aria-controls="messages" role="tab" data-toggle="tab" id="#eTab"> 기타 </a></li>
-			</ul>
-		</div>id = tabs
-	</div>id = mainBoardTab
-			
-	<div id="matchList"></div> --><!-- 게시판 내용 불러오기 -->
-
-<!-- 매칭등록 버튼-->
-	<!-- <div id="matchBtn" >
-		<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#myModal1">매칭등록</button>
-	</div>
-	
-				매칭 모달
-				<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-					<div class="modal-dialog modal-lg">
-						<div class="modal-content">
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-								<h2><label class="control-label">매칭 등록</label></h2>
-							
-								<form action="/spomatch/match/matchTeamProc.do" method="post">
-									<div class="modal-body">
-										<div class="row">
-												<div id="matchLoad"></div>
-												
-										</div>row
-									</div>
-									
-								<div class="modal-footer">
-									
-								</div>modal-footer
-							</form>		
-						</div>modal-header
-					</div>modal Content
-				</div> --><!-- modal Dialog -->
+			$('#sidebarCollapse').on('click', function() {
+				$('#sidebar').addClass('active');
+				$('.overlay').fadeIn();
+				$('.collapse.in').toggleClass('in');
+				$('a[aria-expanded=true]').attr('aria-expanded', 'false');
+			});
+		});
+	</script>
 
 </body>
 </html>

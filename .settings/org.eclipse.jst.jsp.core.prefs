@@ -1,0 +1,3 @@
+eclipse.preferences.version=1
+jsp-content-type//src/main/webapp/WEB-INF/views/commonHeader.jspf=text/html
+jsp-language//src/main/webapp/WEB-INF/views/commonHeader.jspf=java
