@@ -1,0 +1,50 @@
+
+
+#tdLeft {
+	text-align:left;
+}
+
+#tdRight {
+	text-align:left;
+}
+
+#tm_Lv {
+	display:none;
+}
+
+#tm_Age{
+	display:none;
+}
+
+#tm_Vest{
+	display:none;
+}
+
+#tm_Color{
+	display:none;
+}
+
+#m_Phone{
+	display:none;
+}
+
+#tm_Account{
+	display:none;
+}
+
+#tm_Cate{
+	display:none;
+}
+
+#mt_Local{
+	display:none;
+}
+
+#tm_Idx{
+	display:none;
+}
+.placeName {font-size:9pt;font-weight:bold;display:block; color:gray;}
+.title {font-weight:bold;display:block; color:blue;}
+.hAddr {position:absolute;left:10px;top:10px;border-radius: 2px;background:#fff;background:rgba(255,255,255,0.8);z-index:1;padding:5px;}
+.bAddr {padding:5px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
+#selectLoc{ text-align:left}

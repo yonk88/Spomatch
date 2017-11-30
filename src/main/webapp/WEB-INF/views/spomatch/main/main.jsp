@@ -30,12 +30,9 @@
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/main.css" />
 	
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/css/boardPage.css" />
+<%-- <link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/resources/css/boardPage.css" /> --%>
 	
-<!-- 지도API 로드 -->
-	<script type="text/javascript"
-	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=30fd3b061544e407b75d899b10dec151&libraries=services"></script>
 
 </head>
 <body>
@@ -43,95 +40,63 @@
 	<div id="header">
 		<div>
 			<button type="button" class="btn btn-default" id="teamBtn">팀매칭</button>
-			<button type="button" class="btn btn-default" id="recuBtn">용병매칭</button>
+			<!-- <button type="button" class="btn btn-default" id="recuBtn">용병매칭</button> -->
 			<button type="button" class="btn btn-default" id="leagueBtn">대회</button>
 			<button type="button" class="btn btn-default" id="jLeagueBtn">주최/참가한 대회</button>
 			<button type="button" class="btn btn-default" id="reportBtn">신고게시판</button>
 		</div>
 	</div>
 	
-	
-	<!-- Board List -->
-	<div id=mainBoardTab>
+	<!-- Board List Tab-->
+	<!-- <div id=mainBoardTab>
 		<div id="tabs">
 			<ul class="nav nav-tabs" role="tablist" id="catgTab">
 				<li role="presentation" class="active"><a href="#sTab"
-					aria-controls="home" role="tab" data-toggle="tab" id="catg"> 축구 </a></li>
+					aria-controls="home" role="tab" data-toggle="tab" id="#sTab"> 축구 </a></li>
 
 				<li role="presentation"><a href="#bTab"
-					aria-controls="profile" role="tab" data-toggle="tab" id="catg"> 야구 </a></li>
+					aria-controls="profile" role="tab" data-toggle="tab" id="#bTab"> 야구 </a></li>
 
 				<li role="presentation"><a href="#gTab"
-					aria-controls="messages" role="tab" data-toggle="tab" id="catg"> 게임 </a></li>
+					aria-controls="messages" role="tab" data-toggle="tab" id="#gTab"> 게임 </a></li>
 
 				<li role="presentation"><a href="#eTab"
-					aria-controls="messages" role="tab" data-toggle="tab" id="catg"> 기타 </a></li>
-				</ul>
-				
-		<!-- <div class="tab-content">
-			<div role="tabpanel" class="tab-pane active" id="sTab"><div id="catgSet">1</div></div>
-			<div role="tabpanel" class="tab-pane" id="bTab"><div id="catgSet">2</div></div>
-			<div role="tabpanel" class="tab-pane" id="gTab"><div id="catgSet">3</div></div>
-			<div role="tabpanel" class="tab-pane" id="eTab"><div id="catgSet">4</div></div>
-		</div> -->
-	</div><!-- id = tabs -->
-</div><!-- id = mainBoardTab -->
+					aria-controls="messages" role="tab" data-toggle="tab" id="#eTab"> 기타 </a></li>
+			</ul>
+		</div>id = tabs
+	</div>id = mainBoardTab
 			
-	<!-- Board List -->	
-	<div id="matchList"></div><!-- 게시판 내용 불러오기 -->
+	<div id="matchList"></div> --><!-- 게시판 내용 불러오기 -->
 
-
-<div id="matchBtn" >
-				<!-- 매칭등록 버튼-->
-				<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#myModal1">매칭등록</button>
-				<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#myModal2">용병신청</button>
-</div>
-				<!-- 매칭 모달 -->
+<!-- 매칭등록 버튼-->
+	<!-- <div id="matchBtn" >
+		<button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#myModal1">매칭등록</button>
+	</div>
+	
+				매칭 모달
 				<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-					<div class="modal-dialog">
+					<div class="modal-dialog modal-lg">
 						<div class="modal-content">
-							<div class="modal-header">
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
 								</button>
-								<h4 class="modal-title" id="myModalLabel">매칭 등록</h4>
-							</div><!-- modal-header -->
-							<form action="/spomatch/match/matchTeamProc.do" method="post">
-								<div class="modal-body">
-									<div id="matchLoad"></div>
-								</div>
+								<h2><label class="control-label">매칭 등록</label></h2>
+							
+								<form action="/spomatch/match/matchTeamProc.do" method="post">
+									<div class="modal-body">
+										<div class="row">
+												<div id="matchLoad"></div>
+												
+										</div>row
+									</div>
+									
 								<div class="modal-footer">
-									<input type="submit" class="btn btn-primary btn-sm" value="등록 하기" />
-									<button type="button" class="btn btn-default btn-sm" data-dismiss="modal">취소</button>
-								</div><!-- modal-footer -->
-							</form>
-						</div><!-- modal-header -->
-					</div><!-- modal Content -->
-				</div><!-- modal Dialog -->
-
-			<!-- 용병 모달 -->
-			<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-							<h4 class="modal-title" id="myModalLabel">용병 신청</h4>
-						</div>
-						<form action="/spomatch/recruit/recruitProc.do" method="post">
-							<div class="modal-body">
-								<div id="recuLoad"></div>
-							</div>
-							<div class="modal-footer">
-								<input type="submit" class="btn btn-primary" value="등록 하기" />
-								<button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
-							</div><!-- modal-footer -->
-						</form>
-					</div><!-- modal-header -->
-				</div><!-- modal Content -->
-			</div><!-- modal Dialog -->
-		</div><!-- mainBoardTab -->
+									
+								</div>modal-footer
+							</form>		
+						</div>modal-header
+					</div>modal Content
+				</div> --><!-- modal Dialog -->
 
 </body>
 </html>

@@ -1,11 +1,11 @@
 
 #match_bSize{
-	padding-top:2%;
 	text-align:center;
 }
+
 #match_bItem{
 	width:800px;
-	font-size:10pt;	
+	font-size:10pt;
 }
 
 #b_Hidden{
@@ -19,3 +19,7 @@
 #mCatg{
 	display: none;
 }
+
+#paging{text-align:center;}
+a.paging-item,a.paging-side{margin:0 .25em;}
+a.paging-item.selected{font-weight:bold;}
