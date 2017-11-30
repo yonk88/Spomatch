@@ -16,9 +16,11 @@
 <!-- css 경로 -->
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/recruitList.css" />
- 
+
 </head>
 <body>
+
+	<!-- <div id= "tabMenu"></div> -->
 	<div id="match_bSize">
 		<div class="container">
 			<table class="table table-striped table-hover" id="match_bItem">

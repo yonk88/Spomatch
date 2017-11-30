@@ -11,5 +11,5 @@
   	<select id="rcList" resultType="com.spomatch.dto.RecruitVo" parameterType="String">
   	SELECT * FROM SPO_RECRUIT WHERE RC_CATE = #{catg }
   	</select>
-  	 
+  	
   </mapper>

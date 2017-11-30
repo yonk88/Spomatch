@@ -8,8 +8,36 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>SPOMATCH-LEAGUE</title>
 
+<spring:url value="/resources/js/league.js" var="leagueJs" />
+<script src="${leagueJs }"></script>
+
 </head>
+
+<!-- 대진표 모달 -->
+				<div class="modal fade" id="crtModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+								<h4 class="modal-title" id="myModalLabel">순위/대진표</h4>
+							</div><!-- modal-header -->
+								<div class="modal-body">
+									<div id="loadModal"></div>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default btn-sm" data-dismiss="modal">닫기</button>
+								</div><!-- modal-footer -->
+						</div><!-- modal-header -->
+					</div><!-- modal Content -->
+				</div><!-- modal Dialog -->
+
 <body>
+
+<c:set var="mem_Idx" value="${mem_Idx }" />
+
+<!-- <div id= "tabMenu"></div> -->
 	<div id="leagueSize">
 		<div class="container">
 			<table class="table table-striped table-hover" id="leagueItem">
@@ -49,12 +77,14 @@
 						<td>${i.lea_Cost }</td>
 						<td>${i.lea_Deadline }</td>
 						<td>${i.lea_Local }</td>
-						<td>${i.lea_Info }</td>		
+						<td><button type="button" class="btn btn-default btn-sm" 
+						onclick="showCre(${i.lea_Idx });">순위/대진표</button></td>		
 					</tr>
 				</c:forEach>
 			</table>
 		</div>
 	</div>
+	<button type="button" class="btn btn-default btn-sm" onclick="showModal();">순위/대진표</button>
 
 
 </body>

@@ -9,11 +9,46 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 
-<spring:url value="/resources/js/main.js" var="mainJs" />
-<script src="${mainJs }"></script>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- 부가적인 테마 -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+<spring:url value="/resources/js/league.js" var="leagueJs" />
+<script src="${leagueJs }"></script>
 
 </head>
+      			<!-- 대진표 모달 -->
+				<div class="modal fade" id="leaModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+								<h4 class="modal-title" id="myModalLabel">순위/대진표</h4>
+							</div><!-- modal-header -->
+								<div class="modal-body">
+									<div id="loadModal"></div>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default btn-sm" data-dismiss="modal">닫기</button>
+								</div><!-- modal-footer -->
+						</div><!-- modal-header -->
+					</div><!-- modal Content -->
+				</div><!-- modal Dialog -->
 <body>
+spo
 <!-- 주최자 idx 17110800010 -->
 	<div id="leagueMyListSize">
 		<div class="container">
@@ -60,7 +95,9 @@
 				<div id="collapse${index.count }" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading${index.count }">
       			<div class="panel-body">
       				상세 내용 : ${i.lea_Info }<br/>
-      				<button type="button" onclick="showModal(${index.count}, ${i.lea_Idx }, '${i.lt_Status }', ${index.count });">순위/대진표</button>
+      				<button type="button" class="btn btn-default btn-sm" onclick="showLea(${i.lea_Idx }, '${i.lt_Status }');">순위/대진표</button>
+      				
+
 				</div>
 				</div>
 				</div>
@@ -69,25 +106,7 @@
 			</div>
 		</div>
 	</div>
-<!-- 	<!-- 대진표 모달 -->
-				<div class="modal fade" id="leaModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-								<h4 class="modal-title" id="myModalLabel">순위/대진표</h4>
-							</div>modal-header
-								<div class="modal-body">
-									<div id="modalLoad"></div>
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-default btn-sm" data-dismiss="modal">닫기</button>
-								</div>modal-footer
-						</div>modal-header
-					</div>modal Content
-				</div>modal Dialog -->
+
 
 </body>
 </html>

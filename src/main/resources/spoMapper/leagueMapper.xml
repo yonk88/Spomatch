@@ -16,10 +16,32 @@
 	AND LT.LEA_IDX = #{lea_Idx } ORDER BY LT.LT_POINT DESC
   	</select>
   	
-  	<select id="leagueMyList" resultType="com.spomatch.dto.LeagueVo">
+<!--   	<select id="leagueMyList" resultType="com.spomatch.dto.LeagueVo">
   		SELECT LE.LEA_IDX, LE.LEA_NAME, LE.LEA_CATE, LE.LEA_LOCAL, TM.TEAM_NAME, LE.LEA_INFO, LT.LT_STATUS 
+ -->
+  	<select id="leagueMyList" resultType="com.spomatch.dto.LeagueVo" parameterType="String">
+  		<!-- SELECT LE.LEA_NAME, LE.LEA_CATE, LE.LEA_LOCAL, TM.TEAM_NAME, LE.LEA_INFO 
+		FROM SPO_LEAGUE LE, SPO_LEAGUETM LT, SPO_TEAM TM 
+		WHERE LT.TEAM_IDX=TM.TEAM_IDX AND LE.LEA_IDX=LT.LEA_IDX
+		AND TM.TEAM_IDX IN (SELECT TEAM_IDX FROM SPO_TMEM WHERE MEM_IDX = #{memIdx }) -->
+		
+		SELECT LE.LEA_IDX, LE.LEA_NAME, LE.LEA_CATE, LE.LEA_LOCAL, TM.TEAM_NAME, LE.LEA_INFO, LT.LT_STATUS 
 		FROM SPO_LEAGUE LE, SPO_LEAGUETM LT, SPO_TEAM TM 
 		WHERE LT.TEAM_IDX=TM.TEAM_IDX AND LE.LEA_IDX=LT.LEA_IDX
 		AND TM.TEAM_IDX IN (SELECT TEAM_IDX FROM SPO_TMEM WHERE MEM_IDX = #{memIdx })
+		<!-- AND TM.TEAM_IDX IN (SELECT TEAM_IDX FROM SPO_TMEM WHERE MEM_IDX = #{memIdx }) AND LEA_CATE = #{catg } -->
   	</select>
+  	
+  	<select id="leagueHost" resultType="com.spomatch.dto.LeagueVo">
+  	SELECT LEA_HOST, LEA_STYLE FROM SPO_LEAGUE WHERE LEA_IDX = #{lea_Idx}
+  	</select>
+  	
+  	<update id="tmtUpdate" parameterType="com.spomatch.dto.LeagueTmVo">
+  		UPDATE SPO_LEAGUETM SET LT_GROUP = #{lt_Group} WHERE TEAM_IDX = #{team_Idx} AND LEA_IDX = #{lea_Idx}
+  	</update>
+  	
+  	<update id="leaStUpdate" parameterType="String">
+  		UPDATE SPO_LEAGUE SET LEA_STYLE = 'T' WHERE LEA_IDX = #{lea_Idx}
+  	</update>
+  	
   </mapper>
