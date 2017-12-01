@@ -64,6 +64,7 @@ $(document).ready(function(){
 		
 	});
 	
+	
 	$("#tabs> ul li").click(function(){
 		
 		var tabIndex = $(this).index();

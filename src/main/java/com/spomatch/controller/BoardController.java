@@ -85,7 +85,7 @@ public class BoardController {
 		}
 			
 		}
-	@RequestMapping (value ="/spomatch/board/myBoard.do")
+	/*@RequestMapping (value ="/spomatch/board/myBoard.do")
 	public void myBoardAction(MatchVo matVo, TeamVo tVo, Model model, HttpSession session, HttpServletRequest request ){
 		logger.info("_+_+_+ match Team +_+_+_");
 		//logger.info("xVal : " + xVal + ", yVAl : " + yVal + ", ADDR : " + addr);
@@ -104,11 +104,57 @@ public class BoardController {
 		model.addAttribute("tmList", tmList);
 		model.addAttribute("memList", memList);
 		
-	}
+	}*/
 	
 	@RequestMapping (value = "/spomatch/board/myBoinfo.do")
-	public String showMyWriteAction(){
+	public String showMyWriteAction(MatchVo matVo, Model model, HttpSession session, HttpServletRequest request){
+		String catg = request.getParameter("catg");
+		/*List<MatchVo> boaList = boaService.boardList();
+		model.addAttribute("boaList", boaList);
+		int listLeng = boaList.size();*/
 		
+		if(catg == (null)){
+			logger.info("////MatCatg is null//////");
+			catg = "S";
+			session.setAttribute("catg", catg);
+			logger.info("Session : " + session.getAttribute("catg"));
+			List<MatchVo> boaList = boaService.boardList(catg);
+			model.addAttribute("boaList", boaList);	
+			
+			int endPage = 1;
+			int countList = boaList.size();
+			
+			if(countList > 5){
+				endPage = (int) Math.ceil(countList/5.0);
+			}
+						
+			model.addAttribute("endPage", endPage);
+			model.addAttribute("totalPage", countList);
+			logger.info("boardList Num : " + Integer.toString(countList));
+			logger.info("boardList Num : " + Integer.toString(endPage));
+			
+		}else{
+			logger.info("=*=*=*=*MatCatg is NOT null=*=*=*=*");
+			logger.info("Matlis NotNULL Param : " + request.getParameter("catg"));
+			catg = request.getParameter("catg");
+			session.setAttribute("catg", catg);
+			logger.info("Session : " + session.getAttribute("catg"));
+			//logger.info("Before : " + request.getParameter("catg"));
+			List<MatchVo> boaList = boaService.boardList(catg);
+			model.addAttribute("boaList", boaList);
+			
+			int endPage = 1;
+			int countList = boaList.size();
+			
+			if(countList > 5){
+				endPage = (int) Math.ceil(countList/5.0);
+			}
+			logger.info("boardList Num : " + Integer.toString(countList));
+			logger.info("boardList Num : " + Integer.toString(endPage));
+			model.addAttribute("endPage", endPage);
+			model.addAttribute("totalPage", countList);
+			
+		}
 		
 	return null;	
 	}

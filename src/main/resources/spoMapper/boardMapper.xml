@@ -7,7 +7,7 @@
   	<select id="boardList" resultType="com.spomatch.dto.MatchVo" parameterType="String">
   		SELECT M.MAT_AMPM, M.MAT_FTIME, M.MAT_STIME, M.MAT_IDX, M.MAT_DATE, M.MAT_CATE, M.MAT_MATCHDAY, T.TEAM_NAME,
   		M.MAT_STATUS, M.MAT_LV, M.MAT_LOCAL FROM SPO_MATCH M, SPO_TEAM T WHERE T.TEAM_IDX = M.MAT_HOST AND
-  		MAT_CATE = #{catg } #{my_Info}
+  		MAT_CATE = #{catg }
   	</select>
   	
   	<select id="rcList" resultType="com.spomatch.dto.RecruitVo" parameterType="String">

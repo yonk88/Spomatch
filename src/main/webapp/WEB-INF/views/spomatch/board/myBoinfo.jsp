@@ -29,14 +29,14 @@
 <title>SPOMATCH-BOARD</title>
 
 <!-- js 경로 -->
-<spring:url value="/resources/js/myBoard.js" var="myBoardJs" />
-<script src="${myBoardJs }"></script>
+<spring:url value="/resources/js/myBoinfo.js" var="myBoinfoJs" />
+<script src="${myBoinfoJs }"></script>
 
 <!-- css 경로 -->
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/matchList.css" />
 
-</head>
+</head><!-- 
 <script type="text/javascript">
 
 $(document).ready(function(){
@@ -145,12 +145,43 @@ $(document).ready(function(){
 
 });
 
-</script>
+</script> -->
 <body>
 <div id="headerLoad"></div>
+	<!-- 매칭등록 버튼 -->
+		<div class="modal fade" id="matchTeam" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h2><label class="control-label">매칭 등록</label></h2>
+							<div class="modal-body">
+								<div class="row">
+										<div id="matchLoad"></div>
+								</div><!-- row -->
+							</div>
+				</div><!-- modal-header -->
+			</div><!-- modal Content -->
+		</div><!-- modal Dialog -->
 
-팀리스트
-날짜, 시간, 장소, 팀, 상대팀
+		<!-- 매칭등록 버튼 -->
+		<div class="modal fade" id="matchInfoM" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						
+							<div class="modal-body">
+								<div class="row">
+										<div id="matchInfoGo"></div>
+										
+								</div><!-- row -->
+							</div>
+				</div><!-- modal-header -->
+			</div><!-- modal Content -->
+		</div><!-- modal Dialog -->
 	<div id="match_bSize">
 		<div class="container" id="data-container">
 			<table class="table table-striped table-hover" id="match_bItem">
@@ -160,7 +191,6 @@ $(document).ready(function(){
 					<th>팀명</th>
 					<th>경기 날짜</th>
 					<th>경기 시간</th>
-					<th>수준</th>
 					<th>모집 상태</th>
 					<!-- <th>대기인원</th> -->
 				</tr>
@@ -172,7 +202,7 @@ $(document).ready(function(){
 						<td>${i.team_Name }</td>
 						<td>${i.mat_MatchDay }</td>
 						<td>${i.mat_Ampm }&nbsp;${i.mat_Stime }&nbsp;~&nbsp;${i.mat_Ftime }</td>
-						<td id="matLv">${i.mat_Lv}</td>
+						<td id="matLv" style="display:none;">${i.mat_Lv}</td>
 						<td id="matStatus">${i.mat_Status }</td>
 						<td id="mIdx" class="mIdx">${i.mat_Idx }</td>
 					</tr>
@@ -181,6 +211,40 @@ $(document).ready(function(){
 		</div><!-- match_bSize -->
 	</div>
 
+<div id="bInfo" style="width:420;height:420px;overflow:hidden; padding-left:"30%"></div>
+	<!-- 매칭등록 버튼 -->
+		<div class="modal fade" id="matchTeam" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<h2><label class="control-label">매칭 등록</label></h2>
+							<div class="modal-body">
+								<div class="row">
+										<div id="matchLoad"></div>
+								</div><!-- row -->
+							</div>
+				</div><!-- modal-header -->
+			</div><!-- modal Content -->
+		</div><!-- modal Dialog -->
 
+		<!-- 매칭등록 버튼 -->
+		<div class="modal fade" id="matchInfoM" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						
+							<div class="modal-body">
+								<div class="row">
+										<div id="matchInfoGo"></div>
+										
+								</div><!-- row -->
+							</div>
+				</div><!-- modal-header -->
+			</div><!-- modal Content -->
+		</div><!-- modal Dialog -->
 </body>
 </html>
