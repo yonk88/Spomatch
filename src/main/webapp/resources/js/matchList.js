@@ -13,9 +13,16 @@ function showContent(idx) {
 		console.log("idxsecond" + idx);
 	});
 	console.log("idxthird" + idx);
+	
+	$('.mCatgTr').on('hidden.bs.modal', function () {
+	    console.log('modal close');
+	    $(this).find("#matchInfoGo").html("");
+	});
 	return idx;
 };
 /////////////////////////////////////////////////
+
+
 
 $(document).ready(function(){
 	
