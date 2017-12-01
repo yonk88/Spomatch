@@ -69,7 +69,7 @@ public class AccountController {
 		logger.info("멤버 : memberJoinAction");
 		//Map<String, String> map = new HashMap<String, String>();
 
-		int ran = new Random().nextInt(10000) + 1000;
+		int ran = new Random().nextInt(90000) + 10000;
 		SimpleDateFormat sdf = new SimpleDateFormat("yyMMdd");
 		Calendar c1 = Calendar.getInstance();
 		String strToday = sdf.format(c1.getTime());
@@ -162,7 +162,6 @@ public class AccountController {
 			return false;
 		}
 
-		
 	}
 
 }

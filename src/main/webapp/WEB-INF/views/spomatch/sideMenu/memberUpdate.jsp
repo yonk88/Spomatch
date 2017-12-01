@@ -5,24 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 
-<!-- 합쳐지고 최소화된 최신 CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-
-<!-- 부가적인 테마 -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
-<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script>
 $(document).ready(function() {
 	$("#memberInfo").click(function() {
-		$("#memberSwitch").load("memberInfo.do");
+		$("#memberSwitch").load("/spomatch/sideMenu/memberInfo.do");
 	})
 });
 
@@ -44,13 +31,30 @@ $(document).ready(function() {
 			alert("비밀번호가 일치하지 않습니다.")
 			return false;
 		}
+		
+		var query = {
+				mem_Pass : $("#mem_Pass").val(),
+				mem_Local : $("#mem_Local").val()
+			};
+		
+		$.ajax({
+			url : "/spomatch/sideMenu/setMemberUpdate.do",
+			type : "post",
+			data : query,
+			success : function(data) {
+				alert("회원정보 수정완료");
+				$("#memberSwitch").load("/spomatch/sideMenu/memberInfo.do");
+			}
+		});
+		
 			
-		document.updateForm.submit();
+		/* document.updateForm.submit();
 		alert("회원정보 수정완료");
-		/* $("#memberSwitch").load("memberInfo.do"); */
+		$("#memberSwitch").load("memberInfo.do"); */
 		
 	})
 });
+
 </script>
 
 </head>
@@ -62,54 +66,54 @@ $(document).ready(function() {
 			</h1>
 		</div>
 		<div >
-		<form name="updateForm" action="/spomatch/sideMenu/setMemberUpdate.do" method = "post">
-			<table class="table table-striped">
+		<form name="updateForm">
+			<table class="table" style="text-align:left">
 
 				<tr>
 					<td>이름</td>
-					<td>${result.mem_Name }</td>
+					<td><input class="form-control" id="team_Name" type="text" placeholder="${result.mem_Name }" disabled></td>
 				</tr>
 
 				<tr>
 					<td>이메일</td>
-					<td>${result.mem_Id }</td>
+					<td><input class="form-control" id="team_Name" type="text" placeholder="${result.mem_Id }" disabled></td>
 				</tr>
 				
 				<tr>
 					<td>비밀번호</td>
-					<td><input type="password" id="mem_Pass" name="mem_Pass"></td>
+					<td><input class="form-control" type="password" id="mem_Pass" name="mem_Pass"></td>
 				</tr>
 
 				<tr>
 					<td>비밀번호 확인</td>
-					<td><input type="password" id="mem_Pass2"></td>
+					<td><input class="form-control" type="password" id="mem_Pass2"></td>
 				</tr>
 
 				<tr>
 					<td>생년월일</td>
-					<td>${birth }</td>
+					<td><input class="form-control" id="team_Name" type="text" placeholder="${birth }" disabled></td>
 				</tr>
 
 				<tr>
 					<td>성별</td>
-					<td>${gender }</td>
+					<td><input class="form-control" id="team_Name" type="text" placeholder="${gender }" disabled></td>
 				</tr>
 
 				<tr>
 					<td>활동지역</td>
-					<td><input type="text" id="mem_Local" name="mem_Local"></td>
+					<td><input type="text" class="form-control" id="mem_Local" name="mem_Local"></td>
 				</tr>
 
 				<tr>
 					<td>회원유형</td>
-					<td>${level }</td>
+					<td><input class="form-control" id="team_Name" type="text" placeholder="${level }" disabled></td>
 				</tr>
 			</table>
 			</form>
 		</div>
 		<div class="text-right">
-			<button type="button" class="btn btn-default" id="memberUpdate" >수정 완료</button>
-			<button type="button" class="btn btn-default" id="memberInfo">취소</button>
+			<button type="button" class="btn btn-info" id="memberUpdate" >수정 완료</button>
+			<button type="button" class="btn btn-warning" id="memberInfo">취소</button>
 		</div>
 	</div>
 </body>

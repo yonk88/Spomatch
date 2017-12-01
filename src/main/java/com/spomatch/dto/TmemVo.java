@@ -3,40 +3,65 @@ package com.spomatch.dto;
 //회원별 팀 가입정보
 public class TmemVo {
 
-	private String tMem_MemIdx;
-	private String TeamIdx;
-	private char tMem_TeamCate;
-	private String tMem_TeamCp;
+	private String team_Cp;
+	private String team_Idx;
+	private char team_Cate;
+	private String mem_Idx;
 	
-	public String gettMem_MemIdx() {
-		return tMem_MemIdx;
-	}
-	public void settMem_MemIdx(String tMem_MemIdx) {
-		this.tMem_MemIdx = tMem_MemIdx;
-	}
-	public String getTeamIdx() {
-		return TeamIdx;
-	}
-	public void setTeamIdx(String teamIdx) {
-		TeamIdx = teamIdx;
-	}
-	public char gettMem_TeamCate() {
-		return tMem_TeamCate;
-	}
-	public void settMem_TeamCate(char tMem_TeamCate) {
-		this.tMem_TeamCate = tMem_TeamCate;
-	}
-	public String gettMem_TeamCp() {
-		return tMem_TeamCp;
-	}
-	public void settMem_TeamCp(String tMem_TeamCp) {
-		this.tMem_TeamCp = tMem_TeamCp;
-	}
 	
+	
+	public String getTeam_Cp() {
+		return team_Cp;
+	}
+
+
+
+	public void setTeam_Cp(String team_Cp) {
+		this.team_Cp = team_Cp;
+	}
+
+
+
+	public String getTeam_Idx() {
+		return team_Idx;
+	}
+
+
+
+	public void setTeam_Idx(String team_Idx) {
+		this.team_Idx = team_Idx;
+	}
+
+
+
+	public char getTeam_Cate() {
+		return team_Cate;
+	}
+
+
+
+	public void setTeam_Cate(char team_Cate) {
+		this.team_Cate = team_Cate;
+	}
+
+
+
+	public String getMem_Idx() {
+		return mem_Idx;
+	}
+
+
+
+	public void setMem_Idx(String mem_Idx) {
+		this.mem_Idx = mem_Idx;
+	}
+
+
+
 	@Override
 	public String toString() {
-		return "TmemVo [tMem_MemIdx=" + tMem_MemIdx + ", TeamIdx=" + TeamIdx + ", tMem_TeamCate=" + tMem_TeamCate
-				+ ", tMem_TeamCp=" + tMem_TeamCp + "]";
+		return "TmemVo [team_Cp=" + team_Cp + ", team_Idx=" + team_Idx + ", team_Cate=" + team_Cate + ", mem_Idx="
+				+ mem_Idx + "]";
 	}
 	
 	
