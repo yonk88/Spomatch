@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spomatch.dao.ReportDao">
+	<select id="reportVerify" resultType="com.spomatch.dto.ReportVo">
+		SELECT * FROM SPO_REPORT
+	</select>
+
+
+	<select id="reportViewByIdx" resultType="com.spomatch.dto.ReportVo">
+		SELECT * FROM SPO_REPORT
+		WHERE REP_IDX = #{rep_idx }
+	</select>
+
+	<insert id="newReport" parameterType="com.spomatch.dto.ReportVo">
+		INSERT INTO SPO_REPORT (REP_IDX, REP_MIDX, REP_WIDX, REP_PTN, REP_CONTENT,
+		REP_TYPE, REP_CHECK, REP_DATE) VALUES
+		(SPO_REP_SEQ.NEXTVAL, #{rep_Midx }, #{rep_Widx }, #{rep_Ptn }, #{rep_Content}, #{rep_Type
+		}, 'W', SYSDATE)
+	</insert>
+	
+	<select id="reportBoardList" parameterType="javax.servlet.http.HttpSession" resultType="hashmap">
+		SELECT * FROM SPO_REPORT INNER JOIN SPO_MEMBER ON SPO_REPORT.REP_MIDX = SPO_MEMBER.MEM_IDX 
+		ORDER BY REP_IDX DESC
+	</select>
+	
+	<select id="reportBoardList2" parameterType="javax.servlet.http.HttpSession" resultType="hashmap">
+		SELECT * FROM SPO_REPORT INNER JOIN SPO_MEMBER ON SPO_REPORT.REP_WIDX = SPO_MEMBER.MEM_IDX 
+		ORDER BY REP_IDX DESC
+	</select>
+	
+	<update id="SuspendByIdx" parameterType="int">
+		UPDATE SPO_MEMBER SET MEM_LV = '4' WHERE MEM_IDX = #{mem_Idx }
+	</update>
+	
+	<select id="getIdxById" parameterType="String" resultType="int">
+		SELECT MEM_IDX FROM SPO_MEMBER 
+		WHERE MEM_ID= #{rep_Widx }
+	</select>
+
+</mapper>

@@ -13,9 +13,12 @@ public interface AccountService {
 	public MemberVo loginAction(MemberVo vo);
 
 	public MemberVo findEmail(MemberVo vo);
-
+	
 	public String getNameByIdx(int idx);
 
-	public void findPassword(String mem_Pass, String mem_Id);
+	//public void findPassword(String mem_Pass, String mem_Id);
+
+	public void findPassword(MemberVo vo);
+
 
 }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spomatch.dao.AdDao">
+	<insert id="newAd" parameterType="com.spomatch.dto.AdVo">
+		INSERT INTO SPO_AD (AD_IDX, AD_NAME, AD_DATE, AD_URL, AD_START, AD_END, AD_CATE, AD_COMP, AD_EMAIL,
+		AD_PHONE, AD_ACCEPT) VALUES
+		(SPO_AD_SEQ.NEXTVAL, #{ad_Name }, SYSDATE, #{ad_Url }, #{ad_Start }, #{ad_End }, #{ad_Cate }, #{ad_Comp }, #{ad_Email}, 
+		#{ad_Phone}, 'W')
+	</insert>
+	
+	<insert id="insertBoard" parameterType="hashmap">
+		INSERT INTO SPO_AD (AD_IDX, AD_NAME, AD_DATE, AD_URL, AD_START, AD_END, AD_CATE, AD_COMP, AD_EMAIL,
+		AD_PHONE, AD_ACCEPT) VALUES
+		(SPO_AD_SEQ.NEXTVAL, #{name }, SYSDATE, #{url }, #{startDate }, #{endDate }, #{ad_Type }, #{comp }, #{email}, 
+		#{phone}, 'W')
+	</insert>
+	
+	
+	
+</mapper>

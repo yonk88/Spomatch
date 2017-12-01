@@ -32,7 +32,7 @@ public class ReportController {
 	
 	Logger logger = LoggerFactory.getLogger(this.getClass());
 	
-	//½Å°í°Ô½ÃÆÇ
+	//ì‹ ê³ ê²Œì‹œíŒ
 	@RequestMapping (value="/spomatch/board/openReportPage.do")
 	public ModelAndView reportPageAction(HttpSession session) throws Exception{
 		ModelAndView mv = new ModelAndView("/spomatch/board/reportPage");
@@ -48,25 +48,25 @@ public class ReportController {
 		mv.addObject("birth", birth);
 		
 		if(gender.equals("1") || gender.equals("3")) {
-			mv.addObject("gender", "³²ÀÚ");
+			mv.addObject("gender", "ë‚¨ì");
 		}else {
-			mv.addObject("gender", "¿©ÀÚ");
+			mv.addObject("gender", "ì—¬ì");
 		}
 		
 		if(mem_Lv == 0)
-			mv.addObject("level", "ÃÖ»óÀ§ °ü¸®ÀÚ");
+			mv.addObject("level", "ìµœìƒìœ„ ê´€ë¦¬ì");
 		if(mem_Lv == 1)
-			mv.addObject("level", "°ü¸®ÀÚ");
+			mv.addObject("level", "ê´€ë¦¬ì");
 		if(mem_Lv == 2)
-			mv.addObject("level", "ÀÏ¹İÈ¸¿ø");
+			mv.addObject("level", "ì¼ë°˜íšŒì›");
 		if(mem_Lv == 3)
-			mv.addObject("level", "´ëÈ¸ ¿î¿µÀÚ");
+			mv.addObject("level", "ëŒ€íšŒ ìš´ì˜ì");
 		
 		//logger.info(result);
 		mv.addObject("result", result);
 		mv.addObject("list", list);
 		mv.addObject("list2", list2);
-		logger.info("½Å°í°Ç¼ö: "+ String.valueOf(list.size()));
+		logger.info("ì‹ ê³ ê±´ìˆ˜: "+ String.valueOf(list.size()));
 		return mv;
 	}
 
@@ -81,19 +81,19 @@ public class ReportController {
 		repVo.setRep_Content(rep_Content);
 		repVo.setRep_Widx(String.valueOf(repService.getIdxById(rep_Widx)));
 		char r_Type = 0;
-		if(rep_Type.equals("»ç±â")){
+		if(rep_Type.equals("ì‚¬ê¸°")){
 			r_Type='F';
-		}else if(rep_Type.equals("³ë¼î(no show)")){
+		}else if(rep_Type.equals("ë…¸ì‡¼(no show)")){
 			r_Type='N';
-		}else if(rep_Type.equals("ºÒ·®")){
+		}else if(rep_Type.equals("ë¶ˆëŸ‰")){
 			r_Type='B';
 		}
 		repVo.setRep_Type(r_Type);
 		
 		char r_Ptn =0;
-		if(rep_Ptn.equals("°³ÀÎ")){
+		if(rep_Ptn.equals("ê°œì¸")){
 			r_Ptn='P';
-		}else if(rep_Ptn.equals("ÆÀ")){
+		}else if(rep_Ptn.equals("íŒ€")){
 			r_Ptn='T';
 		}
 		repVo.setRep_Ptn(r_Ptn);
