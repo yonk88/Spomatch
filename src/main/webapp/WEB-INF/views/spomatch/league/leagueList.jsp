@@ -118,13 +118,12 @@
 						<td>${i.lea_Deadline }</td>
 						<td>${i.lea_Local }</td>
 						<td><button type="button" class="btn btn-default btn-sm" 
-						onclick="showCre(${i.lea_Idx });">순위/대진표</button></td>		
+						onclick="showCre(${i.lea_Idx });">대회 참가</button></td>		
 					</tr>
 				</c:forEach>
 			</table>
 		</div>
 	</div>
-	<button type="button" class="btn btn-default btn-sm" onclick="showModal();">순위/대진표</button>
 	
 	
 	
@@ -223,15 +222,6 @@
 
 	});
 
-
-	function showModal(mem_Idx){
-		console.log("sdf : "+cnt, lea_Idx, status);
-		if(status == 'T'){
-			$("#loadModal").load("/spomatch/league/leagueTmt.do?lea_Idx="+lea_Idx);
-		}else{
-			$("#loadModal").load("/spomatch/league/leagueRank.do?lea_Idx="+lea_Idx);
-		}
-	};
 
 	function showLea(lea_Idx, status){
 		if(status == 'T'){

@@ -13,6 +13,12 @@
 		WHERE MEM_ID = #{mem_Id }
 	</select>
 
+	<insert id="memberJoin" parameterType="com.spomatch.dto.MemberVo">
+		INSERT INTO SPO_MEMBER
+		VALUES
+		(MEMBERSEQ.NEXTVAL, #{userid }, #{userpw }, #{username },
+		SYSDATE)
+	</insert>
 	<select id="idxCheck" resultType="com.spomatch.dto.MemberVo">
 		SELECT MEM_ID FROM SPO_MEMBER
 		WHERE MEM_IDX = #{mem_Idx }

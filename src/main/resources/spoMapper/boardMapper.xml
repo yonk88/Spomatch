@@ -2,6 +2,8 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
   
   <mapper namespace="com.spomatch.dao.BoardDao">
   	<select id="boardList" resultType="com.spomatch.dto.MatchVo" parameterType="String">
@@ -9,6 +11,7 @@
   		M.MAT_STATUS, M.MAT_LV, M.MAT_LOCAL FROM SPO_MATCH M, SPO_TEAM T WHERE T.TEAM_IDX = M.MAT_HOST AND
   		MAT_CATE = #{catg }
   	</select>
+
   	
   	<select id="rcList" resultType="com.spomatch.dto.RecruitVo" parameterType="String">
   		SELECT R.RC_IDX, R.RC_DATE, T.TEAM_NAME, R.RC_MEMIDX, R.RC_CATE, R.RC_POSIT, R.RC_MATCHDAY,
@@ -17,3 +20,4 @@
   	</select>
   	
   </mapper>
+

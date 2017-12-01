@@ -6,6 +6,7 @@
 $(document).ready(function(){
 	
 	$("#headerLoad").load("/spomatch/main/main.do");
+	
 var tempCatg = $("#tempCatg").val();
    if(tempCatg == "S" || tempCatg == ""){
       $("#catgTab a:first").tab("show");
@@ -96,15 +97,16 @@ var tempCatg = $("#tempCatg").val();
 
 
 
-function showModal(mem_Idx){
-	console.log("sdf : "+cnt, lea_Idx, status);
-	if(status == 'T'){
-		$("#loadModal").load("/spomatch/league/leagueTmt.do?lea_Idx="+lea_Idx);
-	}else{
-		$("#loadModal").load("/spomatch/league/leagueRank.do?lea_Idx="+lea_Idx);
-	}
+function showModal(){
+	//console.log("sdf : "+cnt, lea_Idx, status);
+		location.href=url="/spomatch/league/leagueCreate.do";
 };
 
+/*function showModal(){
+	
+	$("#loadModal").load("/spomatch/league/leagueCreate.do");
+};
+*/
 function showLea(lea_Idx, status){
 	if(status == 'T'){
 		url="/spomatch/league/tmtTest.do?lea_Idx="+lea_Idx;

@@ -31,7 +31,9 @@ public class BoardController {
 	private static final Logger logger
 	= LoggerFactory.getLogger(BoardController.class);
 
+
 	//메치 리스트 가져오기
+	
 	@RequestMapping (value = "/spomatch/board/matchList.do")
 	public void matchListAction(MatchVo matVo, Model model, HttpSession session, HttpServletRequest request){
 		logger.info("MatchList");
@@ -66,6 +68,9 @@ public class BoardController {
 	
 	@RequestMapping (value = "/spomatch/board/recruitList.do")
 	public void recuruitListAction(RecruitVo rcVo, Model model, HttpSession session, HttpServletRequest request){
+
+	@RequestMapping (value = "/spomatch/board/matchListProc.do")
+	public String matchListProcAction(MatchVo matVo, Model model, HttpSession session, HttpServletRequest request){
 		
 		logger.info("////=*=Recruit=*=//////");
 		String catg = request.getParameter("catg");
@@ -85,5 +90,14 @@ public class BoardController {
 		}
 		
 	}
+	
+	
+
+	@RequestMapping (value="/spomatch/board/reportPage.do")
+	public void reportPageAction(MatchVo matVo, Model model, HttpSession session, HttpServletRequest request){
+		
+	}
+	
+
 
 }

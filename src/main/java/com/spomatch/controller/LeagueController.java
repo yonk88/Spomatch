@@ -88,8 +88,12 @@ public class LeagueController {
 	}
 	
 	@RequestMapping(value="/spomatch/league/leagueCreate.do")
-	public void leagueCrtAction(LeagueVo leaVo, Model model,
+	public void leagueCreate(LeagueVo leaVo, Model model,
 			HttpSession session, HttpServletRequest request){
+		
+		String mem_Idx = session.getAttribute("loginSession").toString();
+		model.addAttribute("mem_Idx",mem_Idx);
+		//List<LeagueVo> leaCrtList = leaService.leagueCrt(mem_Idx);
 		
 	}
 	
@@ -166,15 +170,17 @@ public class LeagueController {
 	public void leagueMyListAction(LeagueVo leaVo, Model model, HttpSession session, 
 			HttpServletRequest request){
 		logger.info("LeagueMyList");
-		//String mem_Idx = session.getAttribute("loginSession").toString();
-		String mem_Idx ="1711211777";
+		String mem_Idx = session.getAttribute("loginSession").toString();
+		//String mem_Idx ="1711211777";
 		List<LeagueVo> leaMyList = leaService.leagueMyList(mem_Idx);
 		int listLeng = leaMyList.size();
 		
-		//model.addAttribute("mem_Idx", mem_Idx);
+		model.addAttribute("mem_Idx", mem_Idx);
 		logger.info("leagueMyList Num = "+Integer.toString(listLeng));
 		model.addAttribute("leaMyList", leaMyList);
 		logger.info("leagueMyList : "+leaVo.toString());
 	}
+	
+	
 
 }

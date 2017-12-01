@@ -106,8 +106,9 @@
 			</div>
 		</div>
 	</div>
-	<input type="button" onclick="" />
-
+	<a align="center">
+	<button type="button" class="btn btn-default btn-sm" onclick="showModal();">주최하기</button>
+</a>
 
 </body>
 </html>
