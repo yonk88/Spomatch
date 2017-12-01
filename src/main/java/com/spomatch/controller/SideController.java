@@ -26,23 +26,23 @@ public class SideController {
 	
 	@RequestMapping(value = "/spomatch/sideMenu/sideMenu.do")
 	public void sideMenu() {
-		logger.info("»çÀÌµå¸Ş´º ¸ŞÀÎ");
+		logger.info("ì‚¬ì´ë“œë©”ë‰´ ë©”ì¸");
 		
 	}
 	@RequestMapping(value = "/spomatch/sideMenu/teamInfo.do")
 	public void teamInfo() {
-		logger.info("³ªÀÇ ÆÀ");
+		logger.info("ë‚˜ì˜ íŒ€");
 		
 	}
 	/*@RequestMapping(value = "/spomatch/sideMenu/sideMenu.do")
 	public void sideMenu() {
-		logger.info("»çÀÌµå¸Ş´º ¸ŞÀÎ");
+		logger.info("ì‚¬ì´ë“œë©”ë‰´ ë©”ì¸");
 		
 	}*/
 
 	@RequestMapping(value = "/spomatch/sideMenu/memberInfo.do"/*, method= RequestMethod.POST*/)
 	public ModelAndView memberInfo(HttpSession session) {
-		logger.info("»çÀÌµå¸Ş´º È¸¿øÁ¤º¸ ºÒ·¯¿À±â");
+		logger.info("ì‚¬ì´ë“œë©”ë‰´ íšŒì›ì •ë³´ ë¶ˆëŸ¬ì˜¤ê¸°");
 		ModelAndView mv = new ModelAndView();
 
 		String mem_Idx = session.getAttribute("loginSession").toString();
@@ -57,19 +57,19 @@ public class SideController {
 		mv.addObject("birth", birth);
 		
 		if(gender.equals("1") || gender.equals("3")) {
-			mv.addObject("gender", "³²ÀÚ");
+			mv.addObject("gender", "ë‚¨ì");
 		}else {
-			mv.addObject("gender", "¿©ÀÚ");
+			mv.addObject("gender", "ì—¬ì");
 		}
 		
 		if(mem_Lv == 0)
-			mv.addObject("level", "ÃÖ»óÀ§ °ü¸®ÀÚ");
+			mv.addObject("level", "ìµœìƒìœ„ ê´€ë¦¬ì");
 		if(mem_Lv == 1)
-			mv.addObject("level", "°ü¸®ÀÚ");
+			mv.addObject("level", "ê´€ë¦¬ì");
 		if(mem_Lv == 2)
-			mv.addObject("level", "ÀÏ¹İÈ¸¿ø");
+			mv.addObject("level", "ì¼ë°˜íšŒì›");
 		if(mem_Lv == 3)
-			mv.addObject("level", "´ëÈ¸ ¿î¿µÀÚ");
+			mv.addObject("level", "ëŒ€íšŒ ìš´ì˜ì");
 		
 		//logger.info(result);
 		mv.addObject("result", result);
@@ -82,7 +82,7 @@ public class SideController {
 	
 	@RequestMapping(value = "/spomatch/sideMenu/memberUpdate.do"/*, method= RequestMethod.POST*/)
 	public ModelAndView memberUpdate(HttpSession session) {
-		logger.info("»çÀÌµå¸Ş´º È¸¿øÁ¤º¸ ºÒ·¯¿À±â");
+		logger.info("ì‚¬ì´ë“œë©”ë‰´ íšŒì›ì •ë³´ ë¶ˆëŸ¬ì˜¤ê¸°");
 		ModelAndView mv = new ModelAndView();
 
 		String mem_Idx = session.getAttribute("loginSession").toString();
@@ -97,19 +97,19 @@ public class SideController {
 		mv.addObject("birth", birth);
 		
 		if(gender.equals("1") || gender.equals("3")) {
-			mv.addObject("gender", "³²ÀÚ");
+			mv.addObject("gender", "ë‚¨ì");
 		}else {
-			mv.addObject("gender", "¿©ÀÚ");
+			mv.addObject("gender", "ì—¬ì");
 		}
 		
 		if(mem_Lv == 0)
-			mv.addObject("level", "ÃÖ»óÀ§ °ü¸®ÀÚ");
+			mv.addObject("level", "ìµœìƒìœ„ ê´€ë¦¬ì");
 		if(mem_Lv == 1)
-			mv.addObject("level", "°ü¸®ÀÚ");
+			mv.addObject("level", "ê´€ë¦¬ì");
 		if(mem_Lv == 2)
-			mv.addObject("level", "ÀÏ¹İÈ¸¿ø");
+			mv.addObject("level", "ì¼ë°˜íšŒì›");
 		if(mem_Lv == 3)
-			mv.addObject("level", "´ëÈ¸ ¿î¿µÀÚ");
+			mv.addObject("level", "ëŒ€íšŒ ìš´ì˜ì");
 		
 		//logger.info(result);
 		mv.addObject("result", result);
@@ -124,7 +124,7 @@ public class SideController {
 	@RequestMapping(value = "/spomatch/sideMenu/setMemberUpdate.do", method = RequestMethod.POST)
 	public String setMemberUpdate(MemberVo vo, HttpSession session, @RequestParam String mem_Pass, 
 			@RequestParam String mem_Local ) {
-		logger.info("¸â¹ö DB¾÷µ¥ÀÌÆ®");
+		logger.info("ë©¤ë²„ DBì—…ë°ì´íŠ¸");
 		String mem_Idx = session.getAttribute("loginSession").toString();
 		vo.setMem_Idx(mem_Idx);
 		vo.setMem_Pass(mem_Pass);

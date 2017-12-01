@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.spomatch.dao.SideDao">
+  	<select id="getMemberInfo" resultType="com.spomatch.dto.MemberVo">
+  	SELECT * FROM SPO_MEMBER WHERE MEM_IDX = #{mem_Idx }
+  	</select>
+  	
+  	<update id="setMemberUpdate" parameterType="com.spomatch.dto.MemberVo">
+  	UPDATE SPO_MEMBER SET MEM_PASS = #{mem_Pass }, MEM_LOCAL = #{mem_Local } WHERE MEM_IDX = #{mem_Idx }
+  	</update>
+  </mapper>

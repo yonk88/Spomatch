@@ -40,7 +40,8 @@
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">팀 매칭<span class="sr-only">(current)</span></a></li>
+					<li><a href="#">팀매칭</a></li>
+					<!-- <li class="active"><a href="#">팀 매칭<span class="sr-only">(current)</span></a></li> -->
 					<li><a href="#">대회</a></li>
 					<li><a href="#">주최/참가대회</a></li>
 					<li><a href="#">신고</a></li>
