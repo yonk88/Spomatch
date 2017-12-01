@@ -29,7 +29,7 @@ public class MatchController {
 	private static final Logger logger
 	= LoggerFactory.getLogger(MatchController.class);
 	
-	@RequestMapping (value = "/spomatch/match/matchTeam.do?catg=")
+	@RequestMapping (value = "/spomatch/match/matchTeam.do")
 	public void insertTeamMatAction(MemberVo mVo, TeamVo tVo, MatchVo matVo, Model model
 			,HttpServletRequest request, HttpSession session){
 		logger.info("_+_+_+ match Team +_+_+_");
@@ -48,6 +48,7 @@ public class MatchController {
 		
 		model.addAttribute("tmList", tmList);
 		model.addAttribute("memList", memList);
+		
 	}
 
 	@RequestMapping (value = "/spomatch/match/matchTeamProc.do", method=RequestMethod.GET)
@@ -68,7 +69,7 @@ public class MatchController {
 			logger.info(matVo.toString());
 			mService.insertTeamMatch(matVo);
 			
-			return "redirect:/spomatch/main/main.do";
+			return "redirect:/spomatch/board/matchList.do";
 		}else{
 			String tempXval = request.getParameter("xVal").toString();
 			String tempYval = request.getParameter("yVal").toString();
@@ -105,10 +106,10 @@ public class MatchController {
 			logger.info(matVo.toString());
 			mService.insertTeamMatch(matVo);
 			
-			return "redirect:/spomatch/main/main.do";
+			return "redirect:/spomatch/board/matchList.do";
 		}
 		
-	}
+	}	
 	
 	@RequestMapping (value = "/spomatch/board/matchInfo.do")
 	public void matchInfoAction(TeamVo tVo, MatchVo matVo, MemberVo mVo, Model model
@@ -128,7 +129,7 @@ public class MatchController {
 		model.addAttribute("mVo", mVo);
 	}
 	
-	@RequestMapping (value = "/spomatch/board/matchInfoProc.do")
+	/*@RequestMapping (value = "/spomatch/board/matchInfoProc.do")
 	public void matchInfoProcAction(TeamVo tVo, MatchVo matVo, MemberVo mVo, Model model
 			,HttpServletRequest request, HttpSession session, @RequestParam int idx){
 		logger.info("_+_+_+ matchINFO +_+_+_");
@@ -144,7 +145,7 @@ public class MatchController {
 		model.addAttribute("tVo", tVo);
 		model.addAttribute("matVo", matVo);
 		model.addAttribute("mVo", mVo);
-	}
+	}*/
 	
 	/*@RequestMapping (value = "/spomatch/recruit/recruit.do")
 	public void insertRecuMatAction(){

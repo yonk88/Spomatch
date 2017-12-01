@@ -11,5 +11,7 @@ public interface BoardService {
 	public List boardList(String catg);
 	
 	public List rcList(String catg);
+	
+	public List myWriteList(String catg, String my_Info);
 
 }

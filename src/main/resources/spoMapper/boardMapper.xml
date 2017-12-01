@@ -7,7 +7,7 @@
   	<select id="boardList" resultType="com.spomatch.dto.MatchVo" parameterType="String">
   		SELECT M.MAT_AMPM, M.MAT_FTIME, M.MAT_STIME, M.MAT_IDX, M.MAT_DATE, M.MAT_CATE, M.MAT_MATCHDAY, T.TEAM_NAME,
   		M.MAT_STATUS, M.MAT_LV, M.MAT_LOCAL FROM SPO_MATCH M, SPO_TEAM T WHERE T.TEAM_IDX = M.MAT_HOST AND
-  		MAT_CATE = #{catg }
+  		MAT_CATE = #{catg } #{my_Info}
   	</select>
   	
   	<select id="rcList" resultType="com.spomatch.dto.RecruitVo" parameterType="String">
@@ -16,4 +16,9 @@
   		RC_CATE = #{catg }
   	</select>
   	
+  	<select id="myWriteList" resultType="com.spomatch.dto.MatchVo" parameterType="String">
+  		SELECT DISTINCT(M.MAT_MATCHDAY), M.MAT_AMPM, M.MAT_FTIME, M.MAT_STIME, M.MAT_IDX, M.MAT_DATE, M.MAT_CATE,
+  		M.MAT_MATCHDAY, T.TEAM_NAME, M.MAT_STATUS, M.MAT_LV, M.MAT_LOCAL FROM SPO_MATCH M, SPO_TEAM T, SPO_MEMBER
+  		MEM, SPO_TMEM TM WHERE T.TEAM_IDX = M.MAT_HOST AND MAT_CATE = #{catg } AND TM.MEM_IDX = #{my_Info}
+  	</select>
   </mapper>

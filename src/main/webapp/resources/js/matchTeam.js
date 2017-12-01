@@ -6,7 +6,7 @@ var setX = "";
 
 var mt_Local = "";
 	
-var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+var mapContainer = document.getElementById('map1'), // 지도를 표시할 div 
    mapOption = {
        center: new daum.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
        level: 1 // 지도의 확대 레벨
@@ -70,9 +70,6 @@ daum.maps.event.addListener(map, 'click', function(mouseEvent) {
             cenParam = mouseEvent.latLng;
             var addrClicked = result[0].address.address_name;
 
-			
-            /* var distance = Math.round();
-            displayCircleDot(disParam1, disParam2); */
             setY = cenParam.getLat()
             setX = cenParam.getLng()
             
@@ -155,7 +152,6 @@ function keyEnter(){
 //////////////////////////////////////////////////////////////////////////
 
 $(document).ready(function(){
-	//$("#mapLoad").load("/spomatch/mapApi/mapApi.do");
 	
 	var tm_Index = $("#tm_Name option").index($("#tm_Name option:selected"));
 	var tm_Name = "";
@@ -324,7 +320,7 @@ $(document).ready(function(){
 		
 		$("#mat_Stime").val(mat_Stime);
 		$("#mat_Ftime").val(mat_Ftime);
-		console.log(mat_Stime + ":" + mat_Ftime);
+		//console.log(mat_Stime + ":" + mat_Ftime);
 	});
 	
 	$("#selectLoc").click(function(){
@@ -335,14 +331,14 @@ $(document).ready(function(){
 		//$("#mat_Xval").val(setX);
 		//$("#mat_Yval").val(setY);
 		
-		console.log($("#mat_Stime").val() + ":" + $("#mat_Ftime").val());
+		/*console.log($("#mat_Stime").val() + ":" + $("#mat_Ftime").val());
 		console.log("setX : " + setX);
 		console.log("setY : " + setY);
 		console.log("tm_Cate : " + tm_Cate);
 		console.log("tm_Name : " + $("#tm_Name option:eq(" + tm_Index + ")").val());
 		console.log("mat_Local : " + mt_Local);
 		console.log("mat_MatchDay : " + $("#mat_MatchDay").val());
-		console.log("mat_Comment : " + $("#mat_Comment").val());
+		console.log("mat_Comment : " + $("#mat_Comment").val());*/
 		
 	});
 	
@@ -353,11 +349,11 @@ $(document).ready(function(){
 		var setLocalParam ="";
 		if($("#tm_Cate li:eq(" + tm_Index + ")").text() == "G"){
 			setLocalParam = $("#mat_LocalText").val();
-			alert("game loc :" + setLocalParam);
+			//alert("game loc :" + setLocalParam);
 		}else{
 			$("#mat_LocalMap").val(mt_Local);
 			setLocalParam = $("#mat_LocalMap").val();
-			alert("other loc : " + setLocalParam);
+			//alert("other loc : " + setLocalParam);
 		}
 		
 		var fSizeParam ="";

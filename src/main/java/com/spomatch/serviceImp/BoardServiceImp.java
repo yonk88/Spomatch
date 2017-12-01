@@ -25,6 +25,11 @@ public class BoardServiceImp implements BoardService{
 	public List rcList(String catg) {
 		return boaDao.rcList(catg);
 	}
+
+	@Override
+	public List myWriteList(String catg, String my_Info) {
+		return boaDao.rcList(catg);
+	}
 	
 	
 
