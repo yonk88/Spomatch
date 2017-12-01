@@ -21,6 +21,9 @@ public interface AccountDao {
 	//public void findPassword(String mem_Pass, String mem_Id);
 
 	public void findPassword(MemberVo vo);
+<<<<<<< HEAD
 
 	public String getNameByIdx(int idx);
+=======
+>>>>>>> branch 'masterSirsh12_1201' of https://github.com/yonk88/Spomatch.git
 }

@@ -1,8 +1,15 @@
 package com.spomatch.controller;
 
+<<<<<<< HEAD
 import java.util.List;
 import java.util.Map;
+=======
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.RequestMapping;
+>>>>>>> branch 'masterSirsh12_1201' of https://github.com/yonk88/Spomatch.git
 
+<<<<<<< HEAD
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -115,5 +122,8 @@ public class ReportController {
 	}
 	
 	
+=======
+public class ReportController {
+>>>>>>> branch 'masterSirsh12_1201' of https://github.com/yonk88/Spomatch.git
 	
 }

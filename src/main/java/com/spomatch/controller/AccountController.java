@@ -70,7 +70,7 @@ public class AccountController {
 		logger.info("멤버 : memberJoinAction");
 		//Map<String, String> map = new HashMap<String, String>();
 
-		int ran = new Random().nextInt(10000) + 1000;
+		int ran = new Random().nextInt(90000) + 10000;
 		SimpleDateFormat sdf = new SimpleDateFormat("yyMMdd");
 		Calendar c1 = Calendar.getInstance();
 		String strToday = sdf.format(c1.getTime());
@@ -101,6 +101,7 @@ public class AccountController {
 		logger.info("입력 ID:" + mem_Id);
 		logger.info("입력 PW:" + mem_Pass);
 		MemberVo result = aService.loginAction(vo);
+		String mem_Idx = result.getMem_Idx();
 		logger.info("result:" + result);
 		String mem_Idx = null;
 		if (result != null) {
@@ -109,7 +110,10 @@ public class AccountController {
 				return false;
 			}
 			if (mem_Pass.equals(result.getMem_Pass())) {
+<<<<<<< HEAD
 				mem_Idx = result.getMem_Idx();
+=======
+>>>>>>> branch 'masterSirsh12_1201' of https://github.com/yonk88/Spomatch.git
 				session.setAttribute("loginSession", mem_Idx);
 				return true;
 			}
@@ -166,7 +170,10 @@ public class AccountController {
 			return false;
 		}
 
+<<<<<<< HEAD
 		
+=======
+>>>>>>> branch 'masterSirsh12_1201' of https://github.com/yonk88/Spomatch.git
 	}
 
 }

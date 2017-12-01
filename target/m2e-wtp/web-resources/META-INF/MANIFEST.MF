@@ -1,5 +1,10 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: user1
 Build-Jdk: 1.8.0_151
+=======
+Built-By: LEESH
+Build-Jdk: 1.8.0_141
+>>>>>>> branch 'masterSirsh12_1201' of https://github.com/yonk88/Spomatch.git
 Created-By: Maven Integration for Eclipse
 

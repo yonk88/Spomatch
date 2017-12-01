@@ -40,11 +40,14 @@ public class AccountServiceImpl implements AccountService{
 		
 	}
 
+<<<<<<< HEAD
 	@Override
 	public String getNameByIdx(int idx) {
 		return dao.getNameByIdx(idx);
 	}
 
+=======
+>>>>>>> branch 'masterSirsh12_1201' of https://github.com/yonk88/Spomatch.git
 	/*@Override
 	public void findPassword(String mem_Pass, String mem_Id) {
 		dao.findPassword(mem_Pass, mem_Id);

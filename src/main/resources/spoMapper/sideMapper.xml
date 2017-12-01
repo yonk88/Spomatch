@@ -8,6 +8,35 @@
   	SELECT * FROM SPO_MEMBER WHERE MEM_IDX = #{mem_Idx }
   	</select>
   	
+<<<<<<< HEAD
+=======
+  	<select id="teamCheck" resultType="com.spomatch.dto.TeamVo">
+  	SELECT * FROM SPO_TEAM WHERE TEAM_NAME = #{team_Name }
+  	</select>
+  	
+  	<select id="myTeam" resultType="com.spomatch.dto.TeamVo">
+  	SELECT * FROM SPO_TEAM WHERE TEAM_IDX IN (SELECT TEAM_IDX FROM SPO_TMEM WHERE MEM_IDX = #{mem_Idx})
+  	</select>
+  	
+  	<select id="teamInfoAJAX" resultType="com.spomatch.dto.TeamVo">
+  	SELECT * FROM SPO_TEAM WHERE TEAM_IDX = #{team_Idx}
+  	</select>
+  	
+  	<select id="teamCpName" resultType="String">
+  	SELECT MEM_NAME FROM SPO_MEMBER WHERE MEM_IDX = (SELECT TEAM_CP FROM SPO_TEAM WHERE TEAM_IDX = #{team_Idx})
+  	</select>
+  	
+  	<select id="teamList" resultType="com.spomatch.dto.TeamVo">
+  	SELECT * FROM SPO_TEAM
+  	</select>
+  	
+  	<insert id="teamCreateAction" parameterType="com.spomatch.dto.TeamVo">
+  	INSERT INTO SPO_TEAM (TEAM_IDX, TEAM_NAME, TEAM_LOCAL, TEAM_CATE, TEAM_AGE, TEAM_LV, TEAM_COLOR, TEAM_VEST, TEAM_CP)
+  	VALUES (#{team_Idx }, #{team_Name }, #{team_Local }, #{team_Cate }, #{team_Age }, #{team_Lv }, #{team_Color },
+  	#{team_Vest }, #{team_Cp })
+  	</insert>
+  	
+>>>>>>> branch 'masterSirsh12_1201' of https://github.com/yonk88/Spomatch.git
   	<update id="setMemberUpdate" parameterType="com.spomatch.dto.MemberVo">
   	UPDATE SPO_MEMBER SET MEM_PASS = #{mem_Pass }, MEM_LOCAL = #{mem_Local } WHERE MEM_IDX = #{mem_Idx }
   	</update>

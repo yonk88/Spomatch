@@ -6,6 +6,10 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'masterSirsh12_1201' of https://github.com/yonk88/Spomatch.git
 	<!-- DispatcherServlet Context: defines this servlet's request-processing 
 		infrastructure -->
 
@@ -26,7 +30,10 @@
 			</beans:bean>
 		</interceptor>
 	</interceptors> -->
+<<<<<<< HEAD
 	
+=======
+>>>>>>> branch 'masterSirsh12_1201' of https://github.com/yonk88/Spomatch.git
 
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven />

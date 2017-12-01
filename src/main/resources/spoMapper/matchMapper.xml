@@ -2,6 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<<<<<<< HEAD
   
 	<mapper namespace="com.spomatch.dao.MatchDao">
 		<select id="teamList" resultType="com.spomatch.dto.TeamVo" parameterType="String">
@@ -35,3 +36,13 @@
   			AND T.TEAM_IDX = MAT_HOST AND MAT_IDX = #{idx }
   		</select>
 	</mapper>
+=======
+
+<mapper namespace="com.spomatch.dao.MatchDao">
+
+	<!-- <insert id="insertTeamMatch" parameterType="com.spomatch.dto.MatchVo"> 
+		INSERT INTO SPO_MATCH (MAT_IDX, MAT_DATE, MAT_CATE, MAT_MATCHDAY, MAT_HOST, 
+		MAT_GUEST, MAT_LOCAL, MAT_STATUS, MAT_LV) VALUES(SPO_MAT_SEQ.NEXVAL, #{ } 
+		) </insert> -->
+</mapper>
+>>>>>>> branch 'masterSirsh12_1201' of https://github.com/yonk88/Spomatch.git

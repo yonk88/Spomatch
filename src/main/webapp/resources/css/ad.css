@@ -1,0 +1,9 @@
+.modal-backdrop.in {
+    filter: alpha(opacity=50);
+    opacity: .5;
+}
+.modal-content {
+    position: relative;
+    margin: auto;
+    width: 800px;
+}

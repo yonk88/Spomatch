@@ -1,7 +1,15 @@
 package com.spomatch.controller;
 
+<<<<<<< HEAD
 import java.sql.Date;
+=======
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+>>>>>>> branch 'masterSirsh12_1201' of https://github.com/yonk88/Spomatch.git
 
+<<<<<<< HEAD
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -68,4 +76,17 @@ public class AdController {
 		logger.info("NewAd");
 		return mv;
 	}*/
+=======
+@Controller
+public class AdController {
+	
+	private static final Logger logger
+	= LoggerFactory.getLogger(MainController.class);
+	
+	@RequestMapping(value="/spomatch/ad/ad.do")
+	public void mainAction(){
+		logger.info("ad");
+	}
+
+>>>>>>> branch 'masterSirsh12_1201' of https://github.com/yonk88/Spomatch.git
 }

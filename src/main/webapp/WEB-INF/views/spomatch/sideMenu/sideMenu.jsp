@@ -9,6 +9,7 @@
 
 </head>
 <body>
+<<<<<<< HEAD
 	<div class="container" style="width:400px; filter: alpha(opacity=50); " >
 		<ul class="nav nav-tabs" role="tablist" id="myTab">
 			<li role="presentation" class="active"><a href="#myInfo"
@@ -39,6 +40,42 @@
 		
 		$(document).ready(function(){
 		    $("#myTeam").load("/spomatch/sideMenu/teamInfo.do");
+=======
+	<div class="container" style="width:400px">
+		<ul class="nav nav-tabs" role="tablist" id="myTab">
+			<li role="presentation" class="active"><a href="#myInfo"
+				aria-controls="home" role="tab" data-toggle="tab">내정보</a></li>
+
+			<li role="presentation"><a href="#myTeam"
+				aria-controls="profile" role="tab" data-toggle="tab">내 팀</a></li>
+
+			<li role="presentation"><a href="#teamList"
+				aria-controls="messages" role="tab" data-toggle="tab">팀 찾기</a></li>
+		</ul>
+
+		<div class="tab-content">
+			<div role="tabpanel" class="tab-pane active" id="myInfo"></div>
+			<div role="tabpanel" class="tab-pane" id="myTeam"></div>
+			<div role="tabpanel" class="tab-pane" id="teamList"></div>
+		</div>
+	</div>
+	
+	<script>
+		$(function() {
+			$('#myTab a:first').tab('show');
+		});
+		
+		$(document).ready(function(){
+		    $("#myInfo").load("/spomatch/sideMenu/memberInfo.do");
+		});
+		
+		$(document).ready(function(){
+		    $("#myTeam").load("/spomatch/sideMenu/teamInfo.do");
+		});
+		
+		$(document).ready(function(){
+		    $("#teamList").load("/spomatch/sideMenu/teamList.do");
+>>>>>>> branch 'masterSirsh12_1201' of https://github.com/yonk88/Spomatch.git
 		});
 		
 	</script>

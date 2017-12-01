@@ -30,8 +30,13 @@ public class BoardController {
 	
 	private static final Logger logger
 	= LoggerFactory.getLogger(BoardController.class);
+<<<<<<< HEAD
 
 	//메치 리스트 가져오기
+=======
+	
+	//硫붿튂 由ъ뒪�듃 媛��졇�삤湲�
+>>>>>>> branch 'masterSirsh12_1201' of https://github.com/yonk88/Spomatch.git
 	@RequestMapping (value = "/spomatch/board/matchList.do")
 	public void matchListAction(MatchVo matVo, Model model, HttpSession session, HttpServletRequest request){
 		logger.info("MatchList");
@@ -64,8 +69,14 @@ public class BoardController {
 		
 	}
 	
+<<<<<<< HEAD
 	@RequestMapping (value = "/spomatch/board/recruitList.do")
 	public void recuruitListAction(RecruitVo rcVo, Model model, HttpSession session, HttpServletRequest request){
+=======
+	//留ㅼ튂 �떊泥�
+	@RequestMapping (value = "/spomatch/board/matchListProc.do")
+	public String matchListProcAction(MatchVo matVo, Model model, HttpSession session, HttpServletRequest request){
+>>>>>>> branch 'masterSirsh12_1201' of https://github.com/yonk88/Spomatch.git
 		
 		logger.info("////=*=Recruit=*=//////");
 		String catg = request.getParameter("catg");
@@ -85,5 +96,14 @@ public class BoardController {
 		}
 		
 	}
+	
+	
+
+	@RequestMapping (value="/spomatch/board/reportPage.do")
+	public void reportPageAction(MatchVo matVo, Model model, HttpSession session, HttpServletRequest request){
+		
+	}
+	
+
 
 }

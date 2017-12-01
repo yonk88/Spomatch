@@ -1,7 +1,10 @@
 package com.spomatch.controller;
 
+<<<<<<< HEAD
 import java.util.List;
 
+=======
+>>>>>>> branch 'masterSirsh12_1201' of https://github.com/yonk88/Spomatch.git
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -151,4 +154,19 @@ public class MatchController {
 		
 	}*/
 	
+<<<<<<< HEAD
+=======
+	@RequestMapping (value = "/spomatch/recruit/recruitList.do")
+	public void recuruitListAction(){
+		
+	}
+	
+	@RequestMapping (value = "/spomatch/recruit/recruitProc.do", method=RequestMethod.POST)
+	public String insertRecuMatProcAction(MatchVo matVo){
+		logger.info(matVo.toString());
+		
+		return "redirect:/spomatch/main/main.do";
+	}
+
+>>>>>>> branch 'masterSirsh12_1201' of https://github.com/yonk88/Spomatch.git
 }
