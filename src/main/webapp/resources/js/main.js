@@ -56,7 +56,7 @@ $(document).ready(function() {
 	});
 ///////////////////////////////////////////////////////
 
-
+/*
 ///////////////////모달 버튼////////////////////
 	function matchT_Btn() {
 		location.href = "/spomatch/match/matchTeam.do";
@@ -72,7 +72,7 @@ $(document).ready(function() {
 	$('#myModal1').on('shown.bs.modal', function() {
 		$('#myInput').focus();
 		$("#matchLoad").load("/spomatch/match/matchTeam.do");
-	});
+	});*/
 
 });
 

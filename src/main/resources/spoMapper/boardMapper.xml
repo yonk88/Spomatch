@@ -19,7 +19,16 @@
   		RC_CATE = #{catg }
   	</select>
   	
+<<<<<<< HEAD
   </mapper>
 =======
   </mapper>
 >>>>>>> branch 'masterSirsh12_1201' of https://github.com/yonk88/Spomatch.git
+=======
+  	<select id="myWriteList" resultType="com.spomatch.dto.MatchVo" parameterType="String">
+  		SELECT DISTINCT(M.MAT_MATCHDAY), M.MAT_AMPM, M.MAT_FTIME, M.MAT_STIME, M.MAT_IDX, M.MAT_DATE, M.MAT_CATE,
+  		M.MAT_MATCHDAY, T.TEAM_NAME, M.MAT_STATUS, M.MAT_LV, M.MAT_LOCAL FROM SPO_MATCH M, SPO_TEAM T, SPO_MEMBER
+  		MEM, SPO_TMEM TM WHERE T.TEAM_IDX = M.MAT_HOST AND MAT_CATE = #{catg } AND TM.MEM_IDX = #{my_Info}
+  	</select>
+  </mapper>
+>>>>>>> branch 'YONK1201' of https://github.com/yonk88/Spomatch.git

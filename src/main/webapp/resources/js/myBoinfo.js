@@ -13,28 +13,17 @@ function showContent(idx) {
 		console.log("idxsecond" + idx);
 	});
 	console.log("idxthird" + idx);
-	
-	$('.mCatgTr').on('hidden.bs.modal', function () {
-	    console.log('modal close');
-	    $(this).find("#matchInfoGo").html("");
-	});
 	return idx;
 };
 /////////////////////////////////////////////////
 
-
-
 $(document).ready(function(){
-<<<<<<< HEAD
-	$("#userInfo").load("/spomatch/sideMenu/sideMenu.do");
-=======
 	
 	$('#matchTeam').on('shown.bs.modal', function() {
 		$('#myInput').focus();
 		$("#matchLoad").load("/spomatch/match/matchTeam.do");
 	});
 	
->>>>>>> branch 'YONK1201' of https://github.com/yonk88/Spomatch.git
 	$("#headerLoad").load("/spomatch/main/main.do");
 	
 	var tempCatg = $("#tempCatg").val();
@@ -74,6 +63,7 @@ $(document).ready(function(){
 	alert("fdasg");	
 		
 	});
+	
 	
 	$("#tabs> ul li").click(function(){
 		

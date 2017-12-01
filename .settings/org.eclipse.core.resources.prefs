@@ -1,7 +1,11 @@
 eclipse.preferences.version=1
 <<<<<<< HEAD
+<<<<<<< HEAD
 encoding//src/main/webapp/WEB-INF/views/commonHeader.jspf=UTF-8
 =======
 encoding//src/main/java/com/spomatch/controller/BoardController.java=UTF-8
 >>>>>>> branch 'masterSirsh12_1201' of https://github.com/yonk88/Spomatch.git
+=======
+encoding//src/main/webapp/WEB-INF/views/spomatch/board/myBoard.jsp=UTF-8
+>>>>>>> branch 'YONK1201' of https://github.com/yonk88/Spomatch.git
 encoding//src/main/webapp/WEB-INF/views/spomatch/main/main.jsp=UTF-8

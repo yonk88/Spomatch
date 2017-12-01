@@ -44,53 +44,65 @@
 		</tr>
 		
 		<tr>
-			<td colspan="2">시합날짜:&nbsp;&nbsp; <label class="control-label">${matVo.mat_MatchDay }</label></td>
+			<td colspan="2">시합날짜:&nbsp;&nbsp;</td><td>${matVo.mat_MatchDay }</td>
 		</tr>
 		
 		<tr>
-			<td colspan="2">시합시간:&nbsp;&nbsp; <label class="control-label">${matVo.mat_Stime } ~ ${matVo.mat_Ftime }</label></td>
+			<td colspan="2">시합시간:&nbsp;&nbsp;</td><td> ${matVo.mat_Stime } ~ ${matVo.mat_Ftime }</td>
 		</tr>
 		
 		<tr>
-			<td colspan="2">구장크기:&nbsp;&nbsp; <label class="control-label">${matVo.mat_Fsize }</label></td>
+			<td colspan="2">구장크기:&nbsp;&nbsp;</td><td>${matVo.mat_Fsize }</td>
+		</tr>
+		
+		<tr id="ageTr">
+			<td colspan="2">연령:&nbsp;&nbsp;</td><td id="ageTd">${tVo.team_Age }</td>
+		</tr>
+		
+		<tr id="teamLvTr">
+			<td colspan="2">수준:&nbsp;&nbsp;</td><td id="teamLvTd">${tVo.team_Lv }</td>
 		</tr>
 		
 		<tr>
-			<td colspan="2">연령:&nbsp;&nbsp; <label class="control-label">${tVo.team_Age }</label></td>
+			<td colspan="2">조끼:&nbsp;&nbsp;</td><td>${tVo.team_Vest }</td>
 		</tr>
 		
 		<tr>
-			<td colspan="2">수준:&nbsp;&nbsp; <label class="control-label">${tVo.team_Lv }</label></td>
+			<td colspan="2">유니폼:&nbsp;&nbsp;</td><td>${tVo.team_Color }</td>
 		</tr>
 		
 		<tr>
-			<td colspan="2">조끼:&nbsp;&nbsp; <label class="control-label">${tVo.team_Vest }</label></td>
+			<td colspan="2">대표연락처:&nbsp;&nbsp;</td><td>${mVo.mem_Phone }</td>
 		</tr>
 		
 		<tr>
-			<td colspan="2">유니폼:&nbsp;&nbsp; <label class="control-label">${tVo.team_Color }</label></td>
-		</tr>
-		
-		<tr>
-			<td colspan="2">대표연락처:&nbsp;&nbsp; <label class="control-label">${mVo.mem_Phone }</label></td>
-		</tr>
-		
-		<tr>
-			<td colspan="2">계좌번호:&nbsp;&nbsp; <label class="control-label">${tVo.team_Account }</label></td>
+			<td colspan="2">계좌번호:&nbsp;&nbsp;</td><td>${tVo.team_Account }</td>
 		</tr>
 		
 	</tbody>
 </table>
-
+<input type="button" id="sendBtn" class="btn btn-primary btn-md" value="매칭신청" data-dismiss="modal" style = "text-align:center;"/>
 <!-- 좌표용 -->
 <input type="hidden" id="yVal" value="${matVo.mat_Yval }"/>
 <input type="hidden" id="xVal" value="${matVo.mat_Xval }"/>
 
 
+
+
 <script type="text/javascript">
 
+
+$("#sendBtn").click(function(){
+	locatin.href = "/spomatch/match/matchProc.do";
+});
 var yVal = $("#yVal").val();
 var xVal = $("#xVal").val();
+
+if(xVal == null){	
+	$("#mapArea").hide();
+}else{
+	$("#mapArea").show();
+}
 
 var mapContainer = document.getElementById('mapp'), // 지도를 표시할 div 
 mapOption = { 
@@ -110,6 +122,48 @@ position: markerPosition
 
 //마커가 지도 위에 표시되도록 설정합니다
 marker.setMap(map);
+
+(document).ready(function(){
+
+	$('.teamLvTr').each(function(index, item){
+	//////////////////수준 한글 변경//////////////////////
+
+	var teamLvTr = $(this).children("#teamLvTd").text();
+	//console.log("mCatg : " + findCh);
+	//console.log("List : " + inLength);
+	//console.log("catgL : " + catgList);
+	if(teamLvTr == "L"){
+		$(this).children("#teamLvTd").text("하");
+	}else if(matLv == "M"){
+		$(this).children("#teamLvTd").text("중");
+	}else if(matLv == "H"){
+		$(this).children("#teamLvTd").text("상");
+	}
+	////////////////////////////////////////////////////
+
+
+	//////////////////현재 상태 한글 변경///////////////////			
+	var ageTr = $(this).children("#ageTr").text();
+	if(ageTr == 0){
+		$(this).children("#ageTd").text("20대 이하");
+	}else if(ageTr == 1){
+		$(this).children("#ageTd").text("20대 ~ 30대");
+	}else if(ageTr == 2){
+		$(this).children("#ageTd").text("30대 ~ 40대");
+	}else if(ageTr == 3){
+		$(this).children("#ageTd").text("40대 ~ 50대");
+	}else if(ageTr == 4){
+		$(this).children("#ageTd").text("50대 이상");
+	}
+	});
+});
+
+
 </script>
+
+
+
+
+
 </body>
 </html>

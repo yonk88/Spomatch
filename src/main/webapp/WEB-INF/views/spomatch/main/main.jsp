@@ -9,6 +9,7 @@
 =======
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>SPOMATCH</title>
+<<<<<<< HEAD
 
 <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
@@ -29,6 +30,8 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 >>>>>>> branch 'masterSirsh12_1201' of https://github.com/yonk88/Spomatch.git
+=======
+>>>>>>> branch 'YONK1201' of https://github.com/yonk88/Spomatch.git
 
 <!-- js 경로 -->
 <spring:url value="/resources/js/main.js" var="mainJs" />
