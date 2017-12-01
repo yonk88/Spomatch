@@ -1,6 +1,7 @@
 
 //아이디 존재하는지 여부 확인
 $(document).ready(function() {
+	$("#userInfo").load("/spomatch/sideMenu/sideMenu.do");
 	$("#idCheckBtn").click(function() {
 		if ($("#rep_Widx").val()) {
 			var query = {

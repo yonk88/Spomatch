@@ -81,8 +81,9 @@
 				</center>
 			</div>
 			<div class="col-sm-8" style="width: 470px">
-				<!-- Board List -->
-	<%-- 			<div id="boardPage" title="${test }"></div> --%>
+
+
+
 			</div>
 		</div>
 		<!-- /Body -->

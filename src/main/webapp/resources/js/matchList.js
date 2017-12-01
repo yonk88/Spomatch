@@ -14,6 +14,7 @@ function showContent(idx) {
 /////////////////////////////////////////////////
 
 $(document).ready(function(){
+	$("#userInfo").load("/spomatch/sideMenu/sideMenu.do");
 	$("#headerLoad").load("/spomatch/main/main.do");
 var tempCatg = $("#tempCatg").val();
 	if(tempCatg == "S" || tempCatg == ""){
