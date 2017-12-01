@@ -17,8 +17,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.spomatch.dto.MatchVo;
+import com.spomatch.dto.MemberVo;
 import com.spomatch.dto.RecruitVo;
+import com.spomatch.dto.TeamVo;
 import com.spomatch.service.BoardService;
+import com.spomatch.service.MatchService;
 
 @Controller
 public class BoardController {
@@ -40,6 +43,8 @@ public class BoardController {
 		if(catg == (null)){
 			logger.info("////MatCatg is null//////");
 			catg = "S";
+			session.setAttribute("catg", catg);
+			logger.info("Session : " + session.getAttribute("catg"));
 			List<MatchVo> boaList = boaService.boardList(catg);
 			model.addAttribute("boaList", boaList);
 			
@@ -50,6 +55,8 @@ public class BoardController {
 			logger.info("=*=*=*=*MatCatg is NOT null=*=*=*=*");
 			logger.info("Matlis NotNULL Param : " + request.getParameter("catg"));
 			catg = request.getParameter("catg");
+			session.setAttribute("catg", catg);
+			logger.info("Session : " + session.getAttribute("catg"));
 			//logger.info("Before : " + request.getParameter("catg"));
 			List<MatchVo> boaList = boaService.boardList(catg);
 			model.addAttribute("boaList", boaList);

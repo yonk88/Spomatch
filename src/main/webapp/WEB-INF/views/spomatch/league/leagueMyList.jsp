@@ -28,6 +28,7 @@
 <script src="${leagueJs }"></script>
 
 </head>
+<div id="headerLoad"></div>
       			<!-- 대진표 모달 -->
 				<div class="modal fade" id="leaModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 					<div class="modal-dialog">
@@ -48,7 +49,6 @@
 					</div><!-- modal Content -->
 				</div><!-- modal Dialog -->
 <body>
-spo
 <!-- 주최자 idx 17110800010 -->
 	<div id="leagueMyListSize">
 		<div class="container">
@@ -106,6 +106,7 @@ spo
 			</div>
 		</div>
 	</div>
+	<input type="button" onclick="" />
 
 
 </body>

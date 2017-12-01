@@ -23,7 +23,7 @@
 	<!-- <div id= "tabMenu"></div> -->
 	<div id="match_bSize">
 		<div class="container">
-			<table class="table table-striped table-hover" id="match_bItem">
+			<table class="table table-hover table-bordered table-condensed" id="match_bItem">
 				<tr id="dontOpen" name="dontOpen">
 					<th>등록 날짜</th>
 					<th>지역</th>
@@ -35,14 +35,13 @@
 				</tr>
 
 				<c:forEach var="i" items="${rcList }">
-					<tr>
-						<td><fmt:formatDate value="${i.rc_Date }"
-								pattern="yy-MM-dd" /></td>
+					<tr class="rcTr">
+						<td><fmt:formatDate value="${i.rc_Date }" pattern="yy-MM-dd" /></td>
 						<td>${i.rc_Local }</td>
-						<td>${i.rc_TeamIdx }</td>
+						<td>${i.team_Name }</td>
 						<td>${i.rc_MatchDay }</td>
 						<td>${i.rc_Num }</td>
-						<td>${i.rc_Status }</td>
+						<td id="rcStatu">${i.rc_Status }</td>
 						<td>0</td>
 						<td id="mIdx" class="mIdx">${i.rc_Idx }</td>
 					</tr>

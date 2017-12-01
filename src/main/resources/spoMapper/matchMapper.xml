@@ -3,10 +3,35 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-  <mapper namespace="com.spomatch.dao.MatchDao">
-  
-  	<!-- <insert id="insertTeamMatch" parameterType="com.spomatch.dto.MatchVo">
-  		INSERT INTO SPO_MATCH (MAT_IDX, MAT_DATE, MAT_CATE, MAT_MATCHDAY, MAT_HOST, MAT_GUEST,
-  		 MAT_LOCAL, MAT_STATUS, MAT_LV) VALUES(SPO_MAT_SEQ.NEXVAL, #{ } )
-  	</insert> -->
-  </mapper>
+	<mapper namespace="com.spomatch.dao.MatchDao">
+		<select id="teamList" resultType="com.spomatch.dto.TeamVo" parameterType="String">
+			SELECT DISTINCT T.TEAM_IDX, T.TEAM_CATE, T.TEAM_ACCOUNT, T.TEAM_LV, T.TEAM_COLOR, T.TEAM_VEST, T.TEAM_AGE, T.TEAM_NAME
+			FROM SPO_TEAM T, SPO_TMEM TM, SPO_MEMBER M WHERE TM.TEAM_IDX = T.TEAM_IDX AND TM.MEM_IDX = 1711091111 ORDER BY T.TEAM_IDX
+		</select>
+		
+		<select id="getTeamCp" resultType="com.spomatch.dto.MemberVo" parameterType="String">
+			SELECT DISTINCT T.TEAM_IDX, M.MEM_PHONE FROM SPO_MEMBER M, SPO_TMEM T WHERE T.MEM_IDX = 1711091111 AND
+			T.TEAM_CP = M.MEM_IDX ORDER BY T.TEAM_IDX
+		</select>
+		
+  		<insert id="insertTeamMatch" parameterType="com.spomatch.dto.MatchVo">
+  			INSERT INTO SPO_MATCH (MAT_IDX, MAT_DATE, MAT_CATE, MAT_MATCHDAY, MAT_HOST, MAT_LOCAL, MAT_STATUS,
+  			MAT_LV, MAT_STIME, MAT_FTIME, MAT_FSIZE, MAT_AMPM, MAT_COMMENT, MAT_XVAL, MAT_YVAL)
+  			VALUES(SPO_MAT_SEQ.NEXTVAL, SYSDATE, #{mat_Cate }, #{mat_MatchDay }, #{mat_Host }, #{mat_Local },
+  			'H', #{mat_Lv }, #{mat_Stime }, #{mat_Ftime }, #{mat_Fsize }, #{mat_Ampm }, #{mat_Comment },
+  			#{mat_Xval}, #{mat_Yval })
+  		</insert>
+  		
+  		<select id="getMatchInfo" resultType="com.spomatch.dto.MatchVo" parameterType="int">
+  		  	SELECT * FROM SPO_MATCH WHERE MAT_IDX = #{idx }
+  		</select>
+  	
+  		<select id="getTeamInfo" resultType="com.spomatch.dto.TeamVo" parameterType="int">
+  			SELECT * FROM SPO_TEAM WHERE TEAM_IDX = (SELECT MAT_HOST FROM SPO_MATCH WHERE MAT_IDX = #{idx })
+  		</select>
+  		
+  		<select id="getPhoneCp" resultType="com.spomatch.dto.MemberVo" parameterType="int">
+  			SELECT M.MEM_PHONE FROM SPO_MEMBER M, SPO_TEAM T, SPO_MATCH WHERE M.MEM_IDX = T.TEAM_CP
+  			AND T.TEAM_IDX = MAT_HOST AND MAT_IDX = #{idx }
+  		</select>
+	</mapper>

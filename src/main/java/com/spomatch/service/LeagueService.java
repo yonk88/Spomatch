@@ -17,4 +17,10 @@ public interface LeagueService {
 	public void tmtUpdate(LeagueTmVo ltVo);
 
 	public void leaStUpdate(String lea_Idx);
+
+	public void winnerUpdate(LeagueTmVo ltVo);
+
+	public void leaFinUpdate(LeagueVo leaVo);
+
+	public void leaStsUpdate(LeagueVo leaVo);
 }

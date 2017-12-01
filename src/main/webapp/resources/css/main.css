@@ -3,6 +3,25 @@
 	text-align: center;
 }
 
+#catgTab {
+	padding-top:2%;
+	padding-left:20%;
+	
+}
+
+#matchList {
+	padding-left:20%
+}
+
 #matchBtn {
+	text-align:center;
+}
+
+#matchModalFooter {
+	text-align:center;
+	padding-bottom:2%;
+}
+
+.h2 {
 	text-align:center;
 }

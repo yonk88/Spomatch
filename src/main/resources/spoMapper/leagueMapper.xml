@@ -33,7 +33,7 @@
   	</select>
   	
   	<select id="leagueHost" resultType="com.spomatch.dto.LeagueVo">
-  	SELECT LEA_HOST, LEA_STYLE FROM SPO_LEAGUE WHERE LEA_IDX = #{lea_Idx}
+  	SELECT LEA_HOST, LEA_STYLE, LEA_STATUS, LEA_FIN FROM SPO_LEAGUE WHERE LEA_IDX = #{lea_Idx}
   	</select>
   	
   	<update id="tmtUpdate" parameterType="com.spomatch.dto.LeagueTmVo">
@@ -42,6 +42,19 @@
   	
   	<update id="leaStUpdate" parameterType="String">
   		UPDATE SPO_LEAGUE SET LEA_STYLE = 'T' WHERE LEA_IDX = #{lea_Idx}
+  	</update>
+  	
+  	<update id="leaStsUpdate" parameterType="com.spomatch.dto.LeagueVo">
+  		UPDATE SPO_LEAGUE SET LEA_STATUS = #{lea_Status} WHERE LEA_IDX = #{lea_Idx}
+  	</update>
+  	
+  	<update id="leaFinUpdate" parameterType="com.spomatch.dto.LeagueVo">
+  		UPDATE SPO_LEAGUE SET LEA_FIN = 'F', LEA_STATUS = #{lea_Status} WHERE LEA_IDX = #{lea_Idx}
+  	</update>
+  	
+  	<update id="winnerUpdate" parameterType="com.spomatch.dto.LeagueTmVo">
+  		UPDATE SPO_LEAGUETM SET LT_STATUS = #{lt_Status}, LT_POINT = #{lt_Point} 
+  		WHERE LT_GROUP = #{lt_Group} AND LEA_IDX = #{lea_Idx}
   	</update>
   	
   </mapper>

@@ -20,7 +20,14 @@ public class LeagueVo {
 	private char lea_Fin;
 	private String team_Name;
 	private char lt_Status;
+	private int lea_Status;
 	
+	public int getLea_Status() {
+		return lea_Status;
+	}
+	public void setLea_Status(int lea_Status) {
+		this.lea_Status = lea_Status;
+	}
 	public char getLt_Status() {
 		return lt_Status;
 	}
@@ -111,13 +118,23 @@ public class LeagueVo {
 	public void setLea_Fin(char lea_Fin) {
 		this.lea_Fin = lea_Fin;
 	}
-	
 	@Override
 	public String toString() {
 		return "LeagueVo [lea_Idx=" + lea_Idx + ", lea_Name=" + lea_Name + ", lea_Style=" + lea_Style + ", lea_Cate="
 				+ lea_Cate + ", lea_Max=" + lea_Max + ", lea_Min=" + lea_Min + ", lea_Cost=" + lea_Cost + ", lea_Prize="
 				+ lea_Prize + ", lea_Deadline=" + lea_Deadline + ", lea_Host=" + lea_Host + ", lea_Local=" + lea_Local
-				+ ", lea_Info=" + lea_Info + ", lea_Fin=" + lea_Fin + "]";
-	}	
+				+ ", lea_Info=" + lea_Info + ", lea_Fin=" + lea_Fin + ", team_Name=" + team_Name + ", lt_Status="
+				+ lt_Status + ", lea_Status=" + lea_Status + ", getLea_Status()=" + getLea_Status()
+				+ ", getLt_Status()=" + getLt_Status() + ", getTeam_Name()=" + getTeam_Name() + ", getLea_Idx()="
+				+ getLea_Idx() + ", getLea_Name()=" + getLea_Name() + ", getLea_Style()=" + getLea_Style()
+				+ ", getLea_Cate()=" + getLea_Cate() + ", getLea_Max()=" + getLea_Max() + ", getLea_Min()="
+				+ getLea_Min() + ", getLea_Cost()=" + getLea_Cost() + ", getLea_Prize()=" + getLea_Prize()
+				+ ", getLea_Deadline()=" + getLea_Deadline() + ", getLea_Host()=" + getLea_Host() + ", getLea_Local()="
+				+ getLea_Local() + ", getLea_Info()=" + getLea_Info() + ", getLea_Fin()=" + getLea_Fin()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+				+ "]";
+	}
+	
+	
 
 }

@@ -46,4 +46,20 @@ public class LeagueServiceImp implements LeagueService{
 		leaDao.leaStUpdate(lea_Idx);
 		
 	}
+
+	@Override
+	public void winnerUpdate(LeagueTmVo ltVo) {
+		leaDao.winnerUpdate(ltVo);
+	}
+
+	@Override
+	public void leaFinUpdate(LeagueVo leaVo) {
+		leaDao.leaFinUpdate(leaVo);
+		
+	}
+
+	@Override
+	public void leaStsUpdate(LeagueVo leaVo) {
+		leaDao.leaStsUpdate(leaVo);
+	}
 }

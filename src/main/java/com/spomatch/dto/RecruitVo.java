@@ -6,7 +6,7 @@ public class RecruitVo {
 	
 	private int rc_Idx;
 	private String rc_Status;
-	private String rc_TeamIdx;
+	private String team_Name;
 	private String rc_MemIdx;
 	private String rc_Cate;
 	private Date rc_Date;
@@ -27,11 +27,11 @@ public class RecruitVo {
 	public void setRc_Status(String rc_Status) {
 		this.rc_Status = rc_Status;
 	}
-	public String getRc_TeamIdx() {
-		return rc_TeamIdx;
+	public String getTeam_Name() {
+		return team_Name;
 	}
-	public void setRc_TeamIdx(String rc_TeamIdx) {
-		this.rc_TeamIdx = rc_TeamIdx;
+	public void setTeam_Name(String team_Name) {
+		this.team_Name = team_Name;
 	}
 	public String getRc_ReqMem() {
 		return rc_MemIdx;
@@ -78,7 +78,7 @@ public class RecruitVo {
 	
 	@Override
 	public String toString() {
-		return "RecruitVo [rc_Idx=" + rc_Idx + ", rc_Status=" + rc_Status + ", rc_TeamIdx=" + rc_TeamIdx
+		return "RecruitVo [rc_Idx=" + rc_Idx + ", rc_Status=" + rc_Status + ", rc_TeamIdx=" + team_Name
 				+ ", rc_ReqMem=" + rc_MemIdx + ", rc_Cate=" + rc_Cate + ", rc_Date=" + rc_Date + ", rc_Local="
 				+ rc_Local + ", rc_MatchDay=" + rc_MatchDay + ", rc_Num=" + rc_Num + ", rc_Posit=" + rc_Posit + "]";
 	}

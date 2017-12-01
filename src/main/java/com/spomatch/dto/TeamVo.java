@@ -13,7 +13,22 @@ public class TeamVo {
 	private String team_Color;
 	private String team_Vest;
 	private String team_Cp;
+	private String team_Yval;
+	private String team_Xval;
 	
+	
+	public String getTeam_Yval() {
+		return team_Yval;
+	}
+	public void setTeam_Yval(String team_Yval) {
+		this.team_Yval = team_Yval;
+	}
+	public String getTeam_Xval() {
+		return team_Xval;
+	}
+	public void setTeam_Xval(String team_Xval) {
+		this.team_Xval = team_Xval;
+	}
 	public String getTeam_Idx() {
 		return team_Idx;
 	}
@@ -79,8 +94,9 @@ public class TeamVo {
 		return "TeamVo [team_Idx=" + team_Idx + ", team_Name=" + team_Name + ", team_Local=" + team_Local
 				+ ", team_Account=" + team_Account + ", team_Cate=" + team_Cate + ", team_Age=" + team_Age
 				+ ", team_Lv=" + team_Lv + ", team_Color=" + team_Color + ", team_Vest=" + team_Vest + ", team_Cp="
-				+ team_Cp + "]";
+				+ team_Cp + ", team_Yval=" + team_Yval + ", team_Xval=" + team_Xval + "]";
 	}
-	
+
+
 	
 }

@@ -33,12 +33,18 @@
 </head>
 <body>
 <c:set var="host" value="${leaVo.lea_Host }" />
+<c:set var="leaFin" value="${leaVo.lea_Fin }" />
 <c:set var="leaSty" value="${leaVo.lea_Style }" />
+<c:set var="winner" value="#a9db80" />
+<c:set var="loser" value="#ff9a9a" />
 <script type="text/javascript">
 	console.log("s로그그그그"+"${leaVo.lea_Style }");
+	console.log("s로그그으으"+"${leaVo.lea_Status }");
 </script>
 <%String lea_Host = (String)pageContext.getAttribute("host");
-String lea_Style = pageContext.getAttribute("leaSty").toString();%>
+String lea_Style = pageContext.getAttribute("leaSty").toString();
+System.out.println("leaFin"+pageContext.getAttribute("leaFin").toString());
+String lea_Fin = pageContext.getAttribute("leaFin").toString();%>
 
 <%int teamNum = (Integer)request.getAttribute("teamNum"); 
 int num=0;
@@ -62,13 +68,27 @@ for(int k=0;k<index;k++){
 <form id="upTmtForm" method="post">
 	<input type="hidden" id="team_Idx" name="team_Idx" />
 	<input type="hidden" id="lt_Group" name="lt_Group"/>
+	<input type="hidden" id="lt_Status" name="lt_Status"/>
+	<input type="hidden" id="lt_Point" name="lt_Point"/>
 	<input type="hidden" id="lea_Idx" name="lea_Idx" value="${lea_Idx }" />
 	<input type="hidden" id="tmtNum" name="tmtNum" value="<%=num %>" />
 </form>
 
-<form id="leaForm" method="post" action="/spomatch/league/leagueStAction.do">
-	<input type="hidden" id="lea_Idx" name="lea_Idx" value="${lea_Idx }"/>
+<form id="upTmt" method="post" action="/spomatch/league/leagueTmtAction.do">
+	<input type="hidden" id="team_Idx" name="team_Idx" />
+	<input type="hidden" id="lt_Group" name="lt_Group"/>
+	<input type="hidden" id="lea_Idx" name="lea_Idx" value="${lea_Idx }" />
 </form>
+
+<form id="leaForm" method="post">
+	<input type="hidden" id="lea_Idx" name="lea_Idx" value="${lea_Idx }"/>
+	<input type="hidden" id="lea_Status" name="lea_Status" value="${leaVo.lea_Status }"/>
+</form>
+<form id="finForm" method="post">
+	<input type="hidden" id="lea_Idx" name="lea_Idx" value="${lea_Idx }"/>
+	<input type="hidden" id="lea_Status" name="lea_Status"/>
+</form>
+<input type="hidden" id="lea_Fin" name="lea_Fin" value="${leaVo.lea_Fin }"/>
 	<input type="hidden" id="lea_Style" value="${leaVo.lea_Style }" />
 	
 	<%
@@ -76,13 +96,15 @@ String mem_Idx = (String)request.getAttribute("mem_Idx");
 System.out.println("Host : "+lea_Host+", mem : "+mem_Idx);
 
 %>
+
+
 <input type="button" id="gan" 
-<%if(lea_Host.equals(mem_Idx)){ %>
+<%if(lea_Host.equals(mem_Idx) && lea_Fin.equals("F")){ %>
 style="visibility:visible" 
 <%}else{ %>
 style="visibility:hidden" 
 <%} %>
-onclick="gan(<%=num%>);" 
+onclick="gan(<%=num%>, ${leaVo.lea_Status });" 
 <%if(lea_Style.equals("N")){ %>
 value="대진관리"
 <%}else if(lea_Style.equals("T")){ %>
@@ -90,6 +112,15 @@ value="결과관리"
 <%}%>/>
 <button type="button" id="insert" disabled="true" onclick="submitUp(<%=num %>, <%=teamNum %>);">저장</button>
 <input type="button" id="ganCan" disabled="true" onclick="ganCan(<%=num%>);" value="취소" />
+
+<input type="button" id="gan" 
+<%if(lea_Host.equals(mem_Idx) && lea_Fin.equals("T")){ %>
+style="visibility:visible" 
+<%}else{ %>
+style="visibility:hidden" disabled="disabled"
+<%} %>
+onclick="upStatus(<%=num %>);"
+value="대회마감"/>
 
 <table class="table table-condensed" style="width:500px">
 <%for(int i=1;i<=num;i++){%>
@@ -106,21 +137,21 @@ value="결과관리"
 		
 		<%if((int)(num/Math.pow(2, j))==2){%>
 			<input type="button" class="btn" id="tmtBtn<%=((num/(int)Math.pow(2, j))*100)+i%>" 
-			onclick="chan(<%=(num*100)+i%>, <%=num%>);" style="width:100%; height:100%"
+			onclick="chan(<%=(num*100)+i%>, <%=num%>, ${leaVo.lea_Status });" style="width:100%; height:100%"
 			value="결승" disabled="true"></input>
 		<%}else if((int)(num/Math.pow(2, j))==4){%>
 			<input type="button" class="btn" id="tmtBtn<%=((num/(int)Math.pow(2, j))*100)+i%>" 
-			onclick="chan(<%=(num*100)+i%>, <%=num%>);" style="width:100%; height:100%"
+			onclick="chan(<%=(num*100)+i%>, <%=num%>, ${leaVo.lea_Status });" style="width:100%; height:100%"
 			value="준결승" disabled="true"></input>
 		<%}else if(j==0){
 			System.out.println("i : "+i);%>
 			<input type="button" class="btn" id="tmtBtn<%=((num/(int)Math.pow(2, j))*100)+i%>" 
-			onclick="chan(<%=(num*100)+i%>, <%=num%>);" style="width:100%; height:100%"
+			onclick="chan(<%=(num*100)+i%>, <%=num%>, ${leaVo.lea_Status });" style="width:100%; height:100%"
 			value="<%=(int)(num/Math.pow(2, j)) %>강" disabled="true"></input>
 			<%
 		}else{%>
 			<input type="button" class="btn" id="tmtBtn<%=((num/(int)Math.pow(2, j))*100)+i%>" 
-			onclick="chan(<%=(num*100)+i%>, <%=num%>);" style="width:100%; height:100%"
+			onclick="chan(<%=(num*100)+i%>, <%=num%>, ${leaVo.lea_Status });" style="width:100%; height:100%"
 			value="<%=(int)(num/Math.pow(2, j)) %>강" disabled="true"></input>
 		<%}
 		System.out.println("btn : "+btn[j]+" - id : "+i+", = : "+(btn[j]-i));
@@ -140,8 +171,66 @@ value="결과관리"
 
 <c:if test="${leaVo.lea_Style eq 'T'.charAt(0) }">
 	<c:forEach var="i" items="${leaTmList }" varStatus="index">
+	<c:set var="ltPoint" value="${i.lt_Point}" />
+	<c:set var="ltGroup" value="${i.lt_Group}" />
+	<c:set var="ltStatus" value="${i.lt_Status}" />
 		<script type="text/javascript">
-			document.getElementById("tmtBtn"+${i.lt_Group}).value="${i.team_Name}";
+		//와일문으로 cnt는0부터 1씩증가하며 2의cnt배수가 lt_Point와 같아질때까지 돌린다
+		
+		<%int cnt=0;
+		String ltGrp = (String)pageContext.getAttribute("ltGroup");
+		char ltSts = (Character)pageContext.getAttribute("ltStatus");
+		
+		
+		int winWh=(Integer)pageContext.getAttribute("ltPoint");
+		int winBtn=Integer.parseInt(ltGrp)%100;
+		//System.out.println("winWh : "+winWh+", winBtn : "+winBtn);
+		while(true){
+			int tmWh=(int)(num/Math.pow(2, cnt));
+			
+			if(tmWh<num){
+				//if(winBt%2==0){
+					int fuck=0;
+					System.out.println("와일전 시작위치 : "+ltGrp+", 몇강까지? "+winWh+", winBtn : "+winBtn);
+					while(true){
+						if((winBtn>fuck) && (winBtn <= fuck+(int)(Math.pow(2, cnt)))){
+							int temp=winBtn;
+							System.out.println(winBtn);
+							winBtn=fuck+1;
+							if(ltGrp.equals("1611")){
+								System.out.println("안들어가냐 들어가는데 fuck가 왜이래 : "+fuck+"winBtn:"+winBtn%10);
+							}
+							//System.out.println("슈발좀진짜나와라뿅"+winBtn);
+							break;
+						}
+						
+						fuck=fuck+(int)(Math.pow(2, cnt));
+						//System.out.println("fuck : "+fuck);
+						//winBt=(winBt-(int)(Math.pow(2, cnt)))+1;
+						//System.out.println("왜에에에에 : "+winBt+", "+Math.pow(2, cnt));
+					}
+					
+				//}
+			}int winBt=(tmWh*100)+winBtn;
+			//System.out.println("tmWh : "+tmWh+", winBtn : "+winBtn+", "+(tmWh*100)+winBtn);
+			System.out.println("이버튼에 삽입 :"+winBt);%>
+				document.getElementById("tmtBtn"+<%=winBt %>).value="${i.team_Name}";
+				document.getElementById("tmtBtn"+<%=winBt %>).name="${i.lt_Point}";
+				document.getElementById("tmtBtn"+<%=winBt %>).style="width:100%; height:100%; background-color:#a9db80";
+				<%if(ltSts=='L') {%>
+				document.getElementById("tmtBtn"+<%=winBt %>).style="width:100%; height:100%; background-color:#ff9a9a";
+				<%}
+				System.out.println("와일후 시작위치 : "+ltGrp+", 몇강까지? "+winWh+", winBt : "+winBt+", winBtn : "+winBtn);
+				System.out.println();
+				%>
+			<%if(tmWh==winWh){
+				//System.out.println("몇강까지? : "+winWh);
+				break;
+			}
+			
+			%>
+		<%cnt++;}%>
+			
 			//console.log("로오오오그 : " +document.getElementById("tmtBtn"+${i.lt_Group}).value);
 		</script>
 	</c:forEach>

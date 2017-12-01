@@ -14,6 +14,7 @@
 </head>
 <body>
 <div>
+<form id="leaCrt" action = "/spomatch/league/leagueCreateAction.do">
 	<table class="table">
 		<tr><td colspan=2><p align=center>대회 만들기</p></td></tr>
 		<tr>
@@ -23,10 +24,10 @@
 		<tr>
 			<td><p align=center>종목</p></td> <td>
 			<select class="text-center">
-				<option id="op">축구</option>
-				<option id="op">야구</option>
-				<option id="op">게임</option>
-				<option id="op">기타(직접입력)</option>
+				<option id="op1" value="S">축구</option>
+				<option id="op2" value="B">야구</option>
+				<option id="op3" value="G">게임</option>
+				<option id="op4" value="E">기타(직접입력)</option>
 			</select></td>
 			<td rowspan=4><textarea name="info" style="width:100%; height:250px; resize:none"></textarea></td>
 		</tr>
@@ -62,6 +63,7 @@
 		<p align=right><input type="button" value="등록"></input>
 		<input type="button"  value="취소"></input></p></td></tr>
 	</table>
+	</form>
 </div>
 	<script >
 		 $(function(){
